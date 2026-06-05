@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stakeholder Consultation — EECA Lung Health Sovereignty Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Chivo:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ===== CONSULTATION PAGE STYLES ===== */
+*,*::before,*::after{box-sizing:border-box}
+
+:root{
+  --navy-900:#060d1b;
+  --navy-800:#0c1a32;
+  --navy-700:#112244;
+  --navy-600:#193666;
+  --blue-700:#1245a0;
+  --blue-600:#1a56db;
+  --blue-500:#2563eb;
+  --blue-400:#3b82f6;
+  --blue-200:#bfdbfe;
+  --blue-50:#eff6ff;
+  --c-text:#0f172a;
+  --c-text-mid:#334155;
+  --c-text-muted:#64748b;
+  --c-border:#e2e8f0;
+  --c-surface:#f8fafc;
+  --c-surface-2:#f1f5f9;
+  --c-white:#ffffff;
+  --c-green:#059669;
+  --c-green-bg:#ecfdf5;
+  --c-red:#dc2626;
+  --c-amber:#d97706;
+}
+
+/* ---- PAGE HERO ---- */
+.consult-hero{
+  background:var(--navy-900);
+  background-image:
+    radial-gradient(ellipse 60% 70% at 10% 60%,rgba(37,99,235,.14) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 60% at 90% 20%,rgba(18,69,160,.10) 0%,transparent 50%);
+  padding:80px 40px 72px;
+  color:white;
+}
+.consult-hero-inner{max-width:800px;margin:0 auto}
+.consult-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Manrope',sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--blue-200);
+  margin-bottom:24px;
+}
+.consult-eyebrow::before{
+  content:'';display:inline-block;width:28px;height:1px;background:var(--blue-400);
+}
+.consult-hero h1{
+  font-family:'Manrope',sans-serif;
+  font-size:52px;font-weight:800;color:white;
+  line-height:1.05;margin-bottom:22px;letter-spacing:-.025em;
+}
+.consult-hero h1 em{font-style:normal;color:var(--blue-200)}
+.consult-hero-sub{
+  font-family:'Chivo',sans-serif;
+  font-size:17px;color:rgba(255,255,255,.68);line-height:1.75;
+  max-width:640px;margin-bottom:34px;font-weight:300;
+}
+.consult-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.consult-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);
+  border-radius:100px;padding:7px 16px;
+  font-family:'Chivo',sans-serif;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.72);
+}
+.consult-pill svg{width:13px;height:13px;opacity:.7;flex-shrink:0}
+.consult-cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+.btn-consult-primary{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 30px;border-radius:9px;border:none;
+  background:var(--blue-500);color:white;
+  font-family:'Manrope',sans-serif;font-size:14.5px;font-weight:700;letter-spacing:.01em;
+  cursor:pointer;transition:background .18s,transform .12s;text-decoration:none;
+}
+.btn-consult-primary:hover{background:var(--blue-700)}
+.btn-consult-primary:active{transform:scale(.98)}
+.btn-consult-primary svg{width:16px;height:16px}
+.btn-consult-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:9px;
+  border:1.5px solid rgba(255,255,255,.22);background:transparent;color:rgba(255,255,255,.8);
+  font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;letter-spacing:.01em;
+  cursor:pointer;transition:border-color .18s,color .18s;text-decoration:none;
+}
+.btn-consult-ghost:hover{border-color:rgba(255,255,255,.5);color:white}
+.consult-privacy{
+  padding:16px 20px;border:1px solid rgba(255,255,255,.1);border-radius:10px;
+  background:rgba(255,255,255,.04);
+  font-family:'Chivo',sans-serif;font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;
+  max-width:640px;
+}
+.consult-privacy strong{color:rgba(255,255,255,.65);font-weight:500}
+
+/* ---- FORM SECTION ---- */
+.form-wrap{background:var(--c-surface);padding:52px 40px 80px;min-height:60vh}
+.form-box{max-width:740px;margin:0 auto}
+
+/* PROGRESS */
+.prog-wrap{margin-bottom:36px}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}
+.prog-label{font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:var(--c-text-mid);letter-spacing:.04em;text-transform:uppercase}
+.prog-count{font-size:12px;font-weight:600;color:var(--c-text-muted);font-family:'Manrope',sans-serif}
+.prog-track{height:3px;background:var(--c-border);border-radius:100px;overflow:hidden}
+.prog-fill{height:100%;background:var(--blue-500);border-radius:100px;transition:width .45s cubic-bezier(.4,0,.2,1);width:3%}
+
+/* STEP CARD */
+.step{background:white;border-radius:14px;border:1px solid var(--c-border);padding:40px 44px;display:none;animation:fadeUp .32s ease;font-family:'Chivo',sans-serif}
+.step.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.step-tag{font-family:'Manrope',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-500);margin-bottom:7px}
+.step h2{font-family:'Manrope',sans-serif;font-size:21px;font-weight:800;color:var(--c-text);margin-bottom:7px;line-height:1.25}
+.step-hint{font-size:13.5px;color:var(--c-text-muted);margin-bottom:26px;line-height:1.6;font-weight:300}
+
+/* FIELD */
+.c-field{margin-bottom:24px}
+.c-field:last-child{margin-bottom:0}
+.c-field-label{display:block;font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:var(--c-text);margin-bottom:10px;line-height:1.4}
+.c-field-label .req{color:var(--c-red);margin-left:2px}
+.c-field-label .opt{color:var(--c-text-muted);font-weight:400;font-size:11.5px;margin-left:6px}
+.c-field-sep{height:1px;background:var(--c-border);margin:24px 0}
+.c-field-err{color:var(--c-red);font-size:12px;margin-top:5px;display:none;font-family:'Chivo',sans-serif}
+.c-field-err.show{display:block}
+
+/* INPUTS */
+.f-select{width:100%;padding:11px 38px 11px 14px;border:1.5px solid var(--c-border);border-radius:8px;font-family:'Chivo',sans-serif;font-size:14px;color:var(--c-text);background:white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;appearance:none;cursor:pointer;transition:border-color .2s}
+.f-select:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.f-input{width:100%;padding:11px 14px;border:1.5px solid var(--c-border);border-radius:8px;font-family:'Chivo',sans-serif;font-size:14px;color:var(--c-text);background:white;transition:border-color .2s}
+.f-input:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.f-input::placeholder{color:var(--c-text-muted)}
+.f-textarea{width:100%;padding:12px 14px;border:1.5px solid var(--c-border);border-radius:8px;font-family:'Chivo',sans-serif;font-size:14px;color:var(--c-text);background:white;resize:vertical;min-height:110px;line-height:1.65;transition:border-color .2s}
+.f-textarea:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.f-textarea::placeholder{color:var(--c-text-muted)}
+.input-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* RADIO CARDS */
+.r-cards{display:flex;flex-direction:column;gap:8px}
+.r-card{display:flex;align-items:flex-start;gap:13px;padding:14px 18px;border:1.5px solid var(--c-border);border-radius:10px;cursor:pointer;transition:border-color .18s,background .18s;background:white;-webkit-user-select:none;user-select:none}
+.r-card:hover{border-color:var(--blue-400);background:var(--blue-50)}
+.r-card.sel{border-color:var(--blue-500);background:var(--blue-50)}
+.r-card input{width:17px;height:17px;accent-color:var(--blue-500);margin-top:2px;flex-shrink:0;cursor:pointer}
+.r-card-body{flex:1}
+.r-card-body strong{display:block;font-size:13.5px;font-weight:600;color:var(--c-text);line-height:1.4;margin-bottom:2px}
+.r-card-body span{font-size:12.5px;color:var(--c-text-muted);line-height:1.5;font-weight:300}
+.r-card-body span:empty{display:none}
+
+/* ENTRY CARDS (larger) */
+.entry-cards .r-card{padding:18px 22px}
+.entry-cards .r-card strong{font-size:15px}
+.entry-cards .r-card span{font-size:13px}
+
+/* URGENCY CARDS */
+.u-cards{display:flex;flex-direction:column;gap:8px}
+.u-card{display:flex;align-items:center;gap:14px;padding:13px 18px;border:1.5px solid var(--c-border);border-radius:10px;cursor:pointer;transition:all .18s;background:white;-webkit-user-select:none;user-select:none}
+.u-card:hover{border-color:var(--blue-400);background:var(--blue-50)}
+.u-card.sel{border-color:var(--blue-500);background:var(--blue-50)}
+.u-card input{width:17px;height:17px;accent-color:var(--blue-500);flex-shrink:0;cursor:pointer}
+.u-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.u-dot.cr{background:#dc2626}
+.u-dot.hi{background:#f97316}
+.u-dot.mo{background:#eab308}
+.u-dot.lo{background:#22c55e}
+.u-dot.un{background:#94a3b8}
+.u-text{flex:1;font-size:13.5px;color:var(--c-text-mid)}
+.u-text strong{color:var(--c-text);font-weight:600}
+
+/* CHECKBOX CARDS */
+.c-cards{display:flex;flex-direction:column;gap:7px}
+.c-card{display:flex;align-items:flex-start;gap:13px;padding:12px 16px;border:1.5px solid var(--c-border);border-radius:9px;cursor:pointer;transition:all .18s;background:white;-webkit-user-select:none;user-select:none}
+.c-card:hover{border-color:var(--blue-400);background:var(--blue-50)}
+.c-card.sel{border-color:var(--blue-500);background:var(--blue-50)}
+.c-card input{width:16px;height:16px;accent-color:var(--blue-500);margin-top:3px;flex-shrink:0;cursor:pointer}
+.c-card-text{font-size:13.5px;color:var(--c-text-mid);line-height:1.5}
+.max-note{font-size:12px;color:var(--c-text-muted);margin-top:8px;font-style:italic;font-family:'Chivo',sans-serif}
+
+/* RANKING */
+.rank-wrap{display:flex;flex-direction:column;gap:8px}
+.rank-item{display:flex;align-items:flex-start;gap:13px;padding:16px 18px;border:1.5px solid var(--c-border);border-radius:10px;cursor:pointer;transition:all .22s;background:white;-webkit-user-select:none;user-select:none}
+.rank-item:hover{border-color:#94a3b8}
+.rank-item[data-rank="1"]{border-color:var(--blue-500);background:var(--blue-50)}
+.rank-item[data-rank="2"]{border-color:#7c3aed;background:#f5f3ff}
+.rank-item[data-rank="3"]{border-color:#0891b2;background:#ecfeff}
+.rank-badge{width:27px;height:27px;min-width:27px;border-radius:50%;border:1.5px solid var(--c-border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--c-text-muted);font-family:'Manrope',sans-serif;transition:all .22s;background:white}
+.rank-item[data-rank="1"] .rank-badge{background:var(--blue-500);color:white;border-color:var(--blue-500)}
+.rank-item[data-rank="2"] .rank-badge{background:#7c3aed;color:white;border-color:#7c3aed}
+.rank-item[data-rank="3"] .rank-badge{background:#0891b2;color:white;border-color:#0891b2}
+.rank-body{flex:1}
+.rank-body strong{display:block;font-size:13.5px;font-weight:600;color:var(--c-text);margin-bottom:3px;line-height:1.35}
+.rank-body span{font-size:12.5px;color:var(--c-text-muted);line-height:1.5;font-weight:300}
+.rank-body span:empty{display:none}
+.rank-hint{font-size:12px;color:var(--c-text-muted);text-align:center;margin-top:10px;font-style:italic;font-family:'Chivo',sans-serif}
+
+/* SINGLE-SELECT cards */
+.s-cards{display:flex;flex-direction:column;gap:7px}
+.s-card{display:flex;align-items:flex-start;gap:13px;padding:13px 17px;border:1.5px solid var(--c-border);border-radius:9px;cursor:pointer;transition:all .18s;background:white;-webkit-user-select:none;user-select:none}
+.s-card:hover{border-color:var(--blue-400);background:var(--blue-50)}
+.s-card.sel{border-color:var(--blue-500);background:var(--blue-50)}
+.s-card input{width:17px;height:17px;accent-color:var(--blue-500);margin-top:2px;flex-shrink:0;cursor:pointer}
+.s-card-text{font-size:13.5px;color:var(--c-text-mid);line-height:1.5}
+
+/* CONDITIONAL */
+.cond-wrap{padding:16px 18px;background:var(--c-surface);border:1px solid var(--c-border);border-radius:9px;margin-top:12px;display:none}
+.cond-wrap.vis{display:block}
+
+/* STEP NAV BUTTONS */
+.step-nav{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+.btn-back{display:flex;align-items:center;gap:8px;padding:11px 20px;border:1.5px solid var(--c-border);border-radius:8px;background:white;font-family:'Manrope',sans-serif;font-size:13.5px;font-weight:600;color:var(--c-text-mid);cursor:pointer;transition:all .18s}
+.btn-back:hover:not(:disabled){border-color:var(--c-text-muted);color:var(--c-text)}
+.btn-back:disabled{opacity:.35;cursor:not-allowed}
+.btn-next{display:flex;align-items:center;gap:8px;padding:11px 28px;border:none;border-radius:8px;background:var(--blue-500);font-family:'Manrope',sans-serif;font-size:13.5px;font-weight:700;color:white;cursor:pointer;transition:all .18s;margin-left:auto;letter-spacing:.01em}
+.btn-next:hover{background:var(--blue-700)}
+.btn-next:active{transform:scale(.98)}
+
+/* THANK YOU */
+.ty-wrap{background:white;border-radius:14px;border:1px solid var(--c-border);padding:56px 44px;text-align:center;display:none}
+.ty-icon{width:60px;height:60px;background:var(--c-green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-size:24px}
+.ty-wrap h2{font-family:'Manrope',sans-serif;font-size:28px;font-weight:800;color:var(--c-text);margin-bottom:14px}
+.ty-wrap > p{font-family:'Chivo',sans-serif;font-size:15px;color:var(--c-text-muted);line-height:1.75;max-width:480px;margin:0 auto 28px;font-weight:300}
+.ty-box{background:var(--c-surface);border:1px solid var(--c-border);border-radius:10px;padding:18px 22px;font-family:'Chivo',sans-serif;font-size:13.5px;color:var(--c-text-mid);max-width:460px;margin:0 auto;line-height:1.65;font-weight:300}
+.ty-box strong{font-weight:600;color:var(--c-text)}
+.ty-email{display:inline-block;margin-top:8px;color:var(--blue-500);font-weight:600;font-size:13.5px}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:768px){
+  .consult-hero{padding:52px 20px 48px}
+  .consult-hero h1{font-size:34px}
+  .consult-hero-sub{font-size:15px}
+  .form-wrap{padding:32px 16px 60px}
+  .step{padding:26px 22px}
+  .input-row{grid-template-columns:1fr}
+  .btn-consult-primary,.btn-consult-ghost{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== SITE HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">EECA</span>
+        <span class="logo-text">Lung Health Sovereignty Hub</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html#what-is">Overview</a></li>
+          <li><a href="index.html#urgency">Why Now</a></li>
+          <li><a href="index.html#solution">Approach</a></li>
+          <li><a href="index.html#investment">Investment Thesis</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="consultation.html" aria-current="page" style="color:var(--color-primary);font-weight:700">Consultation</a></li>
+        </ul>
+        <div class="lang-switcher" role="group" aria-label="Language selection">
+          <button type="button" class="lang-btn" id="langEN" aria-pressed="true">EN</button>
+          <button type="button" class="lang-btn" id="langRU" aria-pressed="false">RU</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO / CTA ===== -->
+    <div class="consult-hero">
+      <div class="consult-hero-inner">
+        <div class="consult-eyebrow">Regional Stakeholder Consultation · Open Now</div>
+        <h1>Your input will shape<br><em>what gets built first.</em></h1>
+        <p class="consult-hero-sub">Across Eastern Europe and Central Asia, health systems are under pressure from geopolitical disruption, funding transitions, and displacement. Before anything is built, we need to understand what is most urgent, what is already available, and what would actually be used.</p>
+        <div class="consult-meta">
+          <span class="consult-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            7–10 minutes
+          </span>
+          <span class="consult-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            No individual patient data collected
+          </span>
+          <span class="consult-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            All responses inform product decisions
+          </span>
+        </div>
+        <div class="consult-cta-row">
+          <a href="#consultation-form" class="btn-consult-primary" id="heroCTA">
+            Begin the Consultation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a href="index.html" class="btn-consult-ghost">
+            Learn about the Hub
+          </a>
+        </div>
+        <div class="consult-privacy">
+          <strong>Privacy notice:</strong> Your responses are collected for internal strategic planning and product design only. Aggregated, anonymized findings may be shared with core project partners. No individual patient data is requested at any point. Contact details, if provided, are used only for follow-up related to this initiative.
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CONSULTATION FORM ===== -->
+    <section class="form-wrap" id="consultation-form" aria-label="Stakeholder consultation form">
+      <div class="form-box">
+
+        <!-- PROGRESS -->
+        <div class="prog-wrap" id="progWrap">
+          <div class="prog-top">
+            <span class="prog-label" id="progLabel">Getting started</span>
+            <span class="prog-count" id="progCount">1 of 13</span>
+          </div>
+          <div class="prog-track"><div class="prog-fill" id="progFill"></div></div>
+        </div>
+
+        <!-- ========== STEPS ========== -->
+
+        <!-- STEP: entry (Q0) -->
+        <div class="step active" id="step-entry">
+          <div class="step-tag">Step 1 · Identification</div>
+          <h2>Which perspective are you responding from?</h2>
+          <p class="step-hint">Your selection determines which questions follow. All tracks include a shared section and targeted questions for your role.</p>
+          <div class="c-field">
+            <div class="r-cards entry-cards" id="entryCards">
+              <label class="r-card">
+                <input type="radio" name="resp" value="A">
+                <div class="r-card-body">
+                  <strong>Affected community / patient / civil society representative</strong>
+                  <span>Community health workers, patient advocates, NGOs, advocacy organizations, civil society coalitions</span>
+                </div>
+              </label>
+              <label class="r-card">
+                <input type="radio" name="resp" value="B">
+                <div class="r-card-body">
+                  <strong>Member of Parliament / parliamentary staff / policy-maker</strong>
+                  <span>MPs, parliamentary committee staff, government officials, ministry representatives, policy advisors</span>
+                </div>
+              </label>
+              <label class="r-card">
+                <input type="radio" name="resp" value="C">
+                <div class="r-card-body">
+                  <strong>Institutional partner / donor / foundation / technical partner</strong>
+                  <span>WHO, Global Fund, bilateral donors, national foundations, philanthropies, implementation partners, academic institutions</span>
+                </div>
+              </label>
+              <label class="r-card">
+                <input type="radio" name="resp" value="D">
+                <div class="r-card-body">
+                  <strong>Other</strong>
+                  <span>Media, researchers, or others with a relevant perspective on EECA health systems</span>
+                </div>
+              </label>
+            </div>
+            <div class="c-field-err" id="err-entry">Please select your respondent type to continue.</div>
+          </div>
+        </div>
+
+        <!-- STEP: profile (Q1 + Q2) -->
+        <div class="step" id="step-profile">
+          <div class="step-tag">Step 2 · Your profile</div>
+          <h2>Country and primary role</h2>
+          <p class="step-hint">This helps us map responses geographically and by sector.</p>
+          <div class="c-field">
+            <label class="c-field-label">Country or region you are responding from <span class="req">*</span></label>
+            <select class="f-select" id="country" name="country">
+              <option value="">— Select country or region —</option>
+              <option>Armenia</option><option>Azerbaijan</option><option>Belarus</option>
+              <option>Georgia</option><option>Kazakhstan</option><option>Kyrgyzstan</option>
+              <option>Moldova</option><option>Russia</option><option>Tajikistan</option>
+              <option>Turkmenistan</option><option>Ukraine</option><option>Uzbekistan</option>
+              <option>Multi-country / Regional</option><option>Other</option>
+            </select>
+            <div class="c-field-err" id="err-country">Please select your country or region.</div>
+          </div>
+          <div class="c-field">
+            <label class="c-field-label">Primary role <span class="req">*</span></label>
+            <select class="f-select" id="role" name="role">
+              <option value="">— Select your primary role —</option>
+              <option>Community health worker or patient advocate</option>
+              <option>Civil society / NGO / advocacy organization</option>
+              <option>Member of Parliament or parliamentary staff</option>
+              <option>Government official (Ministry of Health or other)</option>
+              <option>National TB or lung health program officer</option>
+              <option>International organization (UN agency, WHO, IOM, etc.)</option>
+              <option>Bilateral or multilateral donor</option>
+              <option>Private foundation or philanthropic organization</option>
+              <option>Academic or research institution</option>
+              <option>Implementation partner or technical assistance provider</option>
+              <option>Media or communications</option>
+              <option>Other</option>
+            </select>
+            <div class="c-field-err" id="err-role">Please select your role.</div>
+          </div>
+        </div>
+
+        <!-- STEP: urgency (Q3) -->
+        <div class="step" id="step-urgency">
+          <div class="step-tag">Step 3 · Urgency</div>
+          <h2>How urgent is the need for a coordinated regional tool?</h2>
+          <p class="step-hint">Assess the urgency of a regional platform for lung health governance and continuity of care in your specific context.</p>
+          <div class="c-field">
+            <div class="u-cards">
+              <label class="u-card"><input type="radio" name="urgency" value="critical"><span class="u-dot cr"></span><div class="u-text"><strong>Critical</strong> — Action is needed now; current systems are failing or at serious risk</div></label>
+              <label class="u-card"><input type="radio" name="urgency" value="high"><span class="u-dot hi"></span><div class="u-text"><strong>High</strong> — Significant gaps exist; things could deteriorate quickly</div></label>
+              <label class="u-card"><input type="radio" name="urgency" value="moderate"><span class="u-dot mo"></span><div class="u-text"><strong>Moderate</strong> — Gaps exist but the situation is stable for now</div></label>
+              <label class="u-card"><input type="radio" name="urgency" value="low"><span class="u-dot lo"></span><div class="u-text"><strong>Low</strong> — Current systems are functioning adequately</div></label>
+              <label class="u-card"><input type="radio" name="urgency" value="unknown"><span class="u-dot un"></span><div class="u-text"><strong>Insufficient information</strong> — I don't have enough visibility to assess</div></label>
+            </div>
+            <div class="c-field-err" id="err-urgency">Please select an urgency level.</div>
+          </div>
+        </div>
+
+        <!-- STEP: risks (Q4) -->
+        <div class="step" id="step-risks">
+          <div class="step-tag">Step 4 · Risk landscape</div>
+          <h2>What are the three greatest risks to lung health system continuity?</h2>
+          <p class="step-hint">Select up to three risks that are most relevant to your context right now.</p>
+          <div class="c-field">
+            <div class="c-cards risks-group">
+              <label class="c-card"><input type="checkbox" name="risks" value="medicine"><span class="c-card-text">Disruption of medicine supply or procurement</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="displacement"><span class="c-card-text">Displacement of populations across or within borders</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="donor"><span class="c-card-text">Loss of donor funding or funding transition</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="legislation"><span class="c-card-text">Weak or absent enabling legislation</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="data"><span class="c-card-text">Fragmented health data and poor information systems</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="political"><span class="c-card-text">Political instability or government transitions</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="workforce"><span class="c-card-text">Healthcare workforce shortages or displacement</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="interruption"><span class="c-card-text">Treatment interruption for patients in transit or displacement</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="resistance"><span class="c-card-text">Drug resistance driven by inconsistent treatment</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="crossborder"><span class="c-card-text">Lack of cross-border coordination mechanisms</span></label>
+              <label class="c-card"><input type="checkbox" name="risks" value="community"><span class="c-card-text">Inadequate community or civil society engagement</span></label>
+            </div>
+            <p class="max-note" id="risksNote">Select up to 3 options.</p>
+            <div class="c-field-err" id="err-risks">Please select at least one risk.</div>
+          </div>
+        </div>
+
+        <!-- STEP: priorities (Q5) -->
+        <div class="step" id="step-priorities">
+          <div class="step-tag">Step 5 · Priorities</div>
+          <h2>Rank the three core Hub functions by priority</h2>
+          <p class="step-hint">Click each pillar in order of priority for your context. Click an already-ranked item to remove its rank.</p>
+          <div class="c-field">
+            <div class="rank-wrap" id="rank-pillars">
+              <div class="rank-item" data-id="leg">
+                <div class="rank-badge"></div>
+                <div class="rank-body">
+                  <strong>Legislative Platform</strong>
+                  <span>A secure space for MPs to access, draft, compare, and exchange health legislation and policy briefs across the region</span>
+                </div>
+              </div>
+              <div class="rank-item" data-id="dip">
+                <div class="rank-badge"></div>
+                <div class="rank-body">
+                  <strong>AI-Driven Diplomacy</strong>
+                  <span>A system identifying which countries should exchange experience based on budgets, legislation, health outcomes, and political readiness</span>
+                </div>
+              </div>
+              <div class="rank-item" data-id="sec">
+                <div class="rank-badge"></div>
+                <div class="rank-body">
+                  <strong>Health Security &amp; Continuity of Care</strong>
+                  <span>An intelligence layer detecting system-level risks during displacement, funding transitions, and supply disruptions — alerting decision-makers before care is interrupted</span>
+                </div>
+              </div>
+            </div>
+            <p class="rank-hint">Click to assign ranks 1 (highest priority), 2, and 3</p>
+            <div class="c-field-err" id="err-priorities">Please rank all three pillars before continuing.</div>
+          </div>
+        </div>
+
+        <!-- STEP: migration (Q6) -->
+        <div class="step" id="step-migration">
+          <div class="step-tag">Step 6 · Migration &amp; continuity</div>
+          <h2>Does population displacement or migration create gaps in lung health care?</h2>
+          <p class="step-hint">To what extent does movement of people create treatment continuity risks in your context?</p>
+          <div class="c-field">
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="migration" value="major"><div class="r-card-body"><strong>Major issue</strong><span>Significant numbers of displaced people are losing or interrupting treatment</span></div></label>
+              <label class="r-card"><input type="radio" name="migration" value="emerging"><div class="r-card-body"><strong>Emerging issue</strong><span>We are seeing early signs; it is not yet a crisis</span></div></label>
+              <label class="r-card"><input type="radio" name="migration" value="limited"><div class="r-card-body"><strong>Limited issue</strong><span>Displacement exists but is managed reasonably well</span></div></label>
+              <label class="r-card"><input type="radio" name="migration" value="none"><div class="r-card-body"><strong>Not a significant issue</strong><span>Not a significant issue in our context</span></div></label>
+              <label class="r-card"><input type="radio" name="migration" value="unknown"><div class="r-card-body"><strong>Insufficient visibility</strong><span>I don't have enough information to answer</span></div></label>
+            </div>
+            <div class="c-field-err" id="err-migration">Please select an option.</div>
+          </div>
+        </div>
+
+        <!-- STEP: contribution (Q7) -->
+        <div class="step" id="step-contribution">
+          <div class="step-tag">Step 7 · Your contribution</div>
+          <h2>Are you in a position to contribute to this initiative?</h2>
+          <p class="step-hint">Select all that apply. This is not a commitment — it helps us understand what is available.</p>
+          <div class="c-field">
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="contrib" value="data"><span class="c-card-text">Aggregated or de-identified health outcome data</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="legislation"><span class="c-card-text">Legislative documents, amendments, or draft laws</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="research"><span class="c-card-text">Existing policy briefs or research reports</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="networks"><span class="c-card-text">Contact networks (MPs, health officials, community leaders)</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="expertise"><span class="c-card-text">Institutional expertise for technical advisory input</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="financial"><span class="c-card-text">Financial support or co-funding</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="pilot"><span class="c-card-text">Pilot country or site access</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="none"><span class="c-card-text">None of the above at this stage</span></label>
+              <label class="c-card"><input type="checkbox" name="contrib" value="info"><span class="c-card-text">I need more information before committing</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== BRANCH A: COMMUNITY / CIVIL SOCIETY ===== -->
+
+        <!-- STEP: a-access (QA1) -->
+        <div class="step" id="step-a-access">
+          <div class="step-tag">Community Track · Access</div>
+          <h2>Where does access to lung health care most commonly break down?</h2>
+          <p class="step-hint">Based on your experience or community — select all that apply.</p>
+          <div class="c-field">
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="access" value="internal"><span class="c-card-text">When people move between cities or regions within a country</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="crossborder"><span class="c-card-text">When people cross international borders</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="funding"><span class="c-card-text">When funding changes and clinics reduce services</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="medicine"><span class="c-card-text">When medicine supply is interrupted</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="docs"><span class="c-card-text">When documentation (ID, residence permit) is missing or expired</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="language"><span class="c-card-text">When language or cultural barriers prevent engagement</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="workers"><span class="c-card-text">When healthcare workers are unavailable or displaced</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="protocols"><span class="c-card-text">When treatment protocols differ between locations</span></label>
+              <label class="c-card"><input type="checkbox" name="access" value="records"><span class="c-card-text">When health records don't transfer between facilities</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP: a-sensing (QA2 + QA3) -->
+        <div class="step" id="step-a-sensing">
+          <div class="step-tag">Community Track · Early warning</div>
+          <h2>Community signals and feedback channels</h2>
+          <p class="step-hint">Two questions about how communities detect problems and whether that information reaches decision-makers.</p>
+          <div class="c-field">
+            <label class="c-field-label">Does your community identify health access problems <em>before</em> official systems do? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="earlyWarn" value="yes"><div class="r-card-body"><strong>Yes</strong><span>Communities often know first</span></div></label>
+              <label class="r-card"><input type="radio" name="earlyWarn" value="sometimes"><div class="r-card-body"><strong>Sometimes</strong><span>It depends on the issue</span></div></label>
+              <label class="r-card"><input type="radio" name="earlyWarn" value="no"><div class="r-card-body"><strong>No</strong><span>Official systems usually detect problems first</span></div></label>
+              <label class="r-card"><input type="radio" name="earlyWarn" value="unknown"><div class="r-card-body"><strong>No reliable way to know</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-earlyWarn">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">Does feedback from communities reach lawmakers or ministry decision-makers in a reliable way? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="feedback" value="yes"><div class="r-card-body"><strong>Yes</strong><span>Formal and functioning channels exist</span></div></label>
+              <label class="r-card"><input type="radio" name="feedback" value="partial"><div class="r-card-body"><strong>Partially</strong><span>Some channels exist but they are slow or inconsistent</span></div></label>
+              <label class="r-card"><input type="radio" name="feedback" value="rarely"><div class="r-card-body"><strong>Rarely</strong><span>Feedback reaches decision-makers informally at best</span></div></label>
+              <label class="r-card"><input type="radio" name="feedback" value="no"><div class="r-card-body"><strong>No</strong><span>There is no effective channel we are aware of</span></div></label>
+              <label class="r-card"><input type="radio" name="feedback" value="unknown"><div class="r-card-body"><strong>I don't know</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-feedback">Please select an option.</div>
+          </div>
+        </div>
+
+        <!-- STEP: a-migration (QA4 + QA5) -->
+        <div class="step" id="step-a-migration">
+          <div class="step-tag">Community Track · Displaced populations</div>
+          <h2>Migrant and displaced community access to care</h2>
+          <p class="step-hint">Two questions about treatment access for people on the move and medicine availability.</p>
+          <div class="c-field">
+            <label class="c-field-label">Are people from migrant or displaced communities losing access to TB or lung health treatment as a result of movement? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="migAccess" value="yes-reg"><div class="r-card-body"><strong>Yes — happening regularly</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="migAccess" value="yes-cases"><div class="r-card-body"><strong>Yes — we know of specific cases</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="migAccess" value="possibly"><div class="r-card-body"><strong>Possibly</strong><span>We suspect it but have no confirmed data</span></div></label>
+              <label class="r-card"><input type="radio" name="migAccess" value="no"><div class="r-card-body"><strong>Not that we have observed</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="migAccess" value="na"><div class="r-card-body"><strong>Not applicable</strong><span>Not applicable in our context</span></div></label>
+            </div>
+            <div class="c-field-err" id="err-migAccess">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">Has your community experienced interruptions in access to TB or lung health medicines in the past 12 months? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="meds" value="significant"><div class="r-card-body"><strong>Yes — significant interruptions</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="meds" value="minor"><div class="r-card-body"><strong>Yes — minor or temporary interruptions</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="meds" value="no"><div class="r-card-body"><strong>No — supply has been consistent</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="meds" value="unknown"><div class="r-card-body"><strong>Insufficient information</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-meds">Please select an option.</div>
+          </div>
+        </div>
+
+        <!-- STEP: a-features (QA6 + QA7) -->
+        <div class="step" id="step-a-features">
+          <div class="step-tag">Community Track · Features &amp; support</div>
+          <h2>What would the Hub need to offer communities?</h2>
+          <p class="step-hint">Select the most useful feature and any support your organization would need.</p>
+          <div class="c-field">
+            <label class="c-field-label">If the Hub were built, which function would be most useful for communities like yours? <span class="req">*</span></label>
+            <div class="s-cards">
+              <label class="s-card"><input type="radio" name="commFeature" value="report"><div class="s-card-text">A channel to report access problems directly to decision-makers</div></label>
+              <label class="s-card"><input type="radio" name="commFeature" value="alerts"><div class="s-card-text">Alerts when medicine supply or service availability changes</div></label>
+              <label class="s-card"><input type="radio" name="commFeature" value="rights"><div class="s-card-text">Information about legal rights and access entitlements</div></label>
+              <label class="s-card"><input type="radio" name="commFeature" value="laws"><div class="s-card-text">Visibility into which laws and policies affect your community</div></label>
+              <label class="s-card"><input type="radio" name="commFeature" value="consult"><div class="s-card-text">A way to be consulted on legislation before it is finalized</div></label>
+              <label class="s-card"><input type="radio" name="commFeature" value="options"><div class="s-card-text">Real-time information about treatment continuity options</div></label>
+            </div>
+            <div class="c-field-err" id="err-commFeature">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">What support would be most useful to engage effectively with this initiative? <span class="opt">Optional</span></label>
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="commSupport" value="training"><span class="c-card-text">Training on digital health advocacy tools</span></label>
+              <label class="c-card"><input type="checkbox" name="commSupport" value="legal"><span class="c-card-text">Legal literacy on TB and lung health policy</span></label>
+              <label class="c-card"><input type="checkbox" name="commSupport" value="documenting"><span class="c-card-text">Support for documenting and reporting treatment access issues</span></label>
+              <label class="c-card"><input type="checkbox" name="commSupport" value="parliament"><span class="c-card-text">Guidance on how to engage with parliamentary processes</span></label>
+              <label class="c-card"><input type="checkbox" name="commSupport" value="language"><span class="c-card-text">Translation and language support</span></label>
+              <label class="c-card"><input type="checkbox" name="commSupport" value="tech"><span class="c-card-text">Technical support for using the platform</span></label>
+              <label class="c-card"><input type="checkbox" name="commSupport" value="none"><span class="c-card-text">None — we have sufficient capacity</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== BRANCH B: MPs / POLITICIANS ===== -->
+
+        <!-- STEP: b-blockers (QB1) -->
+        <div class="step" id="step-b-blockers">
+          <div class="step-tag">Parliamentary Track · Bottlenecks</div>
+          <h2>What currently blocks or delays health legislation?</h2>
+          <p class="step-hint">Select all factors that are relevant in your parliament or ministry context.</p>
+          <div class="c-field">
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="blockers" value="evidence"><span class="c-card-text">Insufficient technical evidence or comparative data</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="examples"><span class="c-card-text">Lack of comparative examples from other EECA countries</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="budget"><span class="c-card-text">No budget analysis or fiscal notes attached to proposals</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="interministry"><span class="c-card-text">Slow inter-ministerial coordination</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="political"><span class="c-card-text">Political disagreement within coalition or majority</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="capacity"><span class="c-card-text">Limited legislative drafting capacity</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="community"><span class="c-card-text">Lack of community or patient-group input</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="compatibility"><span class="c-card-text">Unclear legal compatibility with regional frameworks</span></label>
+              <label class="c-card"><input type="checkbox" name="blockers" value="committee"><span class="c-card-text">No dedicated health committee capacity</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP: b-tools (QB2 + QB3) -->
+        <div class="step" id="step-b-tools">
+          <div class="step-tag">Parliamentary Track · Legislative tools</div>
+          <h2>Comparative law access and AI-assisted policy tools</h2>
+          <p class="step-hint">Two questions about which digital tools would be useful for your legislative work.</p>
+          <div class="c-field">
+            <label class="c-field-label">Would a searchable database of health legislation from across EECA countries be useful? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="compLaw" value="very"><div class="r-card-body"><strong>Very useful</strong><span>I would use it regularly</span></div></label>
+              <label class="r-card"><input type="radio" name="compLaw" value="somewhat"><div class="r-card-body"><strong>Somewhat useful</strong><span>I would use it for specific situations</span></div></label>
+              <label class="r-card"><input type="radio" name="compLaw" value="uncertain"><div class="r-card-body"><strong>Uncertain</strong><span>It depends on how it's designed</span></div></label>
+              <label class="r-card"><input type="radio" name="compLaw" value="unlikely"><div class="r-card-body"><strong>Unlikely to be useful</strong><span>Not relevant to my work context</span></div></label>
+              <label class="r-card"><input type="radio" name="compLaw" value="colleagues"><div class="r-card-body"><strong>Useful for colleagues, not me personally</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-compLaw">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">Would you or your team use an AI-assisted tool that analyzes proposed health amendments and flags legal or policy gaps? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="aiTools" value="yes"><div class="r-card-body"><strong>Yes</strong><span>This would be genuinely useful</span></div></label>
+              <label class="r-card"><input type="radio" name="aiTools" value="possibly"><div class="r-card-body"><strong>Possibly</strong><span>With the right governance and transparency conditions</span></div></label>
+              <label class="r-card"><input type="radio" name="aiTools" value="uncertain"><div class="r-card-body"><strong>Uncertain</strong><span>I'd need to see it in practice</span></div></label>
+              <label class="r-card"><input type="radio" name="aiTools" value="unlikely"><div class="r-card-body"><strong>Unlikely</strong><span>I prefer human analysis</span></div></label>
+              <label class="r-card"><input type="radio" name="aiTools" value="no"><div class="r-card-body"><strong>No</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-aiTools">Please select an option.</div>
+            <div class="cond-wrap" id="aiTrustWrap">
+              <label class="c-field-label">What conditions would be required for you to trust AI-generated policy analysis? <span class="opt">Optional</span></label>
+              <div class="c-cards">
+                <label class="c-card"><input type="checkbox" name="aiTrust" value="sources"><span class="c-card-text">Transparency about data sources used</span></label>
+                <label class="c-card"><input type="checkbox" name="aiTrust" value="human"><span class="c-card-text">Human review before any output is relied upon</span></label>
+                <label class="c-card"><input type="checkbox" name="aiTrust" value="confidence"><span class="c-card-text">Clear indication of confidence level or uncertainty</span></label>
+                <label class="c-card"><input type="checkbox" name="aiTrust" value="endorse"><span class="c-card-text">Institutional endorsement (WHO, regional body, etc.)</span></label>
+                <label class="c-card"><input type="checkbox" name="aiTrust" value="sovereign"><span class="c-card-text">Data held on sovereign or national infrastructure</span></label>
+                <label class="c-card"><input type="checkbox" name="aiTrust" value="audit"><span class="c-card-text">A clear audit trail for all outputs</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP: b-portal (QB4 + QB5) -->
+        <div class="step" id="step-b-portal">
+          <div class="step-tag">Parliamentary Track · Portal &amp; windows</div>
+          <h2>Secure MP portal and legislative timing</h2>
+          <p class="step-hint">Two questions about appetite for a secure digital workspace and upcoming policy opportunities.</p>
+          <div class="c-field">
+            <label class="c-field-label">Would you use a secure, invitation-only portal designed for parliamentarians to access, draft, and exchange health legislation? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="mpPortal" value="yes"><div class="r-card-body"><strong>Yes — I would use it actively</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="mpPortal" value="possibly"><div class="r-card-body"><strong>Possibly</strong><span>If the security and governance conditions were right</span></div></label>
+              <label class="r-card"><input type="radio" name="mpPortal" value="uncertain"><div class="r-card-body"><strong>Uncertain</strong><span>I'd need more information</span></div></label>
+              <label class="r-card"><input type="radio" name="mpPortal" value="no"><div class="r-card-body"><strong>No</strong><span>I wouldn't use it</span></div></label>
+            </div>
+            <div class="c-field-err" id="err-mpPortal">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">Are there upcoming legislative or budget windows where health legislation could realistically be advanced in the next 12 months? <span class="opt">Optional — select all that apply</span></label>
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="windows" value="budget"><span class="c-card-text">Budget allocation or supplementary budget process</span></label>
+              <label class="c-card"><input type="checkbox" name="windows" value="healthlaw"><span class="c-card-text">Health law revision or new national health strategy</span></label>
+              <label class="c-card"><input type="checkbox" name="windows" value="tbprogram"><span class="c-card-text">TB or infectious disease program renewal</span></label>
+              <label class="c-card"><input type="checkbox" name="windows" value="election"><span class="c-card-text">Parliamentary election cycle creating urgency</span></label>
+              <label class="c-card"><input type="checkbox" name="windows" value="eu"><span class="c-card-text">EU accession or international treaty compliance process</span></label>
+              <label class="c-card"><input type="checkbox" name="windows" value="gf"><span class="c-card-text">Global Fund transition planning</span></label>
+              <label class="c-card"><input type="checkbox" name="windows" value="none"><span class="c-card-text">No clear window in the near term</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP: b-emergency (QB6 + QB7) -->
+        <div class="step" id="step-b-emergency">
+          <div class="step-tag">Parliamentary Track · Emergency measures</div>
+          <h2>Migration continuity measures and design priorities</h2>
+          <div class="c-field">
+            <label class="c-field-label">How politically feasible would it be to pass emergency legislation protecting health continuity for displaced populations in the next 12 months? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="migLaw" value="very"><div class="r-card-body"><strong>Very feasible</strong><span>There is political will</span></div></label>
+              <label class="r-card"><input type="radio" name="migLaw" value="feasible"><div class="r-card-body"><strong>Feasible with the right framing and evidence</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="migLaw" value="difficult"><div class="r-card-body"><strong>Difficult — but not impossible</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="migLaw" value="very-difficult"><div class="r-card-body"><strong>Very difficult</strong><span>Too politically sensitive</span></div></label>
+              <label class="r-card"><input type="radio" name="migLaw" value="unknown"><div class="r-card-body"><strong>I don't know</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-migLaw">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">What single thing would make this platform genuinely useful to you — something you would actually open and rely on? <span class="opt">Optional — max 100 words</span></label>
+            <textarea class="f-textarea" name="mpOpen" placeholder="Share your honest perspective on what would make this worth using…" maxlength="800"></textarea>
+          </div>
+        </div>
+
+        <!-- ===== BRANCH C: PARTNERS / FUNDERS ===== -->
+
+        <!-- STEP: c-profile (QC1 + QC2) -->
+        <div class="step" id="step-c-profile">
+          <div class="step-tag">Partner Track · Organization profile</div>
+          <h2>Organization type and data holdings</h2>
+          <p class="step-hint">Two questions to understand your organization and what data may be available.</p>
+          <div class="c-field">
+            <label class="c-field-label">Which best describes your organization? <span class="req">*</span></label>
+            <select class="f-select" id="orgType" name="orgType">
+              <option value="">— Select organization type —</option>
+              <option>UN agency or affiliated body (WHO, IOM, UNAIDS, etc.)</option>
+              <option>Multilateral or bilateral donor government</option>
+              <option>The Global Fund to Fight AIDS, Tuberculosis and Malaria</option>
+              <option>International philanthropic foundation</option>
+              <option>National foundation or state development fund</option>
+              <option>Regional health organization</option>
+              <option>Academic or research institution with implementation role</option>
+              <option>Implementation partner / technical assistance provider</option>
+              <option>Other</option>
+            </select>
+            <div class="c-field-err" id="err-orgType">Please select your organization type.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">Does your organization hold any of the following data types relevant to the EECA region? <span class="opt">Optional — select all that apply</span></label>
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="tb"><span class="c-card-text">Aggregated TB incidence, treatment, or outcome data</span></label>
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="finance"><span class="c-card-text">Health financing or budget allocation data</span></label>
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="migration"><span class="c-card-text">Migration and displacement population data</span></label>
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="procurement"><span class="c-card-text">Medicine procurement or supply chain data</span></label>
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="legislation"><span class="c-card-text">Legislative or policy tracking databases</span></label>
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="performance"><span class="c-card-text">Health system performance indicators</span></label>
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="donor"><span class="c-card-text">Donor disbursement and funding flow data</span></label>
+              <label class="c-card"><input type="checkbox" name="dataHeld" value="none"><span class="c-card-text">None of the above</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP: c-data (QC3 + QC4) -->
+        <div class="step" id="step-c-data">
+          <div class="step-tag">Partner Track · Data &amp; funding</div>
+          <h2>Data sharing conditions and funding transition risks</h2>
+          <div class="c-field">
+            <label class="c-field-label">If your organization holds relevant data, what conditions would be required to share it? <span class="opt">Optional</span></label>
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="dataShare" value="dua"><span class="c-card-text">Data use agreement with defined governance</span></label>
+              <label class="c-card"><input type="checkbox" name="dataShare" value="tech"><span class="c-card-text">Technical integration with existing systems</span></label>
+              <label class="c-card"><input type="checkbox" name="dataShare" value="pia"><span class="c-card-text">Privacy impact assessment</span></label>
+              <label class="c-card"><input type="checkbox" name="dataShare" value="audit"><span class="c-card-text">Third-party or independent audit</span></label>
+              <label class="c-card"><input type="checkbox" name="dataShare" value="who"><span class="c-card-text">Alignment with WHO or UN data standards</span></label>
+              <label class="c-card"><input type="checkbox" name="dataShare" value="gov"><span class="c-card-text">Government sign-off in relevant countries</span></label>
+              <label class="c-card"><input type="checkbox" name="dataShare" value="open"><span class="c-card-text">No conditions — we could share openly</span></label>
+              <label class="c-card"><input type="checkbox" name="dataShare" value="never"><span class="c-card-text">We are unlikely to share data regardless of conditions</span></label>
+            </div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">How significant are funding transition risks for TB and lung health systems in the EECA countries you work with? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="fundRisk" value="very"><div class="r-card-body"><strong>Very significant</strong><span>We are actively managing these risks now</span></div></label>
+              <label class="r-card"><input type="radio" name="fundRisk" value="significant"><div class="r-card-body"><strong>Significant</strong><span>Risks are real but manageable</span></div></label>
+              <label class="r-card"><input type="radio" name="fundRisk" value="moderate"><div class="r-card-body"><strong>Moderate</strong><span>Transition is planned but the path is unclear</span></div></label>
+              <label class="r-card"><input type="radio" name="fundRisk" value="limited"><div class="r-card-body"><strong>Limited</strong><span>National systems are ready to absorb transitions</span></div></label>
+              <label class="r-card"><input type="radio" name="fundRisk" value="na"><div class="r-card-body"><strong>Not applicable</strong><span>Not applicable to our portfolio</span></div></label>
+              <label class="r-card"><input type="radio" name="fundRisk" value="unknown"><div class="r-card-body"><strong>Insufficient visibility</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-fundRisk">Please select an option.</div>
+          </div>
+        </div>
+
+        <!-- STEP: c-evidence (QC5 + QC6) -->
+        <div class="step" id="step-c-evidence">
+          <div class="step-tag">Partner Track · Evidence &amp; systems</div>
+          <h2>Evidence requirements and existing platforms</h2>
+          <div class="c-field">
+            <label class="c-field-label">What evidence would your organization need before funding or formally endorsing the Hub? <span class="opt">Optional — select all that apply</span></label>
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="evidence" value="poc"><span class="c-card-text">Proof-of-concept pilot in at least one country</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="govlet"><span class="c-card-text">Letters of intent or endorsement from national governments</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="review"><span class="c-card-text">Independent technical review or validation</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="parliament"><span class="c-card-text">Demonstrated parliamentary engagement or uptake</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="governance"><span class="c-card-text">Clear governance, privacy, and data security standards</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="codesign"><span class="c-card-text">Evidence of community co-design and civil society engagement</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="vfm"><span class="c-card-text">Cost-effectiveness or value-for-money analysis</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="alignment"><span class="c-card-text">Alignment with existing regional or global frameworks</span></label>
+              <label class="c-card"><input type="checkbox" name="evidence" value="now"><span class="c-card-text">We would support based on current information</span></label>
+            </div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">Does your organization already use dashboards or analytical platforms relevant to this region? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="existSys" value="yes-open"><div class="r-card-body"><strong>Yes — open to integration or interoperability</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="existSys" value="yes-closed"><div class="r-card-body"><strong>Yes — but proprietary or restricted</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="existSys" value="basic"><div class="r-card-body"><strong>Basic tools only</strong><span>Nothing purpose-built for this region</span></div></label>
+              <label class="r-card"><input type="radio" name="existSys" value="no"><div class="r-card-body"><strong>No</strong><span>We rely on manual reporting</span></div></label>
+            </div>
+            <div class="c-field-err" id="err-existSys">Please select an option.</div>
+            <div class="cond-wrap" id="sysDescWrap">
+              <label class="c-field-label">Briefly describe the tool and whether integration would be of interest. <span class="opt">Optional</span></label>
+              <textarea class="f-textarea" name="sysDesc" placeholder="e.g. We use WHO's GTB dashboard and would be interested in an API-level integration…" style="min-height:80px"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP: c-pilot (QC7 + QC8) -->
+        <div class="step" id="step-c-pilot">
+          <div class="step-tag">Partner Track · Pilot &amp; funding</div>
+          <h2>Pilot support and fundable MVP</h2>
+          <div class="c-field">
+            <label class="c-field-label">Would your organization be willing to support or co-facilitate a pilot of the Hub? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="pilotInt" value="yes"><div class="r-card-body"><strong>Yes</strong><span>We are actively looking for initiatives to support</span></div></label>
+              <label class="r-card"><input type="radio" name="pilotInt" value="possibly"><div class="r-card-body"><strong>Possibly</strong><span>Subject to governance and feasibility review</span></div></label>
+              <label class="r-card"><input type="radio" name="pilotInt" value="maybe"><div class="r-card-body"><strong>Maybe</strong><span>We would need a detailed proposal</span></div></label>
+              <label class="r-card"><input type="radio" name="pilotInt" value="unlikely"><div class="r-card-body"><strong>Unlikely at this stage</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="pilotInt" value="no"><div class="r-card-body"><strong>No</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-pilotInt">Please select an option.</div>
+            <div class="cond-wrap" id="pilotCountryWrap">
+              <label class="c-field-label">Which countries would you prioritize for a pilot? <span class="opt">Optional</span></label>
+              <div class="c-cards">
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Armenia"><span class="c-card-text">Armenia</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Azerbaijan"><span class="c-card-text">Azerbaijan</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Georgia"><span class="c-card-text">Georgia</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Kazakhstan"><span class="c-card-text">Kazakhstan</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Kyrgyzstan"><span class="c-card-text">Kyrgyzstan</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Moldova"><span class="c-card-text">Moldova</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Tajikistan"><span class="c-card-text">Tajikistan</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Ukraine"><span class="c-card-text">Ukraine</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Uzbekistan"><span class="c-card-text">Uzbekistan</span></label>
+                <label class="c-card"><input type="checkbox" name="pilotCountry" value="Other"><span class="c-card-text">Other country</span></label>
+              </div>
+            </div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">From a funding perspective, which Hub component would be easiest to support in the next 12–18 months? <span class="req">*</span></label>
+            <div class="s-cards">
+              <label class="s-card"><input type="radio" name="fundableMVP" value="leg"><div class="s-card-text">Legislative Platform / MP sovereignty portal</div></label>
+              <label class="s-card"><input type="radio" name="fundableMVP" value="dip"><div class="s-card-text">AI-driven bilateral diplomacy and country matching system</div></label>
+              <label class="s-card"><input type="radio" name="fundableMVP" value="sec"><div class="s-card-text">Health security and continuity-of-care crisis intelligence layer</div></label>
+              <label class="s-card"><input type="radio" name="fundableMVP" value="full"><div class="s-card-text">The full integrated platform</div></label>
+              <label class="s-card"><input type="radio" name="fundableMVP" value="none"><div class="s-card-text">None of the above</div></label>
+              <label class="s-card"><input type="radio" name="fundableMVP" value="uncertain"><div class="s-card-text">Uncertain</div></label>
+            </div>
+            <div class="c-field-err" id="err-fundableMVP">Please select an option.</div>
+          </div>
+        </div>
+
+        <!-- STEP: c-governance (QC9) -->
+        <div class="step" id="step-c-governance">
+          <div class="step-tag">Partner Track · Governance standards</div>
+          <h2>What governance or privacy standards are required?</h2>
+          <p class="step-hint">Select all standards that your organization would require for formal engagement with the Hub.</p>
+          <div class="c-field">
+            <div class="c-cards">
+              <label class="c-card"><input type="checkbox" name="govStd" value="iso"><span class="c-card-text">ISO 27001 or equivalent information security certification</span></label>
+              <label class="c-card"><input type="checkbox" name="govStd" value="gdpr"><span class="c-card-text">GDPR or equivalent data protection compliance</span></label>
+              <label class="c-card"><input type="checkbox" name="govStd" value="who"><span class="c-card-text">WHO digital health framework alignment</span></label>
+              <label class="c-card"><input type="checkbox" name="govStd" value="noindiv"><span class="c-card-text">No individual or identifiable data collection</span></label>
+              <label class="c-card"><input type="checkbox" name="govStd" value="board"><span class="c-card-text">Independent governance board or oversight body</span></label>
+              <label class="c-card"><input type="checkbox" name="govStd" value="audit"><span class="c-card-text">Annual third-party audit</span></label>
+              <label class="c-card"><input type="checkbox" name="govStd" value="sovereign"><span class="c-card-text">Sovereign data hosting in-country or in-region</span></label>
+              <label class="c-card"><input type="checkbox" name="govStd" value="opensource"><span class="c-card-text">Open-source or auditable codebase</span></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SHARED CLOSING STEPS ===== -->
+
+        <!-- STEP: intelligence (Q9 + Q10) -->
+        <div class="step" id="step-intelligence">
+          <div class="step-tag">Closing · Health security intelligence</div>
+          <h2>Continuity alerts and crisis readiness</h2>
+          <p class="step-hint">Two questions applicable to all respondent types.</p>
+          <div class="c-field">
+            <label class="c-field-label">Would an early-warning system — using aggregated, non-individual regional data to detect where treatment continuity is at risk — be useful? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="earlyWarnSys" value="very"><div class="r-card-body"><strong>Very useful</strong><span>This is a critical gap</span></div></label>
+              <label class="r-card"><input type="radio" name="earlyWarnSys" value="useful"><div class="r-card-body"><strong>Useful</strong><span>This would complement existing systems</span></div></label>
+              <label class="r-card"><input type="radio" name="earlyWarnSys" value="uncertain"><div class="r-card-body"><strong>Uncertain</strong><span>Depends on how data is collected and governed</span></div></label>
+              <label class="r-card"><input type="radio" name="earlyWarnSys" value="limited"><div class="r-card-body"><strong>Of limited use</strong><span>Not particularly relevant in my context</span></div></label>
+              <label class="r-card"><input type="radio" name="earlyWarnSys" value="no"><div class="r-card-body"><strong>No</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-earlyWarnSys">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">How prepared is the health system in your country or region to maintain lung health services during a major crisis? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="crisisReady" value="well"><div class="r-card-body"><strong>Well prepared</strong><span>Systems and protocols are in place</span></div></label>
+              <label class="r-card"><input type="radio" name="crisisReady" value="partial"><div class="r-card-body"><strong>Partially prepared</strong><span>Some systems exist but gaps remain</span></div></label>
+              <label class="r-card"><input type="radio" name="crisisReady" value="poor"><div class="r-card-body"><strong>Poorly prepared</strong><span>We would struggle in a major crisis</span></div></label>
+              <label class="r-card"><input type="radio" name="crisisReady" value="not"><div class="r-card-body"><strong>Not prepared</strong><span>No meaningful contingency mechanisms exist</span></div></label>
+              <label class="r-card"><input type="radio" name="crisisReady" value="unknown"><div class="r-card-body"><strong>I don't know</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-crisisReady">Please select an option.</div>
+          </div>
+        </div>
+
+        <!-- STEP: coordination (Q11 + Q12) -->
+        <div class="step" id="step-coordination">
+          <div class="step-tag">Closing · Coordination &amp; MVP</div>
+          <h2>Cross-border coordination and first-build priority</h2>
+          <div class="c-field">
+            <label class="c-field-label">Is there currently any functional mechanism for cross-border coordination on TB or lung health continuity? <span class="req">*</span></label>
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="crossBorder" value="yes"><div class="r-card-body"><strong>Yes</strong><span>Formal agreements are in place and functioning</span></div></label>
+              <label class="r-card"><input type="radio" name="crossBorder" value="partial"><div class="r-card-body"><strong>Partial</strong><span>Informal coordination exists in some cases</span></div></label>
+              <label class="r-card"><input type="radio" name="crossBorder" value="limited"><div class="r-card-body"><strong>Very limited</strong><span>Coordination is ad hoc at best</span></div></label>
+              <label class="r-card"><input type="radio" name="crossBorder" value="no"><div class="r-card-body"><strong>No</strong><span>No meaningful cross-border mechanism exists</span></div></label>
+              <label class="r-card"><input type="radio" name="crossBorder" value="unknown"><div class="r-card-body"><strong>I don't know</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-crossBorder">Please select an option.</div>
+          </div>
+          <div class="c-field-sep"></div>
+          <div class="c-field">
+            <label class="c-field-label">If the Hub launched with a single feature in the next 6 months, which would create the most value? <span class="req">*</span></label>
+            <div class="s-cards">
+              <label class="s-card"><input type="radio" name="mvpFeature" value="complaw"><div class="s-card-text">Comparative EECA health legislation database — searchable, multi-country</div></label>
+              <label class="s-card"><input type="radio" name="mvpFeature" value="draft"><div class="s-card-text">AI-assisted amendment drafting and analysis tool for MPs</div></label>
+              <label class="s-card"><input type="radio" name="mvpFeature" value="match"><div class="s-card-text">Country matching and bilateral mission recommendation system</div></label>
+              <label class="s-card"><input type="radio" name="mvpFeature" value="alerts"><div class="s-card-text">Continuity-of-care risk alerts for displaced populations</div></label>
+              <label class="s-card"><input type="radio" name="mvpFeature" value="emergency"><div class="s-card-text">Emergency legal measure templates for cross-border health crises</div></label>
+              <label class="s-card"><input type="radio" name="mvpFeature" value="feedback"><div class="s-card-text">Civil society feedback integration with legislative drafting</div></label>
+              <label class="s-card"><input type="radio" name="mvpFeature" value="supply"><div class="s-card-text">Real-time medicine supply disruption monitoring</div></label>
+            </div>
+            <div class="c-field-err" id="err-mvpFeature">Please select an option.</div>
+          </div>
+        </div>
+
+        <!-- STEP: open (Q13) -->
+        <div class="step" id="step-open">
+          <div class="step-tag">Closing · Open response</div>
+          <h2>Anything critical we have not captured?</h2>
+          <p class="step-hint">Is there anything about your context, concerns, or priorities that the preceding questions have not covered? This is optional, but often the most valuable input.</p>
+          <div class="c-field">
+            <textarea class="f-textarea" name="openText" placeholder="Share any additional context, concerns, or priorities not covered above…" style="min-height:130px" maxlength="1000"></textarea>
+          </div>
+        </div>
+
+        <!-- STEP: contact -->
+        <div class="step" id="step-contact">
+          <div class="step-tag">Final step · Follow-up</div>
+          <h2>Would you be willing to be contacted for a 30-minute follow-up conversation?</h2>
+          <p class="step-hint">Your contact details will be used only for follow-up related to this initiative, with your explicit permission. If you prefer to remain anonymous, your responses are still fully valuable.</p>
+          <div class="c-field">
+            <div class="r-cards">
+              <label class="r-card"><input type="radio" name="contactConsent" value="yes"><div class="r-card-body"><strong>Yes — please contact me</strong><span></span></div></label>
+              <label class="r-card"><input type="radio" name="contactConsent" value="maybe"><div class="r-card-body"><strong>Maybe</strong><span>I would like to know more first</span></div></label>
+              <label class="r-card"><input type="radio" name="contactConsent" value="no"><div class="r-card-body"><strong>No — I prefer to remain anonymous</strong><span></span></div></label>
+            </div>
+            <div class="c-field-err" id="err-contactConsent">Please select an option.</div>
+          </div>
+          <div class="cond-wrap" id="contactFieldsWrap">
+            <div class="input-row">
+              <div class="c-field">
+                <label class="c-field-label">Name <span class="opt">Optional</span></label>
+                <input type="text" class="f-input" name="contactName" placeholder="Your name">
+              </div>
+              <div class="c-field">
+                <label class="c-field-label">Organization <span class="opt">Optional</span></label>
+                <input type="text" class="f-input" name="contactOrg" placeholder="Organization name">
+              </div>
+            </div>
+            <div class="c-field" style="margin-top:12px">
+              <label class="c-field-label">Email address <span class="opt">Optional</span></label>
+              <input type="email" class="f-input" name="contactEmail" placeholder="your@email.org">
+            </div>
+            <div class="c-field" style="margin-top:12px">
+              <label class="c-field-label">Preferred language for follow-up <span class="opt">Optional</span></label>
+              <input type="text" class="f-input" name="contactLang" placeholder="e.g. Russian, English, Uzbek…">
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== THANK YOU ===== -->
+        <div class="ty-wrap" id="thankYou" role="status" aria-live="polite">
+          <div class="ty-icon" aria-hidden="true">✓</div>
+          <h2>Thank you.</h2>
+          <p>Your input goes directly to the team designing the EECA Lung Health Sovereignty Hub. If you indicated willingness to be contacted, you will hear from us within two weeks.</p>
+          <div class="ty-box">
+            <strong>Help us reach more stakeholders.</strong><br>
+            If you have colleagues — in parliaments, health institutions, civil society, or partner organizations — who should be consulted, please consider forwarding this consultation.<br>
+            <a href="mailto:contact@eecahub.org" class="ty-email">contact@eecahub.org</a>
+          </div>
+        </div>
+
+        <!-- STEP NAV BUTTONS -->
+        <div class="step-nav" id="stepNav">
+          <button class="btn-back" id="btnBack" disabled type="button" aria-label="Go to previous step">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            Back
+          </button>
+          <button class="btn-next" id="btnNext" type="button" aria-label="Go to next step">
+            Continue
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+
+      </div><!-- /form-box -->
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>EECA Lung Health Sovereignty Hub</strong>
+        <p>Catalyzing resilient health systems and regional security through intelligent investments in Eastern Europe and Central Asia.</p>
+      </div>
+      <div class="footer-partners" aria-label="Foundational partners">
+        <span class="footer-partners-label">Foundational partner</span>
+        <a href="https://www.globaltbcaucus.org/" target="_blank" rel="noopener noreferrer" class="partner-logo" aria-label="Global TB Caucus — opens in new tab">
+          <img src="assets/images/logos/01_GTBC_logotype_main_CMJN.jpg" alt="Global TB Caucus logo">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+  <script>
+  (function(){
+    var state = { respType: null, idx: 0, seq: [] };
+
+    var INTRO = ['entry','profile','urgency','risks','priorities','migration','contribution'];
+    var CLOSE = ['intelligence','coordination','open','contact'];
+    var BRANCH = {
+      'A': ['a-access','a-sensing','a-migration','a-features'],
+      'B': ['b-blockers','b-tools','b-portal','b-emergency'],
+      'C': ['c-profile','c-data','c-evidence','c-pilot','c-governance'],
+      'D': []
+    };
+
+    var LABELS = {
+      'entry':'Your perspective','profile':'Country & role','urgency':'Urgency','risks':'Key risks',
+      'priorities':'Pillar priorities','migration':'Migration & continuity','contribution':'Your contribution',
+      'a-access':'Access breakdown','a-sensing':'Early warning','a-migration':'Displaced populations','a-features':'Features & support',
+      'b-blockers':'Legislative bottlenecks','b-tools':'Digital tools','b-portal':'MP portal','b-emergency':'Emergency measures',
+      'c-profile':'Org profile','c-data':'Data & funding','c-evidence':'Evidence & systems','c-pilot':'Pilot & funding','c-governance':'Governance standards',
+      'intelligence':'Health security','coordination':'Cross-border & MVP','open':'Open response','contact':'Follow-up'
+    };
+
+    var progFill   = document.getElementById('progFill');
+    var progLabel  = document.getElementById('progLabel');
+    var progCount  = document.getElementById('progCount');
+    var btnBack    = document.getElementById('btnBack');
+    var btnNext    = document.getElementById('btnNext');
+    var stepNav    = document.getElementById('stepNav');
+    var progWrap   = document.getElementById('progWrap');
+    var thankYou   = document.getElementById('thankYou');
+
+    function getStep(id){ return document.getElementById('step-'+id); }
+
+    function showStep(id){
+      document.querySelectorAll('.step').forEach(function(s){ s.classList.remove('active'); });
+      var el = getStep(id);
+      if(el){
+        el.classList.add('active');
+        var formSection = document.getElementById('consultation-form');
+        if(formSection){
+          var offset = formSection.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({top: offset, behavior:'smooth'});
+        }
+      }
+      var idx   = state.idx;
+      var total = state.seq.length;
+      var pct   = total > 1 ? Math.round((idx / (total - 1)) * 97) + 3 : 3;
+      progFill.style.width   = pct + '%';
+      progLabel.textContent  = LABELS[id] || id;
+      progCount.textContent  = (idx + 1) + ' of ' + total;
+      btnBack.disabled       = idx === 0;
+      var isLast = idx === total - 1;
+      btnNext.innerHTML = isLast
+        ? 'Submit <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>'
+        : 'Continue <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>';
+    }
+
+    function showThanks(){
+      document.querySelectorAll('.step').forEach(function(s){ s.classList.remove('active'); });
+      thankYou.style.display = 'block';
+      stepNav.style.display  = 'none';
+      progWrap.style.display = 'none';
+      progFill.style.width   = '100%';
+      window.scrollTo({top: 0, behavior:'smooth'});
+    }
+
+    function showErr(id){ var e = document.getElementById('err-'+id); if(e) e.classList.add('show'); }
+    function clearErr(id){ var e = document.getElementById('err-'+id); if(e) e.classList.remove('show'); }
+
+    function validateStep(id){
+      document.querySelectorAll('.c-field-err').forEach(function(e){ e.classList.remove('show'); });
+      var ok = true;
+
+      function needRadio(name, errId){
+        if(!document.querySelector('input[name="'+name+'"]:checked')){ showErr(errId); ok = false; }
+      }
+      function needSelect(selId, errId){
+        var el = document.getElementById(selId);
+        if(!el || !el.value){ showErr(errId); ok = false; }
+      }
+
+      if(id === 'entry'){
+        if(!document.querySelector('input[name="resp"]:checked')){ showErr('entry'); ok = false; }
+      }
+      if(id === 'profile'){ needSelect('country','country'); needSelect('role','role'); }
+      if(id === 'urgency')    { needRadio('urgency','urgency'); }
+      if(id === 'risks'){
+        if(!document.querySelector('.risks-group input[type="checkbox"]:checked')){ showErr('risks'); ok = false; }
+      }
+      if(id === 'priorities'){
+        var ranked = document.querySelectorAll('#rank-pillars .rank-item[data-rank]');
+        if(ranked.length < 3){ showErr('priorities'); ok = false; }
+      }
+      if(id === 'migration')    { needRadio('migration','migration'); }
+      if(id === 'a-sensing')    { needRadio('earlyWarn','earlyWarn'); needRadio('feedback','feedback'); }
+      if(id === 'a-migration')  { needRadio('migAccess','migAccess'); needRadio('meds','meds'); }
+      if(id === 'a-features')   { needRadio('commFeature','commFeature'); }
+      if(id === 'b-tools')      { needRadio('compLaw','compLaw'); needRadio('aiTools','aiTools'); }
+      if(id === 'b-portal')     { needRadio('mpPortal','mpPortal'); }
+      if(id === 'b-emergency')  { needRadio('migLaw','migLaw'); }
+      if(id === 'c-profile')    { needSelect('orgType','orgType'); }
+      if(id === 'c-data')       { needRadio('fundRisk','fundRisk'); }
+      if(id === 'c-evidence')   { needRadio('existSys','existSys'); }
+      if(id === 'c-pilot')      { needRadio('pilotInt','pilotInt'); needRadio('fundableMVP','fundableMVP'); }
+      if(id === 'intelligence') { needRadio('earlyWarnSys','earlyWarnSys'); needRadio('crisisReady','crisisReady'); }
+      if(id === 'coordination') { needRadio('crossBorder','crossBorder'); needRadio('mvpFeature','mvpFeature'); }
+      if(id === 'contact')      { needRadio('contactConsent','contactConsent'); }
+      return ok;
+    }
+
+    btnNext.addEventListener('click', function(){
+      var cur = state.seq[state.idx];
+      if(!validateStep(cur)) return;
+
+      if(cur === 'entry'){
+        var sel = document.querySelector('input[name="resp"]:checked');
+        state.respType = sel.value;
+        state.seq = INTRO.concat(BRANCH[state.respType] || []).concat(CLOSE);
+      }
+
+      state.idx++;
+      if(state.idx >= state.seq.length){ showThanks(); return; }
+      showStep(state.seq[state.idx]);
+    });
+
+    btnBack.addEventListener('click', function(){
+      if(state.idx === 0) return;
+      state.idx--;
+      showStep(state.seq[state.idx]);
+    });
+
+    // Hero CTA smooth scroll
+    var heroCTA = document.getElementById('heroCTA');
+    if(heroCTA){
+      heroCTA.addEventListener('click', function(e){
+        e.preventDefault();
+        var target = document.getElementById('consultation-form');
+        if(target){
+          var offset = target.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({top: offset, behavior:'smooth'});
+        }
+      });
+    }
+
+    // Radio card clicks
+    document.querySelectorAll('.r-card, .u-card, .s-card').forEach(function(card){
+      card.addEventListener('click', function(e){
+        if(e.target.tagName === 'INPUT') return;
+        var inp = card.querySelector('input');
+        if(!inp) return;
+        var name = inp.name;
+        document.querySelectorAll('input[name="'+name+'"]').forEach(function(r){
+          var closest = r.closest('.r-card, .u-card, .s-card');
+          if(closest) closest.classList.remove('sel');
+        });
+        inp.checked = true;
+        card.classList.add('sel');
+        triggerConditionals(name, inp.value);
+      });
+    });
+
+    document.querySelectorAll('.r-card input, .u-card input, .s-card input').forEach(function(inp){
+      inp.addEventListener('change', function(){
+        var name = inp.name;
+        document.querySelectorAll('input[name="'+name+'"]').forEach(function(r){
+          var closest = r.closest('.r-card, .u-card, .s-card');
+          if(closest) closest.classList.remove('sel');
+        });
+        var card = inp.closest('.r-card, .u-card, .s-card');
+        if(card) card.classList.add('sel');
+        triggerConditionals(name, inp.value);
+      });
+    });
+
+    function triggerConditionals(name, val){
+      if(name === 'aiTools'){
+        var w = document.getElementById('aiTrustWrap');
+        if(w) w.classList.toggle('vis', val === 'yes' || val === 'possibly');
+      }
+      if(name === 'existSys'){
+        var w = document.getElementById('sysDescWrap');
+        if(w) w.classList.toggle('vis', val === 'yes-open' || val === 'yes-closed');
+      }
+      if(name === 'pilotInt'){
+        var w = document.getElementById('pilotCountryWrap');
+        if(w) w.classList.toggle('vis', val === 'yes' || val === 'possibly');
+      }
+      if(name === 'contactConsent'){
+        var w = document.getElementById('contactFieldsWrap');
+        if(w) w.classList.toggle('vis', val === 'yes' || val === 'maybe');
+      }
+    }
+
+    // Checkbox card clicks
+    document.querySelectorAll('.c-card').forEach(function(card){
+      card.addEventListener('click', function(e){
+        if(e.target.tagName === 'INPUT') return;
+        var cb = card.querySelector('input[type="checkbox"]');
+        if(!cb) return;
+        cb.checked = !cb.checked;
+        card.classList.toggle('sel', cb.checked);
+      });
+    });
+
+    document.querySelectorAll('.c-card input[type="checkbox"]').forEach(function(cb){
+      cb.addEventListener('change', function(){
+        cb.closest('.c-card').classList.toggle('sel', cb.checked);
+      });
+    });
+
+    // Max 3 for risks
+    document.querySelectorAll('.risks-group input[type="checkbox"]').forEach(function(cb){
+      cb.addEventListener('change', function(){
+        var checked = document.querySelectorAll('.risks-group input[type="checkbox"]:checked');
+        var note = document.getElementById('risksNote');
+        if(checked.length >= 3){
+          document.querySelectorAll('.risks-group input[type="checkbox"]:not(:checked)').forEach(function(u){
+            u.parentElement.style.opacity = '.45';
+            u.parentElement.style.pointerEvents = 'none';
+          });
+          if(note) note.textContent = checked.length + ' of 3 selected.';
+        } else {
+          document.querySelectorAll('.risks-group input[type="checkbox"]').forEach(function(u){
+            u.parentElement.style.opacity = '';
+            u.parentElement.style.pointerEvents = '';
+          });
+          if(note) note.textContent = 'Select up to 3 options.';
+        }
+      });
+    });
+
+    // Ranking widget
+    function initRanking(containerId){
+      var container = document.getElementById(containerId);
+      if(!container) return;
+      var items   = Array.from(container.querySelectorAll('.rank-item'));
+      var maxRank = items.length;
+
+      function getNextRank(){
+        var ranks = items.filter(function(i){ return i.dataset.rank; }).map(function(i){ return parseInt(i.dataset.rank); });
+        for(var r = 1; r <= maxRank; r++){ if(ranks.indexOf(r) === -1) return r; }
+        return null;
+      }
+
+      function shiftDown(removedRank){
+        items.forEach(function(i){
+          var r = parseInt(i.dataset.rank || 0);
+          if(r > removedRank) i.dataset.rank = String(r - 1);
+        });
+      }
+
+      function updateDisplay(){
+        items.forEach(function(item){
+          var badge = item.querySelector('.rank-badge');
+          if(item.dataset.rank){ badge.textContent = item.dataset.rank; }
+          else { badge.textContent = ''; delete item.dataset.rank; }
+        });
+      }
+
+      items.forEach(function(item){
+        item.addEventListener('click', function(){
+          if(item.dataset.rank){
+            var removed = parseInt(item.dataset.rank);
+            delete item.dataset.rank;
+            shiftDown(removed);
+          } else {
+            var next = getNextRank();
+            if(next !== null) item.dataset.rank = String(next);
+          }
+          updateDisplay();
+        });
+      });
+    }
+
+    initRanking('rank-pillars');
+
+    // Language toggle (delegates to existing site i18n if available)
+    var btnEN = document.getElementById('langEN');
+    var btnRU = document.getElementById('langRU');
+    if(btnEN && btnRU){
+      btnEN.addEventListener('click', function(){
+        btnEN.setAttribute('aria-pressed','true');
+        btnRU.setAttribute('aria-pressed','false');
+      });
+      btnRU.addEventListener('click', function(){
+        btnRU.setAttribute('aria-pressed','true');
+        btnEN.setAttribute('aria-pressed','false');
+      });
+    }
+
+    // Init
+    state.seq = INTRO.slice();
+    showStep(state.seq[0]);
+
+  })();
+  </script>
+</body>
+</html>
