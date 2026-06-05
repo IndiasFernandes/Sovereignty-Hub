@@ -23,6 +23,11 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 
 function readStoredLang(): Lang {
   if (typeof window === 'undefined') return 'en';
+  const fromQuery = new URLSearchParams(window.location.search).get('lang');
+  if (fromQuery === 'ru' || fromQuery === 'en') {
+    localStorage.setItem(STORAGE_KEY, fromQuery);
+    return fromQuery;
+  }
   return localStorage.getItem(STORAGE_KEY) === 'ru' ? 'ru' : 'en';
 }
 

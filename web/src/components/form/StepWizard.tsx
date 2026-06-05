@@ -9,12 +9,15 @@ import {
 import { submitConsultation } from '../../lib/submitConsultation';
 import { scrollToElement } from '../../lib/scrollToTarget';
 import { FieldRenderer } from './FieldRenderer';
+import { useI18n } from '../../i18n/I18nProvider';
+import { localizeStep, localizeError, tr } from '../../i18n/formRu';
 
 type Props = {
   hero?: React.ReactNode;
 };
 
 export function StepWizard({ hero }: Props) {
+  const { lang } = useI18n();
   const [answers, setAnswers] = useState<FormAnswers>({});
   const [stepIndex, setStepIndex] = useState(0);
   const [error, setError] = useState<string | null>(null);
@@ -31,6 +34,7 @@ export function StepWizard({ hero }: Props) {
   }, [steps.length, stepIndex]);
 
   const current = steps[stepIndex];
+  const view = current ? localizeStep(current, lang) : null;
   const progress = steps.length > 1 ? Math.round((stepIndex / (steps.length - 1)) * 97) + 3 : 3;
 
   const onChange = useCallback((id: string, value: unknown) => {
@@ -87,14 +91,15 @@ export function StepWizard({ hero }: Props) {
           <div className="form-box">
             <div className="ty-wrap" id="consultation-thanks" style={{ display: 'block' }}>
               <div className="ty-icon" aria-hidden="true">✓</div>
-              <h2>Thank you.</h2>
+              <h2>{tr('Thank you.', lang)}</h2>
               <p>
-                Your input goes directly to the team designing the EECA Lung Health Sovereignty Hub.
-                No response will be shared publicly without your consent. If you indicated willingness
-                to be contacted, you will hear from us within two weeks.
+                {tr(
+                  'Your input goes directly to the team designing the EECA Lung Health Sovereignty Hub. No response will be shared publicly without your consent. If you indicated willingness to be contacted, you will hear from us within two weeks.',
+                  lang,
+                )}
               </p>
               <div className="ty-box">
-                <strong>Questions or direct contact:</strong>
+                <strong>{tr('Questions or direct contact:', lang)}</strong>
                 <br />
                 <a className="ty-email" href="mailto:alesia.matusevych@globaltbcaucus.org">
                   alesia.matusevych@globaltbcaucus.org
@@ -114,9 +119,9 @@ export function StepWizard({ hero }: Props) {
         <div className="form-box">
           <div className="prog-wrap">
             <div className="prog-top">
-              <span className="prog-label">{STEP_LABELS[current?.id ?? ''] ?? 'Consultation'}</span>
+              <span className="prog-label">{tr(STEP_LABELS[current?.id ?? ''] ?? 'Consultation', lang)}</span>
               <span className="prog-count">
-                {stepIndex + 1} of {steps.length}
+                {stepIndex + 1} {tr('of', lang)} {steps.length}
               </span>
             </div>
             <div className="prog-track">
@@ -124,13 +129,13 @@ export function StepWizard({ hero }: Props) {
             </div>
           </div>
 
-          {current && (
+          {current && view && (
             <div className="step active">
-              <div className="step-tag">Step {stepIndex + 1} · {current.tag}</div>
-              <h2>{current.title}</h2>
-              {current.hint && <p className="step-hint">{current.hint}</p>}
+              <div className="step-tag">{tr('Step', lang)} {stepIndex + 1} · {view.tag}</div>
+              <h2>{view.title}</h2>
+              {view.hint && <p className="step-hint">{view.hint}</p>}
 
-              {current.fields.map((field) => {
+              {view.fields.map((field) => {
                 if (field.showWhen && !field.showWhen(answers)) return null;
                 if (field.type === 'group') {
                   return (
@@ -155,19 +160,19 @@ export function StepWizard({ hero }: Props) {
                 );
               })}
 
-              {error && <div className="c-field-err show">{error}</div>}
+              {error && <div className="c-field-err show">{localizeError(error, lang)}</div>}
               {submitError && <div className="c-field-err show">{submitError}</div>}
 
               <div className="step-nav">
                 <button type="button" className="btn-back" disabled={stepIndex === 0} onClick={goBack}>
-                  Back
+                  {tr('Back', lang)}
                 </button>
                 <button type="button" className="btn-next" disabled={submitting} onClick={goNext}>
                   {stepIndex >= steps.length - 1
                     ? submitting
-                      ? 'Submitting…'
-                      : 'Submit'
-                    : 'Continue'}
+                      ? tr('Submitting…', lang)
+                      : tr('Submit', lang)
+                    : tr('Continue', lang)}
                 </button>
               </div>
             </div>
@@ -175,7 +180,9 @@ export function StepWizard({ hero }: Props) {
 
           {resolveBranch(answers) && (
             <p className="max-note" style={{ marginTop: 16 }}>
-              Track: {resolveBranch(answers)} — branch-specific questions follow shared section.
+              {lang === 'ru'
+                ? `Направление: ${resolveBranch(answers)} — профильные вопросы следуют за общим разделом.`
+                : `Track: ${resolveBranch(answers)} — branch-specific questions follow shared section.`}
             </p>
           )}
         </div>

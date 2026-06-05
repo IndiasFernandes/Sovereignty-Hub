@@ -1,0 +1,551 @@
+// Russian translation overlay for the consultation form.
+// Keeps formSchema.ts as the English source of truth; this maps each English
+// UI string -> Russian. Strings not present here fall back to English.
+//
+// ⚠️ Draft translation — needs native-speaker review (Alesia) before public use.
+
+import type { Lang } from './I18nProvider';
+import type { FormField, FormStep } from '../lib/formSchema';
+
+const M: Record<string, string> = {
+  // ── Consultation hero (ConsultationPage) ──────────────────────────────
+  'Regional Stakeholder Consultation · Discovery v1.0':
+    'Региональная консультация заинтересованных сторон · Discovery v1.0',
+  'Your input will shape': 'Ваш вклад определит,',
+  'what gets built first.': 'что будет создано в первую очередь.',
+  'Across Eastern Europe and Central Asia, health systems are under pressure — from geopolitical disruption, funding transitions, displacement of populations, and strained supply chains. When treatment continuity breaks down, the consequences are clinical, political, and irreversible.':
+    'В Восточной Европе и Центральной Азии системы здравоохранения испытывают давление — из-за геополитических потрясений, изменений в финансировании, перемещения населения и нарушений в цепочках поставок. Когда непрерывность лечения нарушается, последствия являются клиническими, политическими и необратимыми.',
+  'The EECA Lung Health Sovereignty Hub is a proposed regional platform designed to help parliamentarians, community organizations, and partners coordinate faster, legislate smarter, and protect care continuity — especially for the most vulnerable populations.':
+    'Хаб суверенитета лёгочного здоровья ВЕЦА — это предлагаемая региональная платформа, призванная помочь парламентариям, общественным организациям и партнёрам быстрее координировать действия, принимать более продуманные законы и защищать непрерывность медицинской помощи — особенно для наиболее уязвимых групп населения.',
+  '7–10 minutes': '7–10 минут',
+  'No individual patient data collected': 'Индивидуальные данные пациентов не собираются',
+  'All responses inform product decisions': 'Все ответы влияют на решения о продукте',
+  'Begin the Consultation': 'Начать консультацию',
+  'Learn about the Hub': 'Узнать о Хабе',
+  'Privacy and consent:': 'Конфиденциальность и согласие:',
+  'Your responses are collected for internal strategic planning and product design purposes only. No individual patient data is requested or collected at any point. Aggregated, anonymized findings may be shared with core project partners. By completing this form, you consent to this use. Contact details, if provided, are used only for follow-up related to this initiative.':
+    'Ваши ответы собираются исключительно для внутреннего стратегического планирования и проектирования продукта. Индивидуальные данные пациентов не запрашиваются и не собираются. Агрегированные обезличенные результаты могут быть переданы ключевым партнёрам проекта. Заполняя эту форму, вы соглашаетесь с таким использованием. Контактные данные, если они указаны, используются только для последующей связи в рамках этой инициативы.',
+
+  // ── Wizard chrome (StepWizard) ────────────────────────────────────────
+  'Step': 'Шаг',
+  'of': 'из',
+  'Back': 'Назад',
+  'Continue': 'Продолжить',
+  'Submit': 'Отправить',
+  'Submitting…': 'Отправка…',
+  'Consultation': 'Консультация',
+  'Thank you.': 'Спасибо.',
+  'Your input goes directly to the team designing the EECA Lung Health Sovereignty Hub. No response will be shared publicly without your consent. If you indicated willingness to be contacted, you will hear from us within two weeks.':
+    'Ваш ответ направляется напрямую команде, разрабатывающей Хаб суверенитета лёгочного здоровья ВЕЦА. Ни один ответ не будет опубликован без вашего согласия. Если вы выразили готовность к контакту, мы свяжемся с вами в течение двух недель.',
+  'Questions or direct contact:': 'Вопросы или прямой контакт:',
+
+  // ── FieldRenderer literals ────────────────────────────────────────────
+  'Optional': 'Необязательно',
+  '— Select —': '— Выберите —',
+  'Click to rank. Click again to remove.': 'Нажмите, чтобы присвоить ранг. Нажмите ещё раз, чтобы убрать.',
+
+  // ── STEP_LABELS (progress bar) ────────────────────────────────────────
+  'Your perspective': 'Ваша позиция',
+  'Country & role': 'Страна и роль',
+  'Urgency': 'Срочность',
+  'Key risks': 'Ключевые риски',
+  'Pillar priorities': 'Приоритеты компонентов',
+  'Migration & continuity': 'Миграция и непрерывность',
+  'Your contribution': 'Ваш вклад',
+  'Follow-up': 'Последующая связь',
+  'Access breakdown': 'Сбои в доступе',
+  'Early warning': 'Раннее оповещение',
+  'Displaced populations': 'Перемещённые группы',
+  'Community features': 'Функции для сообществ',
+  'Documents': 'Документы',
+  'Legislative bottlenecks': 'Законодательные барьеры',
+  'Digital tools': 'Цифровые инструменты',
+  'MP portal': 'Портал для депутатов',
+  'Migration intelligence': 'Миграционная аналитика',
+  'Design priorities': 'Приоритеты дизайна',
+  'Org profile': 'Профиль организации',
+  'Data & funding': 'Данные и финансирование',
+  'Evidence & systems': 'Доказательства и системы',
+  'Pilot & funding': 'Пилот и финансирование',
+  'Governance standards': 'Стандарты управления',
+  'Health security': 'Безопасность здоровья',
+  'Cross-border & MVP': 'Трансграничность и MVP',
+  'Open response': 'Открытый ответ',
+
+  // ── Step tags ─────────────────────────────────────────────────────────
+  'Identification': 'Идентификация',
+  'Your profile': 'Ваш профиль',
+  'Risk landscape': 'Ландшафт рисков',
+  'Priorities': 'Приоритеты',
+  'Community · Access': 'Сообщество · Доступ',
+  'Community · Early warning': 'Сообщество · Раннее оповещение',
+  'Community · Displaced populations': 'Сообщество · Перемещённые группы',
+  'Community · Features': 'Сообщество · Функции',
+  'Community · Documents': 'Сообщество · Документы',
+  'Parliamentary · Bottlenecks': 'Парламент · Барьеры',
+  'Parliamentary · Legislative tools': 'Парламент · Законодательные инструменты',
+  'Parliamentary · Portal': 'Парламент · Портал',
+  'Parliamentary · Migration intelligence': 'Парламент · Миграционная аналитика',
+  'Parliamentary · Design priorities': 'Парламент · Приоритеты дизайна',
+  'Partner · Organization': 'Партнёр · Организация',
+  'Partner · Data & funding': 'Партнёр · Данные и финансирование',
+  'Partner · Evidence & systems': 'Партнёр · Доказательства и системы',
+  'Partner · Pilot & MVP': 'Партнёр · Пилот и MVP',
+  'Partner · Governance': 'Партнёр · Управление',
+  'Closing · Health security': 'Завершение · Безопасность здоровья',
+  'Closing · Coordination & MVP': 'Завершение · Координация и MVP',
+  'Closing · Open response': 'Завершение · Открытый ответ',
+
+  // ── Step titles & hints ───────────────────────────────────────────────
+  'Which perspective are you responding from?': 'С какой позиции вы отвечаете?',
+  'Your selection determines which questions follow. All tracks include a shared section and targeted questions for your role.':
+    'Ваш выбор определяет дальнейшие вопросы. Все направления включают общий раздел и целевые вопросы для вашей роли.',
+  'Country and primary role': 'Страна и основная роль',
+  'This helps us map responses geographically and by sector.':
+    'Это помогает нам распределить ответы по странам и секторам.',
+  'How urgent is the need for a coordinated regional tool for lung health governance and continuity of care in your context?':
+    'Насколько срочна потребность в скоординированном региональном инструменте для управления лёгочным здоровьем и непрерывности помощи в вашем контексте?',
+  'What are the three greatest risks to lung health system continuity in your context right now?':
+    'Каковы три главных риска для непрерывности системы лёгочного здоровья в вашем контексте сейчас?',
+  'Select up to three risks that are most relevant to your context right now.':
+    'Выберите до трёх рисков, наиболее актуальных для вашего контекста сейчас.',
+  'Please rank the three core Hub functions in order of priority for your context (1 = highest)':
+    'Расположите три основные функции Хаба по приоритету для вашего контекста (1 = высший)',
+  'Click each pillar in order of priority. Click an already-ranked item to remove its rank.':
+    'Нажимайте на компоненты в порядке приоритета. Нажмите на уже ранжированный элемент, чтобы убрать ранг.',
+  'To what extent does population displacement or migration create gaps in access to lung health care in your context?':
+    'В какой степени перемещение населения или миграция создают пробелы в доступе к помощи при лёгочных заболеваниях в вашем контексте?',
+  'Are you in a position to contribute any of the following to this initiative?':
+    'Можете ли вы внести что-либо из перечисленного в эту инициативу?',
+  'Select all that apply. This is not a commitment — it helps us understand what is available.':
+    'Отметьте все подходящие варианты. Это не обязательство — это помогает понять, что доступно.',
+  'Would you be willing to be contacted for a follow-up conversation of up to 30 minutes?':
+    'Согласны ли вы на последующий разговор продолжительностью до 30 минут?',
+  'Your contact details will be used only for follow-up related to this initiative, with your explicit permission.':
+    'Ваши контактные данные будут использованы только для последующей связи в рамках этой инициативы и с вашего явного согласия.',
+  'Where does access to lung health care most commonly break down in your experience or community?':
+    'Где, по вашему опыту или в вашем сообществе, чаще всего нарушается доступ к помощи при лёгочных заболеваниях?',
+  'Community signals and feedback channels': 'Сигналы сообщества и каналы обратной связи',
+  'Migrant and displaced community access to care': 'Доступ к помощи для мигрантов и перемещённых сообществ',
+  'If this Hub were built, which functions would be most useful for communities like yours?':
+    'Если бы этот Хаб был создан, какие функции были бы наиболее полезны для сообществ, подобных вашему?',
+  'Rank in order of usefulness (1 = most useful).': 'Расположите по полезности (1 = наиболее полезно).',
+  'Optional document upload': 'Загрузка документов (необязательно)',
+  'If you have reports, case documentation, or community assessments — no individual patient data, please. PDF, DOCX, XLSX. Max 10MB.':
+    'Если у вас есть отчёты, документация по случаям или оценки сообществ — без индивидуальных данных пациентов. PDF, DOCX, XLSX. Макс. 10 МБ.',
+  'Which of the following currently block or delay health legislation in your parliament or ministry?':
+    'Что из перечисленного сейчас блокирует или задерживает законодательство в области здравоохранения в вашем парламенте или министерстве?',
+  'Comparative law database and AI-assisted policy tools':
+    'База сравнительного законодательства и инструменты анализа политики с ИИ',
+  'Secure MP portal and legislative timing': 'Защищённый портал для депутатов и сроки законотворчества',
+  'Health Security & Migration Intelligence': 'Безопасность здоровья и миграционная аналитика',
+  'What would make this platform genuinely useful to you?': 'Что сделало бы эту платформу действительно полезной для вас?',
+  'Organization type and data holdings': 'Тип организации и имеющиеся данные',
+  'Data sharing conditions and funding transition risks': 'Условия обмена данными и риски при изменении финансирования',
+  'Evidence requirements and existing platforms': 'Требования к доказательствам и существующие платформы',
+  'Pilot support and fundable MVP': 'Поддержка пилота и финансируемый MVP',
+  'Governance, privacy and trust requirements': 'Требования к управлению, конфиденциальности и доверию',
+  'Continuity-of-care intelligence and crisis readiness': 'Аналитика непрерывности помощи и готовность к кризисам',
+  'Cross-border coordination and MVP prioritization': 'Трансграничная координация и приоритизация MVP',
+  'Is there anything critical we have not asked?': 'Есть ли что-то важное, о чём мы не спросили?',
+  'Optional — max 100 words. Often the most valuable input.':
+    'Необязательно — до 100 слов. Часто это самый ценный вклад.',
+
+  // ── Field labels & placeholders ───────────────────────────────────────
+  'Which country or region are you responding from?': 'Из какой страны или региона вы отвечаете?',
+  'Which of the following best describes your primary role?': 'Что из перечисленного лучше всего описывает вашу основную роль?',
+  'Please briefly describe your perspective': 'Кратко опишите вашу позицию',
+  'Describe how you relate to EECA lung health systems…': 'Опишите, как вы связаны с системами лёгочного здоровья ВЕЦА…',
+  'Which track is closest to your perspective?': 'Какое направление ближе всего к вашей позиции?',
+  'Other risk (please specify)': 'Другой риск (уточните)',
+  'Please share your name and preferred contact method': 'Укажите ваше имя и предпочтительный способ связи',
+  'Name': 'Имя',
+  'Your name': 'Ваше имя',
+  'Email address': 'Адрес электронной почты',
+  'Organization': 'Организация',
+  'Organization name': 'Название организации',
+  'Preferred language for follow-up': 'Предпочтительный язык для связи',
+  'e.g. English, Russian': 'напр. английский, русский',
+  'In your experience, does your community identify problems with medicine access, treatment interruption, or health service breakdown before official systems do?':
+    'По вашему опыту, выявляет ли ваше сообщество проблемы с доступом к лекарствам, перерывами в лечении или сбоями в медицинских услугах раньше, чем официальные системы?',
+  'Does feedback from patients and communities currently reach lawmakers or health ministry decision-makers in any reliable way?':
+    'Доходит ли сейчас обратная связь от пациентов и сообществ до законодателей или лиц, принимающих решения в министерстве здравоохранения, надёжным образом?',
+  'Are people from migrant or displaced communities in your area losing access to TB or lung health treatment as a result of their movement?':
+    'Теряют ли люди из числа мигрантов или перемещённых сообществ в вашем регионе доступ к лечению туберкулёза или лёгочных заболеваний в результате перемещения?',
+  'Has your community experienced interruptions in access to TB or lung health medicines in the past 12 months?':
+    'Сталкивалось ли ваше сообщество с перебоями в доступе к лекарствам от туберкулёза или лёгочных заболеваний за последние 12 месяцев?',
+  'What support would be most useful for civil society organizations to engage effectively?':
+    'Какая поддержка была бы наиболее полезна организациям гражданского общества для эффективного участия?',
+  'Upload documents (optional)': 'Загрузить документы (необязательно)',
+  'Would access to a searchable database of health legislation from across EECA countries be useful for your work?':
+    'Был бы полезен для вашей работы доступ к поисковой базе законодательства в сфере здравоохранения стран ВЕЦА?',
+  'Scope of legislation you would need access to': 'Объём законодательства, к которому вам нужен доступ',
+  'Would you or your team use an AI-assisted tool that analyzes proposed health amendments and compares them to regional standards?':
+    'Использовали бы вы или ваша команда инструмент с ИИ, который анализирует предлагаемые поправки в сфере здравоохранения и сравнивает их с региональными стандартами?',
+  'What conditions would be required for you to trust and use AI-generated policy analysis?':
+    'Какие условия необходимы, чтобы вы доверяли и использовали анализ политики, созданный с помощью ИИ?',
+  'Would you use a secure, invitation-only digital portal designed specifically for parliamentarians?':
+    'Использовали бы вы защищённый цифровой портал по приглашению, созданный специально для парламентариев?',
+  'Are there upcoming legislative windows, budget cycles, or political deadlines in the next 12 months?':
+    'Есть ли в ближайшие 12 месяцев предстоящие законодательные окна, бюджетные циклы или политические сроки?',
+  'How useful would it be for your work to have access to a regional system that provides early alerts on migration-related health risks and identifies gaps in continuity of care?':
+    'Насколько полезным для вашей работы был бы доступ к региональной системе, которая заранее предупреждает о связанных с миграцией рисках для здоровья и выявляет пробелы в непрерывности помощи?',
+  'What single thing would make this platform genuinely useful to you — something you would actually open and rely on? (max 100 words)':
+    'Что одно сделало бы эту платформу действительно полезной для вас — чем вы бы реально пользовались и на что полагались? (до 100 слов)',
+  'Share your honest perspective…': 'Поделитесь вашим искренним мнением…',
+  'Upload draft legislation, policy briefs, or committee reports (optional). PDF, DOCX. Max 10MB.':
+    'Загрузите проекты законов, аналитические записки или отчёты комитетов (необязательно). PDF, DOCX. Макс. 10 МБ.',
+  'Which best describes your organization?': 'Что лучше всего описывает вашу организацию?',
+  'Does your organization hold any of the following types of data relevant to the EECA region?':
+    'Располагает ли ваша организация какими-либо из следующих типов данных, относящихся к региону ВЕЦА?',
+  'If your organization holds relevant data, what conditions would be required for it to be shared or integrated?':
+    'Если ваша организация располагает соответствующими данными, какие условия необходимы для их передачи или интеграции?',
+  'How serious are funding gaps for TB and lung health programs in your countries, especially as donor support decreases or ends?':
+    'Насколько серьёзны пробелы в финансировании программ по туберкулёзу и лёгочному здоровью в ваших странах, особенно по мере сокращения или прекращения донорской поддержки?',
+  'What key evidence or criteria would your organization look for when assessing a platform like the EECA Hub?':
+    'Какие ключевые доказательства или критерии искала бы ваша организация при оценке платформы, подобной Хабу ВЕЦА?',
+  'Does your organization already use dashboards, analytical platforms, or legislative tracking tools relevant to this region?':
+    'Использует ли ваша организация дашборды, аналитические платформы или инструменты отслеживания законодательства, относящиеся к этому региону?',
+  'Briefly describe existing digital tools and whether integration would be useful':
+    'Кратко опишите существующие цифровые инструменты и была бы ли полезна интеграция',
+  'Would your organization be willing to support or co-facilitate a pilot of the Hub in one or more EECA countries?':
+    'Готова ли ваша организация поддержать или совместно провести пилот Хаба в одной или нескольких странах ВЕЦА?',
+  'Which countries would you prioritize for a pilot?': 'Какие страны вы бы приоритизировали для пилота?',
+  'From a funding perspective, which Hub component would be easiest to support in the next 12–18 months?':
+    'С точки зрения финансирования, какой компонент Хаба было бы проще всего поддержать в ближайшие 12–18 месяцев?',
+  'What rules, safeguards, or trust standards would the Hub need to meet before your organization could engage or support it?':
+    'Каким правилам, гарантиям или стандартам доверия должен соответствовать Хаб, прежде чем ваша организация сможет участвовать или поддержать его?',
+  'Upload relevant reports, assessments, or data samples (optional). PDF, DOCX, XLSX. Max 10MB. No individual patient data.':
+    'Загрузите соответствующие отчёты, оценки или образцы данных (необязательно). PDF, DOCX, XLSX. Макс. 10 МБ. Без индивидуальных данных пациентов.',
+  'Would a system that uses regional data to identify where patients may lose access to treatment — and alerts decision-makers early — be useful?':
+    'Была бы полезна система, которая использует региональные данные, чтобы определить, где пациенты могут потерять доступ к лечению, и заранее предупреждает лиц, принимающих решения?',
+  'How prepared is the health system in your country or region to maintain TB and lung health services during a major crisis?':
+    'Насколько система здравоохранения в вашей стране или регионе готова поддерживать услуги по туберкулёзу и лёгочному здоровью во время крупного кризиса?',
+  'Is there currently any functional mechanism for cross-border coordination on TB or lung health continuity between your country and neighbors?':
+    'Существует ли сейчас работающий механизм трансграничной координации по непрерывности помощи при туберкулёзе или лёгочных заболеваниях между вашей страной и соседями?',
+  'If the Hub were launching with one core feature in the next 6 months, rank by priority (1 = highest)':
+    'Если бы Хаб запускался с одной ключевой функцией в ближайшие 6 месяцев, расположите по приоритету (1 = высший)',
+  'Share any additional context, concerns, or priorities…':
+    'Поделитесь любым дополнительным контекстом, опасениями или приоритетами…',
+
+  // ── Countries & roles ─────────────────────────────────────────────────
+  'Armenia': 'Армения',
+  'Azerbaijan': 'Азербайджан',
+  'Georgia': 'Грузия',
+  'Kazakhstan': 'Казахстан',
+  'Kyrgyzstan': 'Кыргызстан',
+  'Moldova': 'Молдова',
+  'Tajikistan': 'Таджикистан',
+  'Ukraine': 'Украина',
+  'Uzbekistan': 'Узбекистан',
+  'Multi-country / Regional': 'Несколько стран / Региональный',
+  'Other': 'Другое',
+  'Community health worker or patient advocate': 'Общественный медработник или защитник прав пациентов',
+  'Civil society / NGO / advocacy organization': 'Гражданское общество / НКО / правозащитная организация',
+  'Member of Parliament or parliamentary staff': 'Депутат парламента или сотрудник аппарата',
+  'Government official (Ministry of Health or other)': 'Государственный служащий (Минздрав или иное)',
+  'National TB or lung health program officer': 'Сотрудник национальной программы по ТБ или лёгочному здоровью',
+  'International organization (UN agency, WHO, IOM, etc.)': 'Международная организация (агентство ООН, ВОЗ, МОМ и др.)',
+  'Bilateral or multilateral donor': 'Двусторонний или многосторонний донор',
+  'Private foundation or philanthropic organization': 'Частный фонд или благотворительная организация',
+  'Academic or research institution': 'Академическое или исследовательское учреждение',
+  'Implementation partner or technical assistance provider': 'Партнёр по реализации или поставщик технической помощи',
+  'Media or communications': 'СМИ или коммуникации',
+
+  // ── Option labels & subs ──────────────────────────────────────────────
+  'Representative of the community / patient / civil society representative':
+    'Представитель сообщества / пациент / представитель гражданского общества',
+  'Community health workers, patient advocates, NGOs, advocacy organizations':
+    'Общественные медработники, защитники прав пациентов, НКО, правозащитные организации',
+  'Member of Parliament / parliamentary staff / policy-maker':
+    'Депутат / сотрудник аппарата / разработчик политики',
+  'MPs, parliamentary staff, government officials, policy advisors':
+    'Депутаты, сотрудники аппарата, госслужащие, советники по политике',
+  'Institutional partner / donor / foundation / technical partner':
+    'Институциональный партнёр / донор / фонд / технический партнёр',
+  'UN agencies, donors, foundations, implementation partners':
+    'Агентства ООН, доноры, фонды, партнёры по реализации',
+  'Other (please describe briefly)': 'Другое (кратко опишите)',
+  'Media, researchers, or others with a relevant perspective':
+    'СМИ, исследователи или другие лица с релевантной позицией',
+  'Community / civil society': 'Сообщество / гражданское общество',
+  'Parliament / policy-maker': 'Парламент / разработчик политики',
+  'Institutional partner / donor': 'Институциональный партнёр / донор',
+
+  'Critical': 'Критическая',
+  'Action is needed now; current systems are failing or at serious risk':
+    'Действия нужны сейчас; текущие системы дают сбой или под серьёзной угрозой',
+  'High': 'Высокая',
+  'Significant gaps exist; things could deteriorate quickly': 'Существуют значительные пробелы; ситуация может быстро ухудшиться',
+  'Moderate': 'Умеренная',
+  'Gaps exist but the situation is stable for now': 'Пробелы есть, но пока ситуация стабильна',
+  'Low': 'Низкая',
+  'Current systems are functioning adequately': 'Текущие системы функционируют адекватно',
+  "I don't have enough information to assess": 'У меня недостаточно информации для оценки',
+
+  'Disruption of medicine supply or procurement': 'Нарушение поставок или закупок лекарств',
+  'Displacement of populations across or within borders': 'Перемещение населения через границы или внутри страны',
+  'Loss of donor funding or funding transition': 'Потеря донорского финансирования или его переходный период',
+  'Weak or absent enabling legislation': 'Слабое или отсутствующее благоприятствующее законодательство',
+  'Fragmented health data and poor information systems': 'Фрагментированные данные о здоровье и слабые информационные системы',
+  'Political instability or government transitions': 'Политическая нестабильность или смена правительства',
+  'Healthcare workforce shortages or displacement': 'Нехватка или перемещение медицинских кадров',
+  'Treatment interruption for patients in transit or displacement': 'Перерывы в лечении пациентов в пути или при перемещении',
+  'Drug resistance driven by inconsistent treatment': 'Лекарственная устойчивость из-за непоследовательного лечения',
+  'Lack of cross-border coordination mechanisms': 'Отсутствие механизмов трансграничной координации',
+  'Inadequate community or civil society engagement': 'Недостаточное вовлечение сообществ или гражданского общества',
+  'Other (please specify)': 'Другое (уточните)',
+
+  'Legislative Platform': 'Законодательная платформа',
+  'A secure space for MPs to access, draft, compare, and exchange health legislation, amendments, and policy briefs across the region':
+    'Защищённое пространство, где депутаты могут получать доступ, разрабатывать, сравнивать и обмениваться законодательством, поправками и аналитическими записками по региону',
+  'AI-Driven Diplomacy': 'Дипломатия на основе ИИ',
+  'A system that identifies which countries should exchange experience based on budgets, legislation, health outcomes, and political readiness':
+    'Система, определяющая, каким странам следует обмениваться опытом, на основе бюджетов, законодательства, показателей здоровья и политической готовности',
+  'Health Security & Continuity of Care': 'Безопасность здоровья и непрерывность помощи',
+  'An intelligence layer that detects system-level risks during displacement, funding transitions, and supply disruptions — and alerts decision-makers before care is interrupted':
+    'Аналитический уровень, выявляющий системные риски при перемещении, изменении финансирования и сбоях поставок — и предупреждающий лиц, принимающих решения, до прерывания помощи',
+
+  'Major issue': 'Серьёзная проблема',
+  'Significant numbers of displaced people are losing or interrupting treatment':
+    'Значительное число перемещённых людей теряют доступ к лечению или прерывают его',
+  'Emerging issue': 'Назревающая проблема',
+  'We are seeing early signs; it is not yet a crisis': 'Видны ранние признаки; это пока не кризис',
+  'Limited issue': 'Ограниченная проблема',
+  'Displacement exists but is managed reasonably well': 'Перемещение есть, но управляется достаточно хорошо',
+  'Not a significant issue in our context': 'В нашем контексте это не значимая проблема',
+  "I don't have enough visibility to answer": 'У меня недостаточно данных, чтобы ответить',
+
+  'Aggregated or de-identified health outcome data': 'Агрегированные или обезличенные данные о результатах лечения',
+  'Legislative documents, amendments, or draft laws': 'Законодательные документы, поправки или проекты законов',
+  'Existing policy briefs or research reports': 'Существующие аналитические записки или исследовательские отчёты',
+  'Contact networks (MPs, health officials, community leaders)': 'Контактные сети (депутаты, чиновники здравоохранения, лидеры сообществ)',
+  'Institutional expertise for technical advisory input': 'Институциональная экспертиза для технических консультаций',
+  'Financial support or co-funding': 'Финансовая поддержка или софинансирование',
+  'Pilot country or site access': 'Доступ к пилотной стране или площадке',
+  'None of the above at this stage': 'Ничего из перечисленного на данном этапе',
+  'I need more information before committing': 'Мне нужно больше информации, прежде чем брать обязательства',
+
+  'Yes — please contact me': 'Да — пожалуйста, свяжитесь со мной',
+  'Maybe — I would like to know more first': 'Возможно — сначала я хотел бы узнать больше',
+  'No — I prefer to remain anonymous': 'Нет — предпочитаю остаться анонимным',
+
+  'When people move between cities or regions within a country': 'Когда люди перемещаются между городами или регионами внутри страны',
+  'When people cross international borders': 'Когда люди пересекают международные границы',
+  'When funding changes and clinics reduce services': 'Когда меняется финансирование и клиники сокращают услуги',
+  'When medicine supply is interrupted': 'Когда прерываются поставки лекарств',
+  'When documentation (ID, residence permit) is missing or expired': 'Когда документы (удостоверение, вид на жительство) отсутствуют или просрочены',
+  'When language or cultural barriers prevent engagement': 'Когда языковые или культурные барьеры мешают обращению',
+  'When healthcare workers are unavailable or displaced': 'Когда медработники недоступны или перемещены',
+  'When treatment protocols differ between locations': 'Когда протоколы лечения различаются между регионами',
+  "When health records don't transfer between facilities": 'Когда медицинские записи не передаются между учреждениями',
+
+  'Yes — Communities are the first to recognize emerging issues': 'Да — сообщества первыми замечают возникающие проблемы',
+  'Sometimes — it depends on the issue': 'Иногда — зависит от проблемы',
+  'No — official systems usually detect problems first': 'Нет — обычно проблемы первыми выявляют официальные системы',
+  "We don't have a reliable way to know either way": 'У нас нет надёжного способа это определить',
+  'Yes — there are formal and functioning channels': 'Да — есть формальные и работающие каналы',
+  'Partially — some channels exist but they are slow or inconsistent': 'Частично — некоторые каналы есть, но они медленные или непоследовательные',
+  'Rarely — feedback reaches decision-makers informally at best': 'Редко — обратная связь в лучшем случае доходит неформально',
+  'No — there is no effective channel we are aware of': 'Нет — нам неизвестно об эффективном канале',
+  "I don't know": 'Не знаю',
+
+  'Yes — this is happening on a regular basis': 'Да — это происходит регулярно',
+  'There are specific cases we are aware of': 'Нам известны отдельные случаи',
+  'Possibly — we suspect it but have no confirmed data': 'Возможно — мы подозреваем, но подтверждённых данных нет',
+  'Not that we have observed': 'Мы такого не наблюдали',
+  'This is not applicable in our context': 'В нашем контексте это неприменимо',
+  'Yes — significant interruptions': 'Да — значительные перебои',
+  'Yes — minor or temporary interruptions': 'Да — незначительные или временные перебои',
+  'No — supply has been consistent': 'Нет — поставки были стабильными',
+  "I don't have reliable information on this": 'У меня нет надёжной информации по этому вопросу',
+
+  'A channel to report access problems directly to decision-makers': 'Канал для сообщения о проблемах доступа напрямую лицам, принимающим решения',
+  'Alerts when medicine supply or service availability changes': 'Оповещения об изменениях в поставках лекарств или доступности услуг',
+  'Information about legal rights and access entitlements': 'Информация о юридических правах и правах на доступ',
+  'Visibility into which laws and policies affect your community': 'Понимание того, какие законы и политики влияют на ваше сообщество',
+  'A way to be consulted on legislation before it is finalized': 'Возможность участвовать в обсуждении законодательства до его окончательного принятия',
+  'Real-time information about treatment continuity options': 'Информация в реальном времени о вариантах непрерывности лечения',
+  'Training on how to use digital health advocacy tools': 'Обучение использованию цифровых инструментов для защиты здоровья',
+  'Legal literacy on TB and lung health policy': 'Правовая грамотность по политике в области ТБ и лёгочного здоровья',
+  'Support for documenting and reporting treatment access issues': 'Поддержка в документировании и сообщении о проблемах доступа к лечению',
+  'Guidance on how to engage with parliamentary processes': 'Рекомендации по участию в парламентских процессах',
+  'Translation and language support': 'Перевод и языковая поддержка',
+  'Technical support for using the platform': 'Техническая поддержка при использовании платформы',
+  'None — we have sufficient capacity': 'Ничего — у нас достаточно возможностей',
+
+  'Insufficient technical evidence or comparative data': 'Недостаточно технических доказательств или сравнительных данных',
+  'Lack of comparative examples from other EECA countries': 'Отсутствие сравнительных примеров из других стран ВЕЦА',
+  'No budget analysis or fiscal notes attached to proposals': 'Отсутствие бюджетного анализа или финансовых обоснований к предложениям',
+  'Slow inter-ministerial coordination': 'Медленная межведомственная координация',
+  'Political disagreement within coalition or majority': 'Политические разногласия внутри коалиции или большинства',
+  'Limited legislative drafting capacity': 'Ограниченные возможности для разработки законопроектов',
+  'Lack of community or patient-group input': 'Отсутствие вклада сообществ или групп пациентов',
+  'Unclear legal compatibility with regional frameworks': 'Неясная правовая совместимость с региональными рамками',
+  'No dedicated health committee capacity': 'Отсутствие профильного комитета по здравоохранению',
+
+  'Very useful — I would use it regularly': 'Очень полезно — я бы пользовался этим регулярно',
+  'Somewhat useful — I would use it for specific situations': 'Отчасти полезно — я бы использовал в отдельных случаях',
+  "Uncertain — it depends on how it's designed": 'Не уверен — зависит от того, как это сделано',
+  'Unlikely to be useful in my context': 'Вряд ли будет полезно в моём контексте',
+  'I would not use it personally but colleagues might': 'Сам бы не использовал, но коллеги могли бы',
+  'General health legislation': 'Общее законодательство в сфере здравоохранения',
+  'Lung health-specific legislation': 'Законодательство, специфичное для лёгочного здоровья',
+  'Communicable diseases beyond lung health': 'Инфекционные заболевания помимо лёгочных',
+  'Non-communicable diseases (NCDs)': 'Неинфекционные заболевания (НИЗ)',
+  'Public health and prevention policies': 'Политика общественного здоровья и профилактики',
+  'Pharmaceutical regulation and access to medicines': 'Регулирование фармацевтики и доступ к лекарствам',
+  'Health workforce and service delivery': 'Медицинские кадры и оказание услуг',
+  'Yes — this would be genuinely useful': 'Да — это было бы действительно полезно',
+  'Possibly — with the right governance and transparency conditions': 'Возможно — при правильных условиях управления и прозрачности',
+  "Uncertain — I'd need to see it in practice": 'Не уверен — нужно увидеть это на практике',
+  'Unlikely — I prefer human analysis': 'Маловероятно — предпочитаю анализ человеком',
+  'No': 'Нет',
+  'Transparency about data sources used': 'Прозрачность используемых источников данных',
+  'Human review before any output is relied upon': 'Проверка человеком, прежде чем полагаться на результат',
+  'Clear indication of confidence level or uncertainty': 'Чёткое указание уровня уверенности или неопределённости',
+  'Institutional endorsement (WHO, regional body, etc.)': 'Институциональное одобрение (ВОЗ, региональный орган и т. д.)',
+  'Data held on sovereign or national infrastructure': 'Данные размещены на суверенной или национальной инфраструктуре',
+  'User training and onboarding': 'Обучение и адаптация пользователей',
+  'A clear audit trail for all outputs': 'Чёткий аудиторский след для всех результатов',
+
+  'Yes — I would use it actively': 'Да — я бы активно пользовался',
+  'Possibly — if the security and governance conditions were right': 'Возможно — при подходящих условиях безопасности и управления',
+  "I'm uncertain — I'd need more information": 'Я не уверен — нужно больше информации',
+  "No — I wouldn't use it": 'Нет — я бы не пользовался',
+  'Budget allocation or supplementary budget process': 'Распределение бюджета или процесс дополнительного бюджета',
+  'Health law revision or new national health strategy': 'Пересмотр закона о здравоохранении или новая национальная стратегия здоровья',
+  'TB or infectious disease program renewal': 'Обновление программы по ТБ или инфекционным заболеваниям',
+  'Parliamentary election cycle creating urgency': 'Цикл парламентских выборов, создающий срочность',
+  'EU accession or international treaty compliance process': 'Процесс вступления в ЕС или соблюдения международных договоров',
+  'Global Fund transition planning': 'Планирование перехода Глобального фонда',
+  'No clear window in the near term': 'Чёткого окна в ближайшей перспективе нет',
+  "I'm not sure": 'Я не уверен',
+  'Very useful — it would directly support timely decision-making': 'Очень полезно — это напрямую поддержит своевременные решения',
+  'Somewhat useful — helpful in specific crisis situations': 'Отчасти полезно — помогает в отдельных кризисных ситуациях',
+  'Uncertain — depends on how the system is designed and delivered': 'Не уверен — зависит от того, как система устроена и предоставляется',
+  'Not very useful — limited relevance to my role or context': 'Не очень полезно — мало релевантно для моей роли или контекста',
+  'Not useful at all': 'Совсем не полезно',
+
+  'UN agency or affiliated body (WHO, IOM, UNAIDS, etc.)': 'Агентство ООН или аффилированный орган (ВОЗ, МОМ, ЮНЭЙДС и др.)',
+  'Multilateral or bilateral organization': 'Многосторонняя или двусторонняя организация',
+  'International philanthropic foundation': 'Международный благотворительный фонд',
+  'National foundation or state development fund': 'Национальный фонд или государственный фонд развития',
+  'Regional health organization': 'Региональная организация здравоохранения',
+  'Academic or research institution with implementation role': 'Академическое или исследовательское учреждение с ролью в реализации',
+  'Implementation partner / technical assistance provider': 'Партнёр по реализации / поставщик технической помощи',
+  'Aggregated TB incidence, treatment, or outcome data': 'Агрегированные данные о заболеваемости ТБ, лечении или результатах',
+  'Health financing or budget allocation data': 'Данные о финансировании здравоохранения или распределении бюджета',
+  'Migration and displacement population data': 'Данные о миграции и перемещении населения',
+  'Medicine procurement or supply chain data': 'Данные о закупках лекарств или цепочках поставок',
+  'Legislative or policy tracking databases': 'Базы данных отслеживания законодательства или политики',
+  'Health system performance indicators': 'Показатели эффективности системы здравоохранения',
+  'Donor disbursement and funding flow data': 'Данные о выплатах доноров и потоках финансирования',
+  'None of the above': 'Ничего из перечисленного',
+  "I'm not sure what is available": 'Я не уверен, что доступно',
+  'Data use agreement with defined governance': 'Соглашение об использовании данных с чёткими правилами управления',
+  'Technical integration with existing systems': 'Техническая интеграция с существующими системами',
+  'Privacy impact assessment': 'Оценка воздействия на конфиденциальность',
+  'Third-party or independent audit': 'Сторонний или независимый аудит',
+  'Alignment with WHO or UN data standards': 'Соответствие стандартам данных ВОЗ или ООН',
+  'Government sign-off in relevant countries': 'Одобрение правительств соответствующих стран',
+  'No conditions — we could share openly': 'Без условий — мы могли бы делиться открыто',
+  'We are unlikely to share data regardless of conditions': 'Мы вряд ли будем делиться данными независимо от условий',
+  'Very serious — urgent action is needed': 'Очень серьёзно — нужны срочные действия',
+  'Serious — action will be needed soon': 'Серьёзно — действия понадобятся скоро',
+  'Moderate — should be monitored': 'Умеренно — следует отслеживать',
+  'Low — not a priority issue': 'Низко — не приоритетный вопрос',
+  'Not relevant in my context': 'Не релевантно в моём контексте',
+  'Proof-of-concept pilot in at least one country': 'Пилот-доказательство концепции хотя бы в одной стране',
+  'Letters of intent or endorsement from national governments': 'Письма о намерениях или одобрении от национальных правительств',
+  'Independent technical review or validation': 'Независимая техническая экспертиза или валидация',
+  'Demonstrated parliamentary engagement or uptake': 'Подтверждённое участие или вовлечённость парламента',
+  'Clear governance, privacy, and data security standards': 'Чёткие стандарты управления, конфиденциальности и безопасности данных',
+  'Evidence of community co-design and civil society engagement': 'Доказательства совместного дизайна с сообществами и вовлечения гражданского общества',
+  'Cost-effectiveness or value-for-money analysis': 'Анализ экономической эффективности или соотношения цены и качества',
+  'Alignment with existing regional or global frameworks': 'Соответствие существующим региональным или глобальным рамкам',
+  'We would support based on current information': 'Мы бы поддержали на основе текущей информации',
+  'Yes — and we would be open to integration or interoperability': 'Да — и мы открыты к интеграции или совместимости',
+  'Yes — but they are proprietary or restricted': 'Да — но они проприетарные или с ограниченным доступом',
+  'We use basic tools but nothing purpose-built for this region': 'Мы используем базовые инструменты, но ничего специально для этого региона',
+  'No — we rely on manual reporting': 'Нет — мы полагаемся на ручную отчётность',
+  'Yes — we are actively looking for initiatives to support': 'Да — мы активно ищем инициативы для поддержки',
+  'Possibly — subject to governance and feasibility review': 'Возможно — при условии анализа управления и осуществимости',
+  'Maybe — we would need to see a detailed proposal': 'Возможно — нам нужно было бы увидеть детальное предложение',
+  'Unlikely at this stage': 'Маловероятно на данном этапе',
+  'Legislative platform / MP Sovereignty Portal': 'Законодательная платформа / Суверенный портал для депутатов',
+  'AI-driven bilateral diplomacy and country matching system': 'Двусторонняя дипломатия на основе ИИ и система сопоставления стран',
+  'Health security and continuity-of-care crisis intelligence layer': 'Аналитический уровень кризисов для безопасности здоровья и непрерывности помощи',
+  'The full integrated platform': 'Полная интегрированная платформа',
+  'Uncertain': 'Не уверен',
+  'ISO 27001 or equivalent information security standard': 'ISO 27001 или эквивалентный стандарт информационной безопасности',
+  'GDPR or equivalent data protection compliance': 'Соответствие GDPR или эквивалентным нормам защиты данных',
+  'WHO digital health framework alignment': 'Соответствие концепции цифрового здравоохранения ВОЗ',
+  'No individual or identifiable patient data collection': 'Отказ от сбора индивидуальных или идентифицируемых данных пациентов',
+  'Independent governance board or oversight body': 'Независимый совет управления или надзорный орган',
+  'Annual third-party audit': 'Ежегодный сторонний аудит',
+  'Sovereign data hosting in-country or in-region': 'Суверенное размещение данных в стране или регионе',
+  'Open-source or auditable codebase': 'Открытый или поддающийся аудиту исходный код',
+  'Other — please specify': 'Другое — уточните',
+
+  'Very useful — this is a critical gap': 'Очень полезно — это критический пробел',
+  'Useful — this would complement existing systems': 'Полезно — это дополнило бы существующие системы',
+  'Uncertain — it depends on how the data is collected and governed': 'Не уверен — зависит от того, как данные собираются и управляются',
+  'Of limited use in my context': 'Ограниченно полезно в моём контексте',
+  'Well prepared — systems and protocols are in place': 'Хорошо подготовлена — системы и протоколы существуют',
+  'Partially prepared — some systems exist but gaps remain': 'Частично подготовлена — некоторые системы есть, но пробелы остаются',
+  'Poorly prepared — we would struggle in a major crisis': 'Плохо подготовлена — в крупном кризисе нам было бы трудно',
+  'Not prepared — there are no meaningful contingency mechanisms': 'Не подготовлена — значимых механизмов на случай ЧС нет',
+  'Yes — formal agreements are in place and functioning': 'Да — формальные соглашения существуют и работают',
+  'Partial — informal coordination exists in some cases': 'Частично — в некоторых случаях есть неформальная координация',
+  'Very limited — coordination is ad hoc at best': 'Очень ограниченно — координация в лучшем случае разовая',
+  'No — no meaningful cross-border mechanism exists': 'Нет — значимого трансграничного механизма не существует',
+
+  'Comparative EECA health legislation database (searchable, multi-country)': 'Сравнительная база законодательства ВЕЦА в сфере здравоохранения (поисковая, многострановая)',
+  'AI-assisted amendment drafting and analysis tool for MPs': 'Инструмент с ИИ для разработки и анализа поправок для депутатов',
+  'Country matching and bilateral mission recommendation system': 'Система сопоставления стран и рекомендаций по двусторонним миссиям',
+  'Continuity-of-care risk alerts for displaced populations': 'Оповещения о рисках непрерывности помощи для перемещённых групп',
+  'Emergency legal measure templates for cross-border health crises': 'Шаблоны экстренных правовых мер для трансграничных кризисов здоровья',
+  'Civil society feedback integration with legislative drafting': 'Интеграция обратной связи гражданского общества в разработку законов',
+  'Real-time medicine supply disruption monitoring': 'Мониторинг сбоев в поставках лекарств в реальном времени',
+};
+
+export function tr(text: string | undefined | null, lang: Lang): string {
+  if (!text) return text ?? '';
+  if (lang !== 'ru') return text;
+  return M[text] ?? text;
+}
+
+function trField(f: FormField, lang: Lang): FormField {
+  return {
+    ...f,
+    label: tr(f.label, lang),
+    hint: f.hint ? tr(f.hint, lang) : f.hint,
+    placeholder: f.placeholder ? tr(f.placeholder, lang) : f.placeholder,
+    options: f.options?.map((o) => ({ ...o, label: tr(o.label, lang), sub: o.sub ? tr(o.sub, lang) : o.sub })),
+    fields: f.fields?.map((sub) => trField(sub, lang)),
+  };
+}
+
+export function localizeStep(step: FormStep, lang: Lang): FormStep {
+  if (lang !== 'ru') return step;
+  return {
+    ...step,
+    title: tr(step.title, lang),
+    tag: tr(step.tag, lang),
+    hint: step.hint ? tr(step.hint, lang) : step.hint,
+    fields: step.fields.map((f) => trField(f, lang)),
+  };
+}
+
+// Localize the dynamic validation messages returned by validateStep().
+export function localizeError(msg: string | null, lang: Lang): string | null {
+  if (!msg || lang !== 'ru') return msg;
+  let m: RegExpMatchArray | null;
+  if ((m = msg.match(/^Please answer: (.*)$/))) return `Пожалуйста, ответьте: ${tr(m[1], lang)}`;
+  if ((m = msg.match(/^Please complete ranking for: (.*)$/))) return `Пожалуйста, завершите ранжирование: ${tr(m[1], lang)}`;
+  if ((m = msg.match(/^Please select at most (\d+) options\.$/))) return `Пожалуйста, выберите не более ${m[1]} вариантов.`;
+  if ((m = msg.match(/^Please limit your response to (\d+) words\.$/))) return `Пожалуйста, ограничьте ответ ${m[1]} словами.`;
+  if (msg === 'Please select your respondent type to continue.') return 'Пожалуйста, выберите тип респондента, чтобы продолжить.';
+  return msg;
+}

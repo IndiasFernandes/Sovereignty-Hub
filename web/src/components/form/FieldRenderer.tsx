@@ -1,4 +1,6 @@
 import type { FormAnswers, FormField, FieldOption } from '../../lib/formSchema';
+import { useI18n } from '../../i18n/I18nProvider';
+import { tr } from '../../i18n/formRu';
 
 type Props = {
   field: FormField;
@@ -17,6 +19,7 @@ function arr(v: unknown): string[] {
 }
 
 export function FieldRenderer({ field, value, answers, onChange, entryCards }: Props) {
+  const { lang } = useI18n();
   if (field.showWhen && !field.showWhen(answers)) return null;
 
   if (field.type === 'group' && field.fields) {
@@ -25,7 +28,7 @@ export function FieldRenderer({ field, value, answers, onChange, entryCards }: P
         {field.label && (
           <label className="c-field-label">
             {field.label}
-            {field.optional && <span className="opt">Optional</span>}
+            {field.optional && <span className="opt">{tr('Optional', lang)}</span>}
           </label>
         )}
         <div className="input-row">
@@ -48,7 +51,7 @@ export function FieldRenderer({ field, value, answers, onChange, entryCards }: P
     <label className="c-field-label" htmlFor={field.id}>
       {field.label}
       {field.required && <span className="req">*</span>}
-      {field.optional && <span className="opt">Optional</span>}
+      {field.optional && <span className="opt">{tr('Optional', lang)}</span>}
     </label>
   ) : null;
 
@@ -141,7 +144,11 @@ export function FieldRenderer({ field, value, answers, onChange, entryCards }: P
           ))}
         </div>
         {field.maxSelect && (
-          <p className="max-note">Select up to {field.maxSelect} options.</p>
+          <p className="max-note">
+            {lang === 'ru'
+              ? `Выберите до ${field.maxSelect} вариантов.`
+              : `Select up to ${field.maxSelect} options.`}
+          </p>
         )}
       </div>
     );
@@ -157,7 +164,7 @@ export function FieldRenderer({ field, value, answers, onChange, entryCards }: P
           value={str(value)}
           onChange={(e) => onChange(field.id, e.target.value)}
         >
-          <option value="">— Select —</option>
+          <option value="">{tr('— Select —', lang)}</option>
           {(field.options ?? []).map((opt: FieldOption) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}
@@ -212,7 +219,7 @@ export function FieldRenderer({ field, value, answers, onChange, entryCards }: P
             );
           })}
         </div>
-        <p className="rank-hint">Click to rank. Click again to remove.</p>
+        <p className="rank-hint">{tr('Click to rank. Click again to remove.', lang)}</p>
       </div>
     );
   }
@@ -264,11 +271,14 @@ export function FieldRenderer({ field, value, answers, onChange, entryCards }: P
         />
         {file && (
           <p className="max-note">
-            Selected: {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
+            {lang === 'ru' ? 'Выбрано' : 'Selected'}: {file.name} ({(file.size / 1024 / 1024).toFixed(2)}{' '}
+            {lang === 'ru' ? 'МБ' : 'MB'})
           </p>
         )}
         {field.maxSizeMB && (
-          <p className="max-note">Max {field.maxSizeMB}MB. {field.accept}</p>
+          <p className="max-note">
+            {lang === 'ru' ? `Макс. ${field.maxSizeMB} МБ.` : `Max ${field.maxSizeMB}MB.`} {field.accept}
+          </p>
         )}
       </div>
     );
