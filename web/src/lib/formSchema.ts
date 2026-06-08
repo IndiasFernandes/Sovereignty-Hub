@@ -212,7 +212,7 @@ function sharedSteps(): FormStep[] {
       id: 'profile',
       tag: 'Your profile',
       title: 'Country and primary role',
-      hint: 'This helps us map responses geographically and by sector.',
+      hint: 'This helps us map responses geographically and by sector. Unlike the perspective you chose in step 1 (which tailors the questions), this is your specific professional role.',
       fields: profileFields,
     },
     {

@@ -34,6 +34,8 @@ const M: Record<string, string> = {
   'Submit': 'Отправить',
   'Submitting…': 'Отправка…',
   'Consultation': 'Консультация',
+  'Some questions refer to the Hub’s concept and its three core functions. You can open the full Concept Note at any point:':
+    'Некоторые вопросы касаются концепции Хаба и его трёх основных функций. Вы можете открыть полную концепцию в любой момент:',
   'Thank you.': 'Спасибо.',
   'Your input goes directly to the team designing the EECA Lung Health Sovereignty Hub. No response will be shared publicly without your consent. If you indicated willingness to be contacted, you will hear from us within two weeks.':
     'Ваш ответ направляется напрямую команде, разрабатывающей Хаб суверенитета лёгочного здоровья ВЕЦА. Ни один ответ не будет опубликован без вашего согласия. Если вы выразили готовность к контакту, мы свяжемся с вами в течение двух недель.',
@@ -101,8 +103,8 @@ const M: Record<string, string> = {
   'Your selection determines which questions follow. All tracks include a shared section and targeted questions for your role.':
     'Ваш выбор определяет дальнейшие вопросы. Все направления включают общий раздел и целевые вопросы для вашей роли.',
   'Country and primary role': 'Страна и основная роль',
-  'This helps us map responses geographically and by sector.':
-    'Это помогает нам распределить ответы по странам и секторам.',
+  'This helps us map responses geographically and by sector. Unlike the perspective you chose in step 1 (which tailors the questions), this is your specific professional role.':
+    'Это помогает нам распределить ответы по странам и секторам. В отличие от позиции, выбранной на шаге 1 (которая настраивает вопросы), здесь указывается ваша конкретная профессиональная роль.',
   'How urgent is the need for a coordinated regional tool for lung health governance and continuity of care in your context?':
     'Насколько срочна потребность в скоординированном региональном инструменте для управления лёгочным здоровьем и непрерывности помощи в вашем контексте?',
   'What are the three greatest risks to lung health system continuity in your context right now?':

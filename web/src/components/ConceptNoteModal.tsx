@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useI18n, T } from '../i18n/I18nProvider';
 
-export function ConceptNoteModal() {
+type Props = {
+  /** 'button' (default) = primary CTA used on the home page; 'link' = compact inline link for the form. */
+  variant?: 'button' | 'link';
+};
+
+export function ConceptNoteModal({ variant = 'button' }: Props = {}) {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
   const [html, setHtml] = useState('');
@@ -25,7 +30,7 @@ export function ConceptNoteModal() {
     <>
       <button
         type="button"
-        className="btn btn-primary"
+        className={variant === 'link' ? 'concept-note-link' : 'btn btn-primary'}
         aria-expanded={open}
         onClick={() => setOpen(true)}
       >

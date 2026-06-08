@@ -9,6 +9,7 @@ import {
 import { submitConsultation } from '../../lib/submitConsultation';
 import { scrollToElement } from '../../lib/scrollToTarget';
 import { FieldRenderer } from './FieldRenderer';
+import { ConceptNoteModal } from '../ConceptNoteModal';
 import { useI18n } from '../../i18n/I18nProvider';
 import { localizeStep, localizeError, tr } from '../../i18n/formRu';
 
@@ -127,6 +128,16 @@ export function StepWizard({ hero }: Props) {
             <div className="prog-track">
               <div className="prog-fill" style={{ width: `${progress}%` }} />
             </div>
+          </div>
+
+          <div className="concept-access">
+            <span className="concept-access-note">
+              {tr(
+                'Some questions refer to the Hub’s concept and its three core functions. You can open the full Concept Note at any point:',
+                lang,
+              )}
+            </span>
+            <ConceptNoteModal variant="link" />
           </div>
 
           {current && view && (
