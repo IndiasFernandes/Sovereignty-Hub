@@ -1,0 +1,70 @@
+/* Hidden funder-outreach pages (foundations / tech / targets) */
+.pp{--ink:#0f2430;--soft:#3c5663;--line:#dce5e9;--bg:#f5f8f9;--teal:#0e6e6e;--teald:#0a5252;
+  --gold:#c08a2d;color:var(--ink);background:var(--bg);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;min-height:100vh}
+.pp *{box-sizing:border-box}
+.pp-wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.pp a{color:var(--teald)}
+.pp .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;font-weight:800}
+.pp h1{font-size:2.1rem;line-height:1.14;margin:.35em 0 .25em;font-weight:780;letter-spacing:-.01em}
+.pp h2{font-size:1.4rem;margin:0 0 .3em;font-weight:740}
+.pp h3{font-size:1.05rem;margin:0 0 .15em}
+.pp p{color:var(--soft)}
+/* hero */
+.pp-hero{color:#eaf4f4;padding:60px 0 64px}
+.pp-hero.found{background:linear-gradient(160deg,#241a08,#5a4416)}
+.pp-hero.tech{background:linear-gradient(160deg,#0b1f2a,#103a4f)}
+.pp-hero.targets{background:linear-gradient(160deg,#0f2430,#0a5252)}
+.pp-hero .eyebrow{color:#e9d9ad}
+.pp-hero.tech .eyebrow{color:#8fd2cf}
+.pp-hero h1{color:#fff}
+.pp-lede{font-size:1.08rem;max-width:760px;color:#e7eeee}
+.pp-pills{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+.pp-pill{font-size:.78rem;font-weight:600;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);color:#fff;padding:6px 12px;border-radius:999px}
+/* sections */
+.pp-sec{padding:48px 0}
+.pp-sec.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.pp-grid.two{grid-template-columns:repeat(2,1fr)}
+.pp-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px}
+.pp-sec.alt .pp-card{background:var(--bg)}
+.pp-card h3{color:var(--teald)}
+.pp-card p{font-size:.92rem;margin:.4em 0 0}
+.pp-num{font-size:.72rem;font-weight:800;color:var(--gold);letter-spacing:.08em}
+.pp-list{margin:.4em 0 0;padding-left:18px}
+.pp-list li{font-size:.95rem;margin:.35em 0;color:var(--ink)}
+.pp-benefit{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--line)}
+.pp-benefit:last-child{border-bottom:0}
+.pp-benefit .b-ico{font-size:1.3rem;line-height:1.2}
+.pp-benefit b{display:block}
+.pp-benefit span{font-size:.93rem;color:var(--soft)}
+.pp-ask{background:#0f2430;color:#eaf4f4;border-radius:14px;padding:24px 26px;margin-top:24px}
+.pp-ask h3{color:#fff}
+.pp-ask p{color:#cfe3e3;font-size:.95rem}
+.pp-cta{display:inline-block;margin-top:8px;background:var(--gold);color:#231a05;font-weight:700;
+  text-decoration:none;padding:11px 18px;border-radius:9px}
+.pp-foot{padding:28px 0 56px;color:var(--soft);font-size:.8rem;text-align:center}
+/* targets table */
+.pp-cat{margin-top:34px}
+.pp-cat h2{display:flex;align-items:baseline;gap:10px}
+.pp-cat .cnt{font-size:.8rem;font-weight:700;color:var(--teal)}
+.pp-cat .blurb{font-size:.92rem;margin:.2em 0 12px}
+.pp-table{width:100%;border-collapse:collapse;font-size:.86rem;background:#fff;
+  border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pp-table th{text-align:left;background:#0f2430;color:#fff;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.05em;padding:9px 11px;font-weight:700}
+.pp-table td{padding:10px 11px;border-top:1px solid var(--line);vertical-align:top}
+.pp-table tr:nth-child(even) td{background:#fafcfc}
+.pp-name{font-weight:700;color:var(--ink)}
+.pp-flag{display:block;margin-top:4px;font-size:.78rem;color:#9a5b1a;font-style:italic}
+.fit{font-weight:800;font-size:.74rem;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.fit-High{background:#dff2ec;color:#0a5b48}
+.fit-Medium{background:#fdf3da;color:#8a6312}
+.fit-Low{background:#eef1f3;color:#5a6b74}
+.pp-route{font-size:.82rem;color:var(--soft)}
+.pp-note{background:#fbf6ec;border:1px solid #ecd9af;border-left:4px solid var(--gold);
+  border-radius:10px;padding:16px 18px;font-size:.9rem;color:#5f4a1f;margin-top:24px}
+@media(max-width:860px){.pp-grid,.pp-grid.two{grid-template-columns:1fr}.pp h1{font-size:1.7rem}
+  .pp-table{display:block;overflow-x:auto;white-space:nowrap}}

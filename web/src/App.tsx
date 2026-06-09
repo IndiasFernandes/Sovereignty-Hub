@@ -4,9 +4,13 @@ import { I18nProvider } from './i18n/I18nProvider';
 import { HomePage } from './pages/HomePage';
 import { TeamPage } from './pages/TeamPage';
 import { ConsultationPage } from './pages/ConsultationPage';
+import { SejmScannerPage } from './pages/SejmScannerPage';
 import { AdminLoginPage } from './pages/admin/AdminLoginPage';
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage';
 import { AdminResponseDetailPage } from './pages/admin/AdminResponseDetailPage';
+import { PartnersFoundationsPage } from './pages/partners/PartnersFoundationsPage';
+import { PartnersTechPage } from './pages/partners/PartnersTechPage';
+import { PartnersTargetsPage } from './pages/partners/PartnersTargetsPage';
 
 export default function App() {
   return (
@@ -17,9 +21,15 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/consultation" element={<ConsultationPage />} />
+          {/* Hidden — not linked in nav. Embeds the Sejm scanner. */}
+          <Route path="/sejm" element={<SejmScannerPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminDashboardPage />} />
           <Route path="/admin/responses/:id" element={<AdminResponseDetailPage />} />
+          {/* Hidden funder-outreach pages — unlinked + noindex */}
+          <Route path="/partners/foundations" element={<PartnersFoundationsPage />} />
+          <Route path="/partners/tech" element={<PartnersTechPage />} />
+          <Route path="/partners/targets" element={<PartnersTargetsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
