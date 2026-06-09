@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { SiteLayout } from '../components/Layout';
-import { T } from '../i18n/I18nProvider';
+import { T, useI18n } from '../i18n/I18nProvider';
 
 export function HomePage() {
+  const { t } = useI18n();
   return (
     <SiteLayout>
       <section className="hero">
@@ -59,46 +60,47 @@ export function HomePage() {
         <div className="container">
           <h2><T k="solution-title" /></h2>
           <p className="section-lead"><T k="solution-lead" /></p>
-          <div className="diagram-block">
-            <div className="diagram hub-architecture">
-              <div className="hub-core">
-                <strong><T k="hub-core-title" /></strong>
-                <span><T k="hub-core-sub" /></span>
-              </div>
-              <div className="pod pod-a"><strong>A</strong><span><T k="pod-a-title" html /></span></div>
-              <div className="pod pod-b"><strong>B</strong><span><T k="pod-b-title" html /></span></div>
-              <div className="pod pod-c"><strong>C</strong><span><T k="pod-c-title" html /></span></div>
-            </div>
-            <figcaption><T k="solution-caption" /></figcaption>
+
+          <div className="sol-grid">
+            {([
+              { k: 'eng', badge: 'E' },
+              { k: 'bri', badge: 'B' },
+              { k: 'shi', badge: 'S' },
+            ] as const).map((c) => (
+              <article className={`sol-card sol-${c.k}`} key={c.k}>
+                <div className="sol-badge" aria-hidden="true">{c.badge}</div>
+                <div className="sol-role"><T k={`${c.k}-role`} /></div>
+                <h3><T k={`${c.k}-name`} /></h3>
+                <p className="sol-fn"><T k={`${c.k}-fn`} /></p>
+                <ul className="sol-list" dangerouslySetInnerHTML={{ __html: t(`${c.k}-list`) }} />
+                <div className="sol-foot"><T k={`${c.k}-foot`} /></div>
+              </article>
+            ))}
           </div>
-          <figure className="visual-figure">
-            <img src="/assets/images/diagrams/hub-governance-pillars.png" alt="" loading="lazy" />
-            <figcaption><T k="hub-diagram-caption" /></figcaption>
-          </figure>
-          <div className="components-table">
-            <table>
-              <thead>
-                <tr>
-                  <th><T k="table-component" /></th>
-                  <th><T k="table-function" /></th>
-                  <th><T k="table-deliverables" /></th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['gov-row', 'gov-func', 'gov-deliver'],
-                  ['pillar1-row', 'pillar1-func', 'pillar1-deliver'],
-                  ['pillar2-row', 'pillar2-func', 'pillar2-deliver'],
-                  ['pillar3-row', 'pillar3-func', 'pillar3-deliver'],
-                ].map(([row, func, del]) => (
-                  <tr key={row}>
-                    <td><strong><T k={row} /></strong></td>
-                    <td><T k={func} /></td>
-                    <td><T k={del} /></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+
+          <div className="sol-foundation">
+            <div className="sol-found-ico" aria-hidden="true">🛡️</div>
+            <div>
+              <div className="sol-found-t"><T k="sol-found-title" /></div>
+              <div className="sol-found-s"><T k="sol-found-sub" /></div>
+            </div>
+          </div>
+
+          <div className="sol-standards">
+            <p className="sol-std-eyebrow"><T k="sol-std-eyebrow" /></p>
+            <div className="sol-std-grid">
+              {(['1', '2', '3', '4'] as const).map((n) => (
+                <div className="sol-std" key={n}>
+                  <strong><T k={`std${n}-t`} /></strong>
+                  <span><T k={`std${n}-s`} /></span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="sol-callout">
+            <strong><T k="sol-callout-t" /></strong>
+            <p><T k="sol-callout-p" /></p>
           </div>
         </div>
       </section>
