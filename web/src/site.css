@@ -934,6 +934,166 @@ img {
   letter-spacing: -0.01em;
 }
 
+/* ── Opportunity data chart (TB burden bars) ── */
+.opp-chart {
+  margin: 0;
+}
+.opp-bar-row {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+.opp-bar-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+}
+.opp-bar-track {
+  height: 2.25rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+.opp-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary-light) 75%, var(--teal-bright));
+  box-shadow: 0 0 22px -8px rgba(95, 212, 206, 0.6);
+}
+.opp-bar b {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: #fff;
+}
+.opp-chart figcaption {
+  margin-top: var(--space-sm);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 22rem;
+}
+
+/* ── What-is: editorial split + credibility strip ── */
+.whatis-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+.whatis-head h2 {
+  margin-top: var(--space-xs);
+}
+.whatis-body p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin: 0 0 var(--space-md);
+}
+.credstrip {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+.credstrip-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+.country-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.country-chips li {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  background: var(--teal-50);
+  border: 1px solid var(--teal-100);
+  border-radius: var(--radius-full);
+  padding: 0.3rem 0.8rem;
+}
+
+/* ── Governance org diagram ── */
+.gov-chart {
+  margin-top: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gov-node {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+.gov-node strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+.gov-node span {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+.gov-node-lead {
+  max-width: 26rem;
+  border-color: var(--color-primary);
+  border-top: 3px solid var(--color-primary);
+  background: linear-gradient(180deg, var(--teal-50), var(--color-surface));
+}
+.gov-stem {
+  width: 2px;
+  height: var(--space-2xl);
+  background: linear-gradient(var(--color-primary), var(--color-border));
+}
+.gov-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  width: 100%;
+  position: relative;
+}
+.gov-row::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--space-2xl) + 2px);
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: var(--color-border);
+}
+.gov-row .gov-node {
+  position: relative;
+}
+.gov-row .gov-node::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--space-lg));
+  left: 50%;
+  width: 2px;
+  height: var(--space-lg);
+  background: var(--color-border);
+}
+
 @media (max-width: 860px) {
   .opp-grid {
     grid-template-columns: 1fr;
@@ -945,6 +1105,19 @@ img {
   .phase-row {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+  .whatis-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .gov-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gov-row::before {
+    display: none;
+  }
+  .gov-row .gov-node::before {
+    display: none;
   }
 }
 

@@ -58,14 +58,25 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="what-is" className="section section-alt">
-        <div className="container">
-          <h2><T k="what-is-title" /></h2>
-          <div className="intro-block">
+      <section id="what-is" className="section section-alt whatis">
+        <div className="container whatis-grid">
+          <div className="whatis-head">
+            <p className="eyebrow"><T k="whatis-eyebrow" /></p>
+            <h2><T k="what-is-title" /></h2>
+          </div>
+          <div className="whatis-body">
             <p><T k="what-is-p1" html /></p>
             <p><T k="what-is-p2" html /></p>
+            <a href="#urgency" className="link-arrow"><T k="what-is-link" /></a>
           </div>
-          <a href="#urgency" className="link-arrow"><T k="what-is-link" /></a>
+        </div>
+        <div className="container credstrip">
+          <span className="credstrip-label"><T k="cred-label" /></span>
+          <ul className="country-chips">
+            {t('countries').split('·').map((c) => (
+              <li key={c}>{c.trim()}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -75,10 +86,22 @@ export function HomePage() {
             <p className="eyebrow eyebrow-onDark"><T k="opp-eyebrow" /></p>
             <h2><T k="urgency-title" /></h2>
             <p className="section-lead"><T k="urgency-lead" /></p>
-            <div className="opp-stat">
-              <strong><T k="opp-stat-num" /></strong>
-              <span><T k="opp-stat-label" /></span>
-            </div>
+            <figure className="opp-chart">
+              {([
+                { l: 'opp-bar1-label', v: 'opp-bar1-val', w: '85%' },
+                { l: 'opp-bar2-label', v: 'opp-bar2-val', w: '99%' },
+              ] as const).map((b) => (
+                <div className="opp-bar-row" key={b.l}>
+                  <span className="opp-bar-label"><T k={b.l} /></span>
+                  <div className="opp-bar-track">
+                    <div className="opp-bar" style={{ width: b.w }}>
+                      <b><T k={b.v} /></b>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              <figcaption><T k="opp-chart-cap" /></figcaption>
+            </figure>
           </div>
           <ol className="opp-list">
             {(['1', '2', '3', '4'] as const).map((n, i) => (
@@ -181,14 +204,25 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="governance" className="section section-alt">
+      <section id="governance" className="section section-alt gov">
         <div className="container">
+          <p className="eyebrow"><T k="gov-eyebrow" /></p>
           <h2><T k="gov-title" /></h2>
           <p className="section-lead"><T k="gov-lead" /></p>
-          <div className="governance-content">
-            {['gov-p1', 'gov-p2', 'gov-p3', 'gov-p4', 'gov-p5'].map((k) => (
-              <p key={k}><T k={k} html /></p>
-            ))}
+          <div className="gov-chart">
+            <div className="gov-node gov-node-lead">
+              <strong><T k="gov-node1-t" /></strong>
+              <span><T k="gov-node1-d" /></span>
+            </div>
+            <div className="gov-stem" aria-hidden="true" />
+            <div className="gov-row">
+              {(['2', '3', '4', '5'] as const).map((n) => (
+                <div className="gov-node" key={n}>
+                  <strong><T k={`gov-node${n}-t`} /></strong>
+                  <span><T k={`gov-node${n}-d`} /></span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
