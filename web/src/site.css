@@ -726,9 +726,19 @@ img {
   padding: var(--space-3xl) var(--space-xl);
 }
 
+/* Soft tinted washes so frosted-glass cards read against them */
 .section-alt {
-  background: var(--color-bg-alt);
+  background:
+    radial-gradient(80% 70% at 100% 0%, var(--teal-50) 0%, transparent 55%),
+    linear-gradient(180deg, #eef4f2 0%, #f6faf8 100%);
   border-block: 1px solid var(--color-border);
+}
+
+#urgency,
+#investment {
+  background:
+    radial-gradient(70% 60% at 92% -5%, var(--teal-50) 0%, transparent 55%),
+    linear-gradient(180deg, #f1f6f4 0%, #fafbf9 100%);
 }
 
 .container {
@@ -992,17 +1002,19 @@ section[id],
   margin-top: var(--space-2xl);
 }
 
-/* Unified card family — clean hairline surface, soft elevation, subtle hover */
+/* Unified card family — frosted glass over the tinted section washes */
 .crisis-card,
 .benefit-card,
 .develop-card,
 .roadmap-phase,
 .investable-card,
 .sol-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.46));
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.85);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 .crisis-card:hover,
@@ -1012,8 +1024,8 @@ section[id],
 .investable-card:hover,
 .sol-card:hover {
   transform: translateY(-3px);
-  border-color: var(--color-border-strong);
-  box-shadow: var(--shadow-md);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .crisis-card {
