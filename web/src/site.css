@@ -102,6 +102,7 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -734,11 +735,67 @@ img {
   border-block: 1px solid var(--color-border);
 }
 
+/* Dark showcase sections — dark-glass cards echoing the hero card */
 #urgency,
 #investment {
+  position: relative;
+  isolation: isolate;
   background:
-    radial-gradient(70% 60% at 92% -5%, var(--teal-50) 0%, transparent 55%),
-    linear-gradient(180deg, #f1f6f4 0%, #fafbf9 100%);
+    radial-gradient(64% 55% at 92% 0%, rgba(21, 128, 122, 0.3), transparent 55%),
+    linear-gradient(180deg, var(--ink-800) 0%, var(--ink-900) 100%);
+  color: rgba(255, 255, 255, 0.8);
+  border-block: 1px solid rgba(255, 255, 255, 0.06);
+}
+#urgency h2,
+#investment h2 {
+  color: #fff;
+}
+#urgency .section-lead,
+#investment .section-lead {
+  color: rgba(255, 255, 255, 0.7);
+}
+#urgency .diagram-block figcaption {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Dark-glass cards */
+#urgency .crisis-card,
+#investment .benefit-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+#urgency .crisis-card:hover,
+#investment .benefit-card:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: var(--shadow-xl), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+#urgency .crisis-card h3,
+#investment .benefit-card h3 {
+  color: #fff;
+}
+#urgency .crisis-card p,
+#investment .benefit-card p {
+  color: rgba(255, 255, 255, 0.68);
+}
+#investment .benefit-tagline {
+  color: var(--teal-bright);
+}
+#investment .benefit-demo {
+  border-top-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.62) !important;
+}
+#urgency .crisis-num {
+  background: rgba(95, 212, 206, 0.14);
+  border-color: rgba(95, 212, 206, 0.32);
+  color: var(--teal-bright);
+}
+#investment .benefit-icon {
+  background: rgba(95, 212, 206, 0.12);
+  border-color: rgba(95, 212, 206, 0.3);
+  color: var(--teal-bright);
 }
 
 .container {
