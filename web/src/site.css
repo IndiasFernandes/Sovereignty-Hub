@@ -130,6 +130,17 @@ img {
   max-width: 100%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .skip-link {
   position: absolute;
   top: -100%;
@@ -192,18 +203,20 @@ img {
   font-size: 0.9375rem;
   color: var(--color-text-muted);
   font-weight: 600;
+  max-width: 15rem;
+  line-height: 1.25;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
-  flex-wrap: wrap;
+  gap: var(--space-md);
+  flex-wrap: nowrap;
 }
 
 .nav ul {
   display: flex;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -213,8 +226,9 @@ img {
   color: var(--color-text-muted);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
+  font-size: 0.875rem;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
 }
 .nav a:hover {
   color: var(--color-primary);
@@ -261,8 +275,9 @@ img {
   display: flex;
   align-items: center;
   margin-left: 0;
-  padding-left: var(--space-lg);
+  padding-left: var(--space-md);
   border-left: 1px solid var(--color-border);
+  flex-shrink: 0;
 }
 
 .lang-btn {
@@ -1853,7 +1868,7 @@ section[id],
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header-inner {
     flex-direction: row;
     flex-wrap: wrap;
