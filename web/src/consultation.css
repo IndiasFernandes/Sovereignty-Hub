@@ -49,7 +49,7 @@
   display: inline-block;
   width: 1.75rem;
   height: 2px;
-  background: #6fd8d3;
+  background: var(--teal-bright);
 }
 
 .consult-hero h1 {

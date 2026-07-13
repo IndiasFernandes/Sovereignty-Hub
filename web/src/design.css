@@ -25,7 +25,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #6fd8d3;
+  color: var(--teal-bright);
   margin: 0 0 var(--space-sm);
 }
 .ds-h1 {
@@ -65,7 +65,7 @@
   font-size: 0.85rem;
   font-weight: 600;
 }
-.ds-nav a:hover { color: #6fd8d3; }
+.ds-nav a:hover { color: var(--teal-bright); }
 
 .ds-main {
   max-width: var(--container-max);

@@ -1,24 +1,25 @@
 /* EECA Health Sovereignty Hub — ODS-inspired design with distinct color palette */
 
 :root {
-  /* ── Brand: deep teal (institutional, trustworthy) ── */
-  --color-primary: #0e5f5c;
-  --color-primary-dark: #0a4442;
-  --color-primary-light: #17827e;
+  /* ── Brand: deep jewel teal (institutional, trustworthy) — v2 ── */
+  --color-primary: #0c5b57;
+  --color-primary-dark: #08403c;
+  --color-primary-light: #178f88;
+  --teal-bright: #5fd4ce; /* on-dark accent (eyebrows, marks) */
 
-  --teal-50: #f0f7f6;
-  --teal-100: #dcedec;
-  --teal-200: #bcdcda;
-  --teal-600: #14706c;
-  --teal-800: #0b3c3a;
-  --teal-950: #072423;
+  --teal-50: #eef6f5;
+  --teal-100: #d7ebe9;
+  --teal-200: #b0dbd6;
+  --teal-600: #128079;
+  --teal-800: #0a3d3a;
+  --teal-950: #062523;
 
-  /* ── Accent: warm amber (action — used sparingly) ── */
-  --color-accent: #c68a2e;
-  --color-accent-light: #e2a949;
-  --color-accent-dark: #97671e;
-  --amber-50: #fbf6ec;
-  --amber-100: #f3e6c8;
+  /* ── Accent: calm amber (action only — never a warning) — v2 ── */
+  --color-accent: #c2872a;
+  --color-accent-light: #ddab55;
+  --color-accent-dark: #8f6119;
+  --amber-50: #fbf6ea;
+  --amber-100: #f1e4c2;
 
   /* ── Neutral slate scale (cool, professional) ── */
   --neutral-25: #fafbfb;
@@ -38,18 +39,18 @@
   --ink-800: #1d2429;
   --ink-700: #29323a;
 
-  /* ── Semantic neutrals ── */
-  --color-bg: #fafbfb;
-  --color-bg-alt: #f1f3f4;
+  /* ── Semantic neutrals (v2 — a touch warmer so white isn't clinical) ── */
+  --color-bg: #fafbf9;
+  --color-bg-alt: #f0f3f1;
   --color-surface: #ffffff;
-  --color-text: #1b2226;
-  --color-text-muted: #576169;
-  --color-border: #e3e7ea;
-  --color-border-strong: #cfd5d9;
+  --color-text: #1a2124;
+  --color-text-muted: #566169;
+  --color-border: #e3e7e6;
+  --color-border-strong: #ccd4d2;
 
-  /* ── Typography ── */
-  --font-serif: 'Source Serif 4', Georgia, serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  /* ── Typography (v2 — Fraunces display + Inter text) ── */
+  --font-serif: 'Fraunces', 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
 
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -113,6 +114,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
 }
 
 ::selection {
@@ -389,7 +391,7 @@ img {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #6fd8d3;
+  color: var(--teal-bright);
   margin: 0 0 var(--space-md);
 }
 
@@ -541,7 +543,7 @@ img {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #6fd8d3;
+  color: var(--teal-bright);
   margin: 0 0 var(--space-lg);
 }
 .hero-eyebrow::before {
@@ -549,7 +551,7 @@ img {
   flex: 0 0 auto;
   width: 1.75rem;
   height: 2px;
-  background: #6fd8d3;
+  background: var(--teal-bright);
 }
 
 .hero-feature h1 {
@@ -594,7 +596,7 @@ img {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6fd8d3;
+  color: var(--teal-bright);
   margin: 0 0 var(--space-sm);
 }
 .statcard-text {
