@@ -735,9 +735,8 @@ img {
   border-block: 1px solid var(--color-border);
 }
 
-/* Dark showcase sections — dark-glass cards echoing the hero card */
+/* ── Dark sections (Opportunity + Investment) ── */
 #urgency,
-#solution,
 #investment {
   position: relative;
   isolation: isolate;
@@ -748,77 +747,205 @@ img {
   border-block: 1px solid rgba(255, 255, 255, 0.06);
 }
 #urgency h2,
-#solution h2,
 #investment h2 {
   color: #fff;
 }
 #urgency .section-lead,
-#solution .section-lead,
 #investment .section-lead {
-  color: rgba(255, 255, 255, 0.7);
-}
-#urgency .diagram-block figcaption {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.72);
 }
 
-/* Dark-glass cards */
-#urgency .crisis-card,
-#investment .benefit-card,
-#solution .sol-card {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 var(--space-md);
 }
-#urgency .crisis-card:hover,
-#investment .benefit-card:hover,
-#solution .sol-card:hover {
-  border-color: rgba(255, 255, 255, 0.24);
-  box-shadow: var(--shadow-xl), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+.eyebrow-onDark {
+  color: var(--teal-bright);
 }
-#urgency .crisis-card h3,
-#investment .benefit-card h3,
-#solution .sol-card h3 {
+
+/* ── The Opportunity — editorial split: sticky intro + numbered list ── */
+.opp-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+.opp-aside {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-lg));
+}
+.opp-aside .section-lead {
+  margin: var(--space-md) 0 var(--space-xl);
+}
+.opp-stat {
+  border-left: 2px solid var(--teal-bright);
+  padding-left: var(--space-lg);
+}
+.opp-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  line-height: 1;
   color: #fff;
+  letter-spacing: -0.02em;
 }
-#urgency .crisis-card p,
-#investment .benefit-card p {
+.opp-stat span {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.66);
+  max-width: 22rem;
+}
+.opp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: opp;
+}
+.opp-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-lg);
+  align-items: start;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.opp-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+.opp-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(95, 212, 206, 0.12);
+  border: 1px solid rgba(95, 212, 206, 0.3);
+  color: var(--teal-bright);
+}
+.opp-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.opp-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin: 0.2rem 0 0.35rem;
+}
+.opp-body p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.68);
 }
-#investment .benefit-tagline {
-  color: var(--teal-bright);
-}
-#investment .benefit-demo {
-  border-top-color: rgba(255, 255, 255, 0.14);
-  color: rgba(255, 255, 255, 0.62) !important;
+.opp-idx {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.32);
 }
 
-/* Solution card internals on dark */
-#solution .sol-head { border-bottom-color: rgba(255, 255, 255, 0.13); }
-#solution .sol-role { color: var(--teal-bright); }
-#solution .sol-fn { color: rgba(255, 255, 255, 0.68); }
-#solution .sol-list { color: rgba(255, 255, 255, 0.82); }
-#solution .sol-list li strong { color: #fff; }
-#solution .sol-list li::before { background: rgba(95, 212, 206, 0.35); border-color: var(--teal-bright); }
-#solution .sol-foot { border-top-color: rgba(255, 255, 255, 0.13); color: rgba(255, 255, 255, 0.6); }
-#solution .sol-std-eyebrow { color: var(--teal-bright); }
-#solution .sol-std { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.12); box-shadow: none; }
-#solution .sol-std strong { color: #fff; }
-#solution .sol-std span { color: rgba(255, 255, 255, 0.6); }
-#solution .sol-foundation { border: 1px solid rgba(255, 255, 255, 0.08); }
-#solution .sol-callout { background: rgba(194, 135, 42, 0.1); border-color: rgba(194, 135, 42, 0.35); }
-#solution .sol-callout p { color: rgba(255, 255, 255, 0.7); }
-#solution .sol-callout strong { color: var(--color-accent-light); }
+/* ── The Investment — phased timeline with proportional budget bars ── */
+.phase-track {
+  margin-top: var(--space-2xl);
+}
+.phase-row {
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.phase-meta strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: #fff;
+}
+.phase-meta span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+.phase-viz {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+.phase-bar-track {
+  height: 2.75rem;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+.phase-bar {
+  height: 100%;
+  min-width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary-light) 70%, var(--teal-bright));
+  box-shadow: 0 0 24px -6px rgba(95, 212, 206, 0.5);
+}
+.phase-amt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+.phase-desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.66);
+}
+.invest-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 2px solid var(--teal-bright);
+}
+.invest-total span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+.invest-total strong {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
 
-/* Circular icon badges on dark (crisis + benefit + solution) */
-#urgency .card-badge,
-#investment .card-badge,
-#solution .sol-badge {
-  background: rgba(95, 212, 206, 0.12);
-  border-color: rgba(95, 212, 206, 0.3);
-  color: var(--teal-bright);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+@media (max-width: 860px) {
+  .opp-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  .opp-aside {
+    position: static;
+  }
+  .phase-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
 }
 
 .container {

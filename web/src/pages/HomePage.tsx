@@ -69,29 +69,29 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="urgency" className="section">
-        <div className="container">
-          <h2><T k="urgency-title" /></h2>
-          <p className="section-lead"><T k="urgency-lead" /></p>
-          <div className="diagram-block">
-            <div className="diagram crisis-intersection">
-              <div className="diagram-center"><span><T k="urgency-center" /></span></div>
-              <div className="diagram-node node-1"><span>1</span><small><T k="urgency-node1" /></small></div>
-              <div className="diagram-node node-2"><span>2</span><small><T k="urgency-node2" /></small></div>
-              <div className="diagram-node node-3"><span>3</span><small><T k="urgency-node3" /></small></div>
-              <div className="diagram-node node-4"><span>4</span><small><T k="urgency-node4" /></small></div>
+      <section id="urgency" className="section opp">
+        <div className="container opp-grid">
+          <div className="opp-aside">
+            <p className="eyebrow eyebrow-onDark"><T k="opp-eyebrow" /></p>
+            <h2><T k="urgency-title" /></h2>
+            <p className="section-lead"><T k="urgency-lead" /></p>
+            <div className="opp-stat">
+              <strong><T k="opp-stat-num" /></strong>
+              <span><T k="opp-stat-label" /></span>
             </div>
-            <figcaption><T k="urgency-caption" /></figcaption>
           </div>
-          <div className="crisis-grid">
-            {(['1', '2', '3', '4'] as const).map((n) => (
-              <article className="crisis-card" key={n}>
-                <div className="card-badge" aria-hidden="true">{CRISIS_ICONS[Number(n) - 1]}</div>
-                <h3><T k={`crisis${n}-title`} /></h3>
-                <p><T k={`crisis${n}-text`} /></p>
-              </article>
+          <ol className="opp-list">
+            {(['1', '2', '3', '4'] as const).map((n, i) => (
+              <li className="opp-item" key={n}>
+                <span className="opp-icon" aria-hidden="true">{CRISIS_ICONS[i]}</span>
+                <div className="opp-body">
+                  <h3><T k={`crisis${n}-title`} /></h3>
+                  <p><T k={`crisis${n}-text`} /></p>
+                </div>
+                <span className="opp-idx" aria-hidden="true">0{n}</span>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -146,24 +146,37 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="investment" className="section">
+      <section id="investment" className="section invest">
         <div className="container">
+          <p className="eyebrow eyebrow-onDark"><T k="nav-investment" /></p>
           <h2><T k="investment-title" /></h2>
           <p className="section-lead"><T k="investment-lead" /></p>
-          <div className="benefits-grid">
+          <div className="phase-track">
             {([
-              { n: 1, icon: SOL_ICONS.eng },
-              { n: 2, icon: SOL_ICONS.bri },
-              { n: 3, icon: SOL_ICONS.shi },
-            ] as const).map(({ n, icon }) => (
-              <article className="benefit-card" key={n}>
-                <div className="card-badge" aria-hidden="true">{icon}</div>
-                <h3><T k={`benefit${n}-title`} /></h3>
-                <p className="benefit-tagline"><T k={`benefit${n}-tagline`} /></p>
-                <p><T k={`benefit${n}-text`} /></p>
-                <p className="benefit-demo"><T k={`benefit${n}-demo`} html /></p>
-              </article>
+              { n: 1, w: '12%' },
+              { n: 2, w: '40%' },
+              { n: 3, w: '55%' },
+              { n: 4, w: '100%' },
+            ] as const).map(({ n, w }) => (
+              <div className="phase-row" key={n}>
+                <div className="phase-meta">
+                  <strong><T k={`phase${n}-tag`} /></strong>
+                  <span><T k={`phase${n}-when`} /></span>
+                </div>
+                <div className="phase-viz">
+                  <div className="phase-bar-track">
+                    <div className="phase-bar" style={{ width: w }}>
+                      <span className="phase-amt"><T k={`phase${n}-amt`} /></span>
+                    </div>
+                  </div>
+                  <p className="phase-desc"><T k={`phase${n}-desc`} /></p>
+                </div>
+              </div>
             ))}
+          </div>
+          <div className="invest-total">
+            <span><T k="invest-total-label" /></span>
+            <strong><T k="invest-total-value" /></strong>
           </div>
         </div>
       </section>
