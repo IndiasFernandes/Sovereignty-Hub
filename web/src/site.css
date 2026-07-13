@@ -737,6 +737,7 @@ img {
 
 /* Dark showcase sections — dark-glass cards echoing the hero card */
 #urgency,
+#solution,
 #investment {
   position: relative;
   isolation: isolate;
@@ -747,10 +748,12 @@ img {
   border-block: 1px solid rgba(255, 255, 255, 0.06);
 }
 #urgency h2,
+#solution h2,
 #investment h2 {
   color: #fff;
 }
 #urgency .section-lead,
+#solution .section-lead,
 #investment .section-lead {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -760,7 +763,8 @@ img {
 
 /* Dark-glass cards */
 #urgency .crisis-card,
-#investment .benefit-card {
+#investment .benefit-card,
+#solution .sol-card {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
@@ -768,12 +772,14 @@ img {
   box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 #urgency .crisis-card:hover,
-#investment .benefit-card:hover {
+#investment .benefit-card:hover,
+#solution .sol-card:hover {
   border-color: rgba(255, 255, 255, 0.24);
   box-shadow: var(--shadow-xl), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 #urgency .crisis-card h3,
-#investment .benefit-card h3 {
+#investment .benefit-card h3,
+#solution .sol-card h3 {
   color: #fff;
 }
 #urgency .crisis-card p,
@@ -787,15 +793,32 @@ img {
   border-top-color: rgba(255, 255, 255, 0.14);
   color: rgba(255, 255, 255, 0.62) !important;
 }
-#urgency .crisis-num {
-  background: rgba(95, 212, 206, 0.14);
-  border-color: rgba(95, 212, 206, 0.32);
-  color: var(--teal-bright);
-}
-#investment .benefit-icon {
+
+/* Solution card internals on dark */
+#solution .sol-head { border-bottom-color: rgba(255, 255, 255, 0.13); }
+#solution .sol-role { color: var(--teal-bright); }
+#solution .sol-fn { color: rgba(255, 255, 255, 0.68); }
+#solution .sol-list { color: rgba(255, 255, 255, 0.82); }
+#solution .sol-list li strong { color: #fff; }
+#solution .sol-list li::before { background: rgba(95, 212, 206, 0.35); border-color: var(--teal-bright); }
+#solution .sol-foot { border-top-color: rgba(255, 255, 255, 0.13); color: rgba(255, 255, 255, 0.6); }
+#solution .sol-std-eyebrow { color: var(--teal-bright); }
+#solution .sol-std { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.12); box-shadow: none; }
+#solution .sol-std strong { color: #fff; }
+#solution .sol-std span { color: rgba(255, 255, 255, 0.6); }
+#solution .sol-foundation { border: 1px solid rgba(255, 255, 255, 0.08); }
+#solution .sol-callout { background: rgba(194, 135, 42, 0.1); border-color: rgba(194, 135, 42, 0.35); }
+#solution .sol-callout p { color: rgba(255, 255, 255, 0.7); }
+#solution .sol-callout strong { color: var(--color-accent-light); }
+
+/* Circular icon badges on dark (crisis + benefit + solution) */
+#urgency .card-badge,
+#investment .card-badge,
+#solution .sol-badge {
   background: rgba(95, 212, 206, 0.12);
   border-color: rgba(95, 212, 206, 0.3);
   color: var(--teal-bright);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .container {
@@ -1087,6 +1110,35 @@ section[id],
 
 .crisis-card {
   padding: var(--space-xl);
+}
+
+/* Shared circular icon badge (crisis + benefit) — matches the Solution badge */
+.card-badge {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-full);
+  display: grid;
+  place-items: center;
+  margin: 0 auto var(--space-md);
+  background: radial-gradient(120% 120% at 30% 20%, var(--teal-100), var(--teal-50));
+  border: 1px solid var(--teal-200);
+  color: var(--color-primary);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), var(--shadow-xs);
+}
+.card-badge svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+/* Centered layout so crisis + benefit match the Solution cards */
+.crisis-card,
+.benefit-card {
+  text-align: center;
+}
+.benefit-card p,
+.crisis-card p {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Modern index chip (matches the icon language) */

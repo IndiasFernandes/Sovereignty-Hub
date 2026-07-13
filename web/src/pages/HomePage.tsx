@@ -19,6 +19,14 @@ const SOL_ICONS = {
   ),
 };
 
+// Four Imperatives icons (Global Fund transition · lung-health crises · geopolitical · decision lag)
+const CRISIS_ICONS = [
+  <svg {...svg} key="1"><path d="M21 8l-7.5 7.5-4-4L3 18" /><path d="M15 8h6v6" /></svg>,
+  <svg {...svg} key="2"><path d="M3 12h4l2.5 7 5-14 2.5 7H21" /></svg>,
+  <svg {...svg} key="3"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" /></svg>,
+  <svg {...svg} key="4"><circle cx="12" cy="12" r="9" /><path d="M12 7.5V12l3 2" /></svg>,
+];
+
 export function HomePage() {
   const { t } = useI18n();
   return (
@@ -78,7 +86,7 @@ export function HomePage() {
           <div className="crisis-grid">
             {(['1', '2', '3', '4'] as const).map((n) => (
               <article className="crisis-card" key={n}>
-                <span className="crisis-num">0{n}</span>
+                <div className="card-badge" aria-hidden="true">{CRISIS_ICONS[Number(n) - 1]}</div>
                 <h3><T k={`crisis${n}-title`} /></h3>
                 <p><T k={`crisis${n}-text`} /></p>
               </article>
@@ -143,9 +151,13 @@ export function HomePage() {
           <h2><T k="investment-title" /></h2>
           <p className="section-lead"><T k="investment-lead" /></p>
           <div className="benefits-grid">
-            {[1, 2, 3].map((n) => (
+            {([
+              { n: 1, icon: SOL_ICONS.eng },
+              { n: 2, icon: SOL_ICONS.bri },
+              { n: 3, icon: SOL_ICONS.shi },
+            ] as const).map(({ n, icon }) => (
               <article className="benefit-card" key={n}>
-                <div className="benefit-icon" aria-hidden="true">{n === 1 ? '$' : n === 2 ? '⊕' : '▢'}</div>
+                <div className="card-badge" aria-hidden="true">{icon}</div>
                 <h3><T k={`benefit${n}-title`} /></h3>
                 <p className="benefit-tagline"><T k={`benefit${n}-tagline`} /></p>
                 <p><T k={`benefit${n}-text`} /></p>
