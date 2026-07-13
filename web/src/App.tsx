@@ -4,7 +4,6 @@ import { I18nProvider } from './i18n/I18nProvider';
 import { HomePage } from './pages/HomePage';
 import { TeamPage } from './pages/TeamPage';
 import { ConsultationPage } from './pages/ConsultationPage';
-import { SejmScannerPage } from './pages/SejmScannerPage';
 import { AdminLoginPage } from './pages/admin/AdminLoginPage';
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage';
 import { AdminResponseDetailPage } from './pages/admin/AdminResponseDetailPage';
@@ -21,8 +20,6 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/consultation" element={<ConsultationPage />} />
-          {/* Hidden — not linked in nav. Embeds the Sejm scanner. */}
-          <Route path="/sejm" element={<SejmScannerPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminDashboardPage />} />
           <Route path="/admin/responses/:id" element={<AdminResponseDetailPage />} />
