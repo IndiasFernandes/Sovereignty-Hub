@@ -25,6 +25,15 @@ export const translations = {
     'hero-tagline': 'A strategic investment platform designed to strengthen Eastern Europe and Central Asia\'s health resilience, data sovereignty, and regional stability.',
     'hero-cta': 'Discover the Hub',
     'hero-consultation': 'Stakeholder Consultation',
+    'hero-eyebrow': 'EECA Lung Health Sovereignty Hub',
+    'hero-headline': 'Big decisions,<br><span class="hero-accent">real delivery.</span>',
+    'hero-lead': 'The Hub turns political will into lung-health action — a fast, governed platform built on the Global TB Caucus network across nine countries in Eastern Europe & Central Asia.',
+    'statcard-eyebrow': 'The opportunity',
+    'statcard-text': 'A $1.2M, 24-month programme — entered through a $60,000, 6-month Foundation Phase in Kazakhstan that delivers a working solution before any further funding is asked.',
+    'stat1v': '300K+', 'stat1l': 'vulnerable patients',
+    'stat2v': '9', 'stat2l': 'national caucuses',
+    'stat3v': '~1 week', 'stat3l': 'decision to action',
+    'stat4v': '$1.2M', 'stat4l': 'over 24 months',
 
     // Index - What Is
     'what-is-title': 'What is the EECA Lung Health Sovereignty Hub?',
@@ -207,6 +216,15 @@ export const translations = {
     'hero-tagline': 'Стратегическая инвестиционная платформа для укрепления устойчивости систем здравоохранения, суверенитета данных и региональной стабильности в Восточной Европе и Центральной Азии.',
     'hero-cta': 'Узнать о Хабе',
     'hero-consultation': 'Консультация заинтересованных сторон',
+    'hero-eyebrow': 'EECA Хаб суверенитета в области здоровья лёгких',
+    'hero-headline': 'Большие решения —<br><span class="hero-accent">реальные результаты.</span>',
+    'hero-lead': 'Хаб превращает политическую волю в действия по здоровью лёгких — быстрая, управляемая платформа на основе сети Глобального парламентского кокуса по ТБ в девяти странах Восточной Европы и Центральной Азии.',
+    'statcard-eyebrow': 'Возможность',
+    'statcard-text': 'Программа на $1,2 млн и 24 месяца — с началом в виде 6-месячной Фундаментной фазы в Казахстане за $60 000, которая обеспечивает работающее решение до запроса дальнейшего финансирования.',
+    'stat1v': '300K+', 'stat1l': 'уязвимых пациентов',
+    'stat2v': '9', 'stat2l': 'национальных кокусов',
+    'stat3v': '~1 нед.', 'stat3l': 'от решения к действию',
+    'stat4v': '$1,2 млн', 'stat4l': 'за 24 месяца',
 
     // Index - What Is
     'what-is-title': 'Что такое EECA Хаб суверенитета в области здоровья лёгких?',

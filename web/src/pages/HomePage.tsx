@@ -7,15 +7,30 @@ export function HomePage() {
   const { t } = useI18n();
   return (
     <SiteLayout>
-      <section className="hero">
-        <div className="hero-content">
-          <h1><T k="hero-title" /></h1>
-          <p className="hero-subtitle"><T k="hero-subtitle" /></p>
-          <p className="hero-tagline"><T k="hero-tagline" /></p>
-          <div className="hero-buttons">
-            <Link to="/consultation#consultation-form" className="btn btn-primary"><T k="hero-consultation" /></Link>
-            <a href="#what-is" className="btn btn-hero-secondary"><T k="hero-cta" /></a>
+      <section className="hero hero-feature">
+        <div className="hero-media" aria-hidden="true" />
+        <div className="hero-inner">
+          <div className="hero-content">
+            <p className="hero-eyebrow"><T k="hero-eyebrow" /></p>
+            <h1><T k="hero-headline" html /></h1>
+            <p className="hero-lead"><T k="hero-lead" /></p>
+            <div className="hero-buttons">
+              <Link to="/consultation#consultation-form" className="btn btn-primary"><T k="hero-consultation" /></Link>
+              <a href="#what-is" className="btn btn-hero-secondary"><T k="hero-cta" /></a>
+            </div>
           </div>
+          <aside className="hero-statcard" aria-label="Programme at a glance">
+            <p className="statcard-eyebrow"><T k="statcard-eyebrow" /></p>
+            <p className="statcard-text"><T k="statcard-text" /></p>
+            <ul className="statgrid">
+              {(['1', '2', '3', '4'] as const).map((n) => (
+                <li key={n}>
+                  <strong><T k={`stat${n}v`} /></strong>
+                  <span><T k={`stat${n}l`} /></span>
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </section>
 
