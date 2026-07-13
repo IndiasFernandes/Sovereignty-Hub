@@ -10,6 +10,7 @@ import { AdminResponseDetailPage } from './pages/admin/AdminResponseDetailPage';
 import { PartnersFoundationsPage } from './pages/partners/PartnersFoundationsPage';
 import { PartnersTechPage } from './pages/partners/PartnersTechPage';
 import { PartnersTargetsPage } from './pages/partners/PartnersTargetsPage';
+import { DesignSystemPage } from './pages/DesignSystemPage';
 
 export default function App() {
   return (
@@ -27,6 +28,8 @@ export default function App() {
           <Route path="/partners/foundations" element={<PartnersFoundationsPage />} />
           <Route path="/partners/tech" element={<PartnersTechPage />} />
           <Route path="/partners/targets" element={<PartnersTargetsPage />} />
+          {/* Internal design-system reference (noindex) */}
+          <Route path="/design" element={<DesignSystemPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>

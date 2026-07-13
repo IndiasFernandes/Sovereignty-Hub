@@ -481,22 +481,22 @@ img {
   position: absolute;
   inset: 0;
   z-index: 0;
+  /* Photo base (falls back to ink gradient if the file is missing) */
+  --hero-photo: url('/assets/images/hero.jpg');
   background:
-    linear-gradient(102deg, rgba(9, 18, 20, 0.95) 0%, rgba(9, 18, 20, 0.72) 44%, rgba(9, 18, 20, 0.4) 100%),
-    radial-gradient(78% 100% at 88% 8%, rgba(21, 128, 122, 0.4), transparent 60%),
-    var(--ink-900);
-  background-size: cover;
-  background-position: center;
+    var(--hero-photo, none) center / cover no-repeat,
+    linear-gradient(150deg, var(--ink-800) 0%, var(--ink-900) 100%);
 }
 
-/* Optional real photo: set --hero-photo: url('/assets/images/hero.jpg') on .hero-media */
+/* Branded scrim over the photo: dark for text legibility (left) + teal wash */
 .hero-feature .hero-media::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--hero-photo, none) center / cover no-repeat;
-  mix-blend-mode: luminosity;
-  opacity: 0.55;
+  background:
+    linear-gradient(102deg, rgba(9, 18, 20, 0.95) 0%, rgba(9, 18, 20, 0.74) 42%, rgba(9, 18, 20, 0.42) 100%),
+    radial-gradient(80% 110% at 90% 6%, rgba(21, 128, 122, 0.42), transparent 60%),
+    linear-gradient(0deg, rgba(9, 18, 20, 0.55), transparent 55%);
 }
 
 .hero-feature .hero-inner {
