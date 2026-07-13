@@ -2414,62 +2414,90 @@ section[id],
   display: flex;
   flex-direction: column;
 }
+/* Centered header block */
+.sol-head {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+}
 .sol-badge {
-  width: 3rem;
-  height: 3rem;
-  border-radius: var(--radius);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-full);
   display: grid;
   place-items: center;
-  color: #fff;
-  font-family: var(--font-serif);
-  font-weight: 800;
-  font-size: 1.25rem;
+  color: var(--color-primary);
+  background: radial-gradient(120% 120% at 30% 20%, var(--teal-100), var(--teal-50));
+  border: 1px solid var(--teal-200);
   margin-bottom: var(--space-md);
-  box-shadow: var(--shadow-xs);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), var(--shadow-xs);
+}
+.sol-badge svg {
+  width: 1.6rem;
+  height: 1.6rem;
 }
 .sol-role {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--color-text-muted);
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
 }
 .sol-card h3 {
-  font-family: var(--font-serif);
-  margin: 0.15em 0 0.1em;
-  font-size: 1.25rem;
+  font-family: var(--font-display);
+  margin: 0.35em 0 0.15em;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
 }
 .sol-fn {
   color: var(--color-text-muted);
-  font-size: 0.95rem;
-  margin: 0.6rem 0 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 22rem;
 }
 .sol-list {
   margin: 0;
-  padding-left: 1.15rem;
+  padding: 0;
+  list-style: none;
   color: var(--color-text);
 }
 .sol-list li {
+  position: relative;
+  padding-left: 1.4rem;
   font-size: 0.9rem;
-  margin: 0.35em 0;
+  line-height: 1.5;
+  margin: 0.55em 0;
+}
+.sol-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 2px;
+  background: var(--teal-200);
+  border: 1px solid var(--color-primary-light);
+}
+.sol-list li strong {
+  color: var(--color-text);
 }
 .sol-foot {
   margin-top: auto;
   padding-top: var(--space-md);
-  border-top: 1px dashed var(--color-border-strong);
+  border-top: 1px solid var(--color-border);
   font-size: 0.78rem;
   color: var(--color-text-muted);
   font-style: italic;
+  text-align: center;
 }
-.sol-eng .sol-badge { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); }
-.sol-eng { border-top-color: var(--color-primary); }
-.sol-eng h3 { color: var(--color-primary); }
-.sol-bri .sol-badge { background: linear-gradient(135deg, #245b86, #3a78a8); }
-.sol-bri { border-top-color: #2a5d8f; }
-.sol-bri h3 { color: #2a5d8f; }
-.sol-shi .sol-badge { background: linear-gradient(135deg, #6d4497, #8a5cb5); }
-.sol-shi { border-top-color: #7a4ba3; }
-.sol-shi h3 { color: #7a4ba3; }
 .sol-foundation {
   margin-top: var(--space-lg);
   background:

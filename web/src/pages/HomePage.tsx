@@ -3,6 +3,22 @@ import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { SiteLayout } from '../components/Layout';
 import { T, useI18n } from '../i18n/I18nProvider';
 
+const svg = { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, 'aria-hidden': true };
+const SOL_ICONS = {
+  // Engine — legislative platform (chip / processor)
+  eng: (
+    <svg {...svg}><rect x="6.5" y="6.5" width="11" height="11" rx="2" /><path d="M9.5 2.5v3M14.5 2.5v3M9.5 18.5v3M14.5 18.5v3M2.5 9.5h3M2.5 14.5h3M18.5 9.5h3M18.5 14.5h3" /><path d="M10.5 10.5h3v3h-3z" /></svg>
+  ),
+  // Bridge — political coordination (arch bridge)
+  bri: (
+    <svg {...svg}><path d="M3 17v-2a9 9 0 0 1 18 0v2" /><path d="M2.5 17h19" /><path d="M7.5 17v-3.5M16.5 17v-3.5M12 17v-5" /></svg>
+  ),
+  // Shield — crisis & continuity
+  shi: (
+    <svg {...svg}><path d="M12 2.75l7 2.75v5.25c0 4.4-3 7.4-7 8.9-4-1.5-7-4.5-7-8.9V5.5l7-2.75z" /><path d="M9 11.5l2 2 4-4" /></svg>
+  ),
+};
+
 export function HomePage() {
   const { t } = useI18n();
   return (
@@ -78,15 +94,17 @@ export function HomePage() {
 
           <div className="sol-grid">
             {([
-              { k: 'eng', badge: 'E' },
-              { k: 'bri', badge: 'B' },
-              { k: 'shi', badge: 'S' },
+              { k: 'eng', icon: SOL_ICONS.eng },
+              { k: 'bri', icon: SOL_ICONS.bri },
+              { k: 'shi', icon: SOL_ICONS.shi },
             ] as const).map((c) => (
               <article className={`sol-card sol-${c.k}`} key={c.k}>
-                <div className="sol-badge" aria-hidden="true">{c.badge}</div>
-                <div className="sol-role"><T k={`${c.k}-role`} /></div>
-                <h3><T k={`${c.k}-name`} /></h3>
-                <p className="sol-fn"><T k={`${c.k}-fn`} /></p>
+                <div className="sol-head">
+                  <div className="sol-badge" aria-hidden="true">{c.icon}</div>
+                  <div className="sol-role"><T k={`${c.k}-role`} /></div>
+                  <h3><T k={`${c.k}-name`} /></h3>
+                  <p className="sol-fn"><T k={`${c.k}-fn`} /></p>
+                </div>
                 <ul className="sol-list" dangerouslySetInnerHTML={{ __html: t(`${c.k}-list`) }} />
                 <div className="sol-foot"><T k={`${c.k}-foot`} /></div>
               </article>
