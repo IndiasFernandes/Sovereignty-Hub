@@ -980,6 +980,154 @@ img {
   max-width: 22rem;
 }
 
+/* The Moment — 2-column (text + chart) */
+.opp-grid-2 {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.opp-grid-2 .opp-aside {
+  position: static;
+}
+.opp-grid-2 .opp-chart {
+  max-width: 30rem;
+  margin-left: auto;
+}
+
+/* ── What Changes — impact outcomes (light) ── */
+#impact {
+  background:
+    radial-gradient(70% 60% at 100% 0%, var(--teal-50), transparent 55%),
+    linear-gradient(180deg, #f6faf8 0%, #fafbf9 100%);
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+.impact-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-2xl);
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.impact-card::before {
+  content: '';
+  position: absolute;
+  left: var(--space-lg);
+  top: var(--space-xl);
+  bottom: var(--space-xl);
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(var(--color-primary), var(--teal-bright));
+}
+.impact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+.impact-idx {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.impact-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0.3rem 0 0.4rem;
+}
+.impact-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* The System — trust line */
+.sol-trust {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-primary-dark);
+  margin: var(--space-2xl) auto var(--space-xl);
+  max-width: 36rem;
+}
+
+/* ── The Approach — phased path (on dark) ── */
+.path {
+  list-style: none;
+  margin: var(--space-2xl) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+.path-step {
+  position: relative;
+  padding-top: var(--space-lg);
+  border-top: 2px solid rgba(255, 255, 255, 0.14);
+}
+.path-step::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--teal-bright);
+  box-shadow: 0 0 14px var(--teal-bright);
+}
+.path-num {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--teal-bright);
+}
+.path-body strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  color: #fff;
+  margin: 0.35rem 0 0.15rem;
+}
+.path-when {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+.path-body p {
+  margin: 0.55rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.68);
+}
+.invest-note {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 860px) {
+  .opp-grid-2 { grid-template-columns: 1fr; }
+  .opp-grid-2 .opp-chart { margin-left: 0; }
+  .impact-grid { grid-template-columns: 1fr; }
+  .path { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .path { grid-template-columns: 1fr; }
+}
+
 /* ── What-is: editorial split + credibility strip ── */
 .whatis-grid {
   display: grid;

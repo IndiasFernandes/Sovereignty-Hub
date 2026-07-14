@@ -19,14 +19,6 @@ const SOL_ICONS = {
   ),
 };
 
-// Four Imperatives icons (Global Fund transition · lung-health crises · geopolitical · decision lag)
-const CRISIS_ICONS = [
-  <svg {...svg} key="1"><path d="M21 8l-7.5 7.5-4-4L3 18" /><path d="M15 8h6v6" /></svg>,
-  <svg {...svg} key="2"><path d="M3 12h4l2.5 7 5-14 2.5 7H21" /></svg>,
-  <svg {...svg} key="3"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" /></svg>,
-  <svg {...svg} key="4"><circle cx="12" cy="12" r="9" /><path d="M12 7.5V12l3 2" /></svg>,
-];
-
 export function HomePage() {
   const { t } = useI18n();
   return (
@@ -81,45 +73,51 @@ export function HomePage() {
       </section>
 
       <section id="urgency" className="section opp">
-        <div className="container opp-grid">
+        <div className="container opp-grid opp-grid-2">
           <div className="opp-aside">
             <p className="eyebrow eyebrow-onDark"><T k="opp-eyebrow" /></p>
             <h2><T k="urgency-title" /></h2>
             <p className="section-lead"><T k="urgency-lead" /></p>
-            <figure className="opp-chart">
-              {([
-                { l: 'opp-bar1-label', v: 'opp-bar1-val', w: '85%' },
-                { l: 'opp-bar2-label', v: 'opp-bar2-val', w: '99%' },
-              ] as const).map((b) => (
-                <div className="opp-bar-row" key={b.l}>
-                  <span className="opp-bar-label"><T k={b.l} /></span>
-                  <div className="opp-bar-track">
-                    <div className="opp-bar" style={{ width: b.w }}>
-                      <b><T k={b.v} /></b>
-                    </div>
+          </div>
+          <figure className="opp-chart">
+            {([
+              { l: 'opp-bar1-label', v: 'opp-bar1-val', w: '85%' },
+              { l: 'opp-bar2-label', v: 'opp-bar2-val', w: '99%' },
+            ] as const).map((b) => (
+              <div className="opp-bar-row" key={b.l}>
+                <span className="opp-bar-label"><T k={b.l} /></span>
+                <div className="opp-bar-track">
+                  <div className="opp-bar" style={{ width: b.w }}>
+                    <b><T k={b.v} /></b>
                   </div>
                 </div>
-              ))}
-              <figcaption><T k="opp-chart-cap" /></figcaption>
-            </figure>
-          </div>
-          <ol className="opp-list">
-            {(['1', '2', '3', '4'] as const).map((n, i) => (
-              <li className="opp-item" key={n}>
-                <span className="opp-icon" aria-hidden="true">{CRISIS_ICONS[i]}</span>
-                <div className="opp-body">
-                  <h3><T k={`crisis${n}-title`} /></h3>
-                  <p><T k={`crisis${n}-text`} /></p>
-                </div>
-                <span className="opp-idx" aria-hidden="true">0{n}</span>
-              </li>
+              </div>
             ))}
-          </ol>
+            <figcaption><T k="opp-chart-cap" /></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="impact" className="section impact">
+        <div className="container">
+          <p className="eyebrow"><T k="impact-eyebrow" /></p>
+          <h2><T k="impact-title" /></h2>
+          <p className="section-lead"><T k="impact-lead" /></p>
+          <div className="impact-grid">
+            {(['1', '2', '3', '4'] as const).map((n) => (
+              <article className="impact-card" key={n}>
+                <span className="impact-idx" aria-hidden="true">0{n}</span>
+                <h3><T k={`impact${n}-t`} /></h3>
+                <p><T k={`impact${n}-d`} /></p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section id="solution" className="section section-alt">
         <div className="container">
+          <p className="eyebrow"><T k="nav-approach" /></p>
           <h2><T k="solution-title" /></h2>
           <p className="section-lead"><T k="solution-lead" /></p>
 
@@ -137,10 +135,11 @@ export function HomePage() {
                   <p className="sol-fn"><T k={`${c.k}-fn`} /></p>
                 </div>
                 <ul className="sol-list" dangerouslySetInnerHTML={{ __html: t(`${c.k}-list`) }} />
-                <div className="sol-foot"><T k={`${c.k}-foot`} /></div>
               </article>
             ))}
           </div>
+
+          <p className="sol-trust"><T k="sol-trust" /></p>
 
           <div className="sol-foundation">
             <div className="sol-found-ico" aria-hidden="true">🛡️</div>
@@ -148,23 +147,6 @@ export function HomePage() {
               <div className="sol-found-t"><T k="sol-found-title" /></div>
               <div className="sol-found-s"><T k="sol-found-sub" /></div>
             </div>
-          </div>
-
-          <div className="sol-standards">
-            <p className="sol-std-eyebrow"><T k="sol-std-eyebrow" /></p>
-            <div className="sol-std-grid">
-              {(['1', '2', '3', '4'] as const).map((n) => (
-                <div className="sol-std" key={n}>
-                  <strong><T k={`std${n}-t`} /></strong>
-                  <span><T k={`std${n}-s`} /></span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="sol-callout">
-            <strong><T k="sol-callout-t" /></strong>
-            <p><T k="sol-callout-p" /></p>
           </div>
         </div>
       </section>
@@ -174,33 +156,19 @@ export function HomePage() {
           <p className="eyebrow eyebrow-onDark"><T k="nav-investment" /></p>
           <h2><T k="investment-title" /></h2>
           <p className="section-lead"><T k="investment-lead" /></p>
-          <div className="phase-track">
-            {([
-              { n: 1, w: '12%' },
-              { n: 2, w: '40%' },
-              { n: 3, w: '55%' },
-              { n: 4, w: '100%' },
-            ] as const).map(({ n, w }) => (
-              <div className="phase-row" key={n}>
-                <div className="phase-meta">
+          <ol className="path">
+            {(['1', '2', '3', '4'] as const).map((n) => (
+              <li className="path-step" key={n}>
+                <span className="path-num" aria-hidden="true">0{n}</span>
+                <div className="path-body">
                   <strong><T k={`phase${n}-tag`} /></strong>
-                  <span><T k={`phase${n}-when`} /></span>
+                  <span className="path-when"><T k={`phase${n}-when`} /></span>
+                  <p><T k={`phase${n}-desc`} /></p>
                 </div>
-                <div className="phase-viz">
-                  <div className="phase-bar-track">
-                    <div className="phase-bar" style={{ width: w }}>
-                      <span className="phase-amt"><T k={`phase${n}-amt`} /></span>
-                    </div>
-                  </div>
-                  <p className="phase-desc"><T k={`phase${n}-desc`} /></p>
-                </div>
-              </div>
+              </li>
             ))}
-          </div>
-          <div className="invest-total">
-            <span><T k="invest-total-label" /></span>
-            <strong><T k="invest-total-value" /></strong>
-          </div>
+          </ol>
+          <p className="invest-note"><T k="approach-confidential" /></p>
         </div>
       </section>
 
