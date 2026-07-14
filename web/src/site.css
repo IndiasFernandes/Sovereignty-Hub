@@ -1070,6 +1070,57 @@ img {
   font-size: 0.95rem;
 }
 
+/* Who it's for — audience pathways */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+.who-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.who-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+.who-card strong {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+.who-card > span {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.who-arrow {
+  margin-top: var(--space-lg);
+  font-size: 0.8125rem !important;
+  font-weight: 600;
+  color: var(--color-primary) !important;
+  transition: gap var(--transition);
+}
+.who-card:hover .who-arrow {
+  color: var(--color-primary-dark) !important;
+}
+@media (max-width: 860px) {
+  .who-grid { grid-template-columns: 1fr; }
+}
+
 /* The System — trust line */
 .sol-trust {
   text-align: center;

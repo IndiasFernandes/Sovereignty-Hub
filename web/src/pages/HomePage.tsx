@@ -50,6 +50,27 @@ export function HomePage() {
         </div>
       </section>
 
+      <section id="who" className="section who">
+        <div className="container">
+          <p className="eyebrow"><T k="who-eyebrow" /></p>
+          <h2><T k="who-title" /></h2>
+          <p className="section-lead"><T k="who-lead" /></p>
+          <div className="who-grid">
+            {([
+              { to: '/policymakers', t: 'who-pm-t', d: 'who-pm-d' },
+              { to: '/partners', t: 'who-pa-t', d: 'who-pa-d' },
+              { to: '/donors', t: 'who-do-t', d: 'who-do-d' },
+            ] as const).map((w) => (
+              <Link className="who-card" to={w.to} key={w.to}>
+                <strong><T k={w.t} /></strong>
+                <span><T k={w.d} /></span>
+                <span className="who-arrow"><T k="who-cta" /> →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="what-is" className="section section-alt whatis">
         <div className="container whatis-grid">
           <div className="whatis-head">

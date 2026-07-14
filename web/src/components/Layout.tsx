@@ -52,10 +52,11 @@ export function Header({ current }: HeaderProps) {
         </button>
         <nav className="nav" id="main-nav" aria-label="Main navigation">
           <ul onClick={() => setMenuOpen(false)}>
-            <li><a href="/#what-is">{t('nav-overview')}</a></li>
-            <li><a href="/#impact">{t('nav-impact')}</a></li>
-            <li><a href="/#solution">{t('nav-approach')}</a></li>
+            <li><Link to="/policymakers">{t('nav-policymakers')}</Link></li>
+            <li><Link to="/partners">{t('nav-partners')}</Link></li>
+            <li><Link to="/donors">{t('nav-donors')}</Link></li>
             <li><Link to="/team">{t('nav-team')}</Link></li>
+            <li><Link to="/contact">{t('nav-contact')}</Link></li>
           </ul>
           <Link
             to="/consultation#consultation-form"
@@ -125,11 +126,11 @@ export function Footer() {
 
         <nav className="footer-col" aria-label="Explore">
           <span className="footer-col-h">{t('footer-explore')}</span>
-          <a href="/#what-is">{t('nav-overview')}</a>
-          <a href="/#impact">{t('nav-impact')}</a>
-          <a href="/#solution">{t('nav-approach')}</a>
+          <Link to="/policymakers">{t('nav-policymakers')}</Link>
+          <Link to="/partners">{t('nav-partners')}</Link>
+          <Link to="/donors">{t('nav-donors')}</Link>
           <Link to="/team">{t('nav-team')}</Link>
-          <Link to="/consultation#consultation-form">{t('nav-consultation')}</Link>
+          <Link to="/contact">{t('nav-contact')}</Link>
         </nav>
 
         <nav className="footer-col" aria-label="Legal">

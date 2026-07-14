@@ -7,9 +7,8 @@ import { ConsultationPage } from './pages/ConsultationPage';
 import { AdminLoginPage } from './pages/admin/AdminLoginPage';
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage';
 import { AdminResponseDetailPage } from './pages/admin/AdminResponseDetailPage';
-import { PartnersFoundationsPage } from './pages/partners/PartnersFoundationsPage';
-import { PartnersTechPage } from './pages/partners/PartnersTechPage';
-import { PartnersTargetsPage } from './pages/partners/PartnersTargetsPage';
+import { AudiencePage } from './pages/AudiencePage';
+import { ContactPage } from './pages/ContactPage';
 import { DesignSystemPage } from './pages/DesignSystemPage';
 import { LegalPage } from './pages/LegalPage';
 
@@ -25,10 +24,11 @@ export default function App() {
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminDashboardPage />} />
           <Route path="/admin/responses/:id" element={<AdminResponseDetailPage />} />
-          {/* Hidden funder-outreach pages — unlinked + noindex */}
-          <Route path="/partners/foundations" element={<PartnersFoundationsPage />} />
-          <Route path="/partners/tech" element={<PartnersTechPage />} />
-          <Route path="/partners/targets" element={<PartnersTargetsPage />} />
+          {/* Audience pages */}
+          <Route path="/policymakers" element={<AudiencePage audience="policymakers" />} />
+          <Route path="/partners" element={<AudiencePage audience="partners" />} />
+          <Route path="/donors" element={<AudiencePage audience="donors" />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* Internal design-system reference (noindex) */}
           <Route path="/design" element={<DesignSystemPage />} />
           {/* Legal */}
