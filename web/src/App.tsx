@@ -11,6 +11,7 @@ import { PartnersFoundationsPage } from './pages/partners/PartnersFoundationsPag
 import { PartnersTechPage } from './pages/partners/PartnersTechPage';
 import { PartnersTargetsPage } from './pages/partners/PartnersTargetsPage';
 import { DesignSystemPage } from './pages/DesignSystemPage';
+import { LegalPage } from './pages/LegalPage';
 
 export default function App() {
   return (
@@ -30,6 +31,10 @@ export default function App() {
           <Route path="/partners/targets" element={<PartnersTargetsPage />} />
           {/* Internal design-system reference (noindex) */}
           <Route path="/design" element={<DesignSystemPage />} />
+          {/* Legal */}
+          <Route path="/privacy" element={<LegalPage doc="privacy" />} />
+          <Route path="/terms" element={<LegalPage doc="terms" />} />
+          <Route path="/disclaimer" element={<LegalPage doc="disclaimer" />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>

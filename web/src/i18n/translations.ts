@@ -194,6 +194,14 @@ export const translations = {
     'footer-brand': 'EECA Lung Health Sovereignty Hub',
     'footer-tagline': 'Political will, delivered as care — across Eastern Europe & Central Asia.',
     'footer-partner': 'Foundational partner',
+    'nav-impact': 'Impact',
+    'footer-explore': 'Explore',
+    'footer-legal': 'Legal',
+    'footer-privacy': 'Privacy Policy',
+    'footer-terms': 'Terms of Use',
+    'footer-disclaimer': 'Disclaimer',
+    'footer-disclaimer-text': 'This site is informational only. It is not an offer, solicitation, or recommendation of any investment or security, nor medical advice. Figures and plans are indicative and shared with partners in confidence.',
+    'footer-rights': '© 2026 EECA Lung Health Sovereignty Hub. All rights reserved.',
 
     // Team page
     'team-title': 'Core Team',
@@ -413,6 +421,14 @@ export const translations = {
     'footer-brand': 'EECA Хаб суверенитета в области здоровья лёгких',
     'footer-tagline': 'Политическая воля, воплощённая в помощь — по всей Восточной Европе и Центральной Азии.',
     'footer-partner': 'Основной партнёр',
+    'nav-impact': 'Влияние',
+    'footer-explore': 'Разделы',
+    'footer-legal': 'Правовое',
+    'footer-privacy': 'Политика конфиденциальности',
+    'footer-terms': 'Условия использования',
+    'footer-disclaimer': 'Оговорка',
+    'footer-disclaimer-text': 'Сайт носит исключительно информационный характер. Он не является предложением, приглашением или рекомендацией какой-либо инвестиции или ценной бумаги, а также медицинской консультацией. Цифры и планы являются ориентировочными и предоставляются партнёрам конфиденциально.',
+    'footer-rights': '© 2026 EECA Хаб суверенитета в области здоровья лёгких. Все права защищены.',
 
     // Team page
     'team-title': 'Основная команда',

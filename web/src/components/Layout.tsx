@@ -53,9 +53,8 @@ export function Header({ current }: HeaderProps) {
         <nav className="nav" id="main-nav" aria-label="Main navigation">
           <ul onClick={() => setMenuOpen(false)}>
             <li><a href="/#what-is">{t('nav-overview')}</a></li>
-            <li><a href="/#urgency">{t('nav-why-now')}</a></li>
+            <li><a href="/#impact">{t('nav-impact')}</a></li>
             <li><a href="/#solution">{t('nav-approach')}</a></li>
-            <li><a href="/#investment">{t('nav-investment')}</a></li>
             <li><Link to="/team">{t('nav-team')}</Link></li>
           </ul>
           <Link
@@ -105,21 +104,45 @@ export function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <strong>{t('footer-brand')}</strong>
+          <Link to="/" className="footer-logo">
+            <span className="logo-icon">EECA</span>
+            <strong>{t('footer-brand')}</strong>
+          </Link>
           <p>{t('footer-tagline')}</p>
+          <div className="footer-partners" aria-label="Foundational partner">
+            <span className="footer-partners-label">{t('footer-partner')}</span>
+            <a
+              href="https://www.globaltbcaucus.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="partner-logo"
+              aria-label="Global TB Caucus — opens in new tab"
+            >
+              <img src="/assets/images/logos/01_GTBC_logotype_main_CMJN.jpg" alt="Global TB Caucus" />
+            </a>
+          </div>
         </div>
-        <div className="footer-partners" aria-label="Foundational partners">
-          <span className="footer-partners-label">{t('footer-partner')}</span>
-          <a
-            href="https://www.globaltbcaucus.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="partner-logo"
-            aria-label="Global TB Caucus — opens in new tab"
-          >
-            <img src="/assets/images/logos/01_GTBC_logotype_main_CMJN.jpg" alt="" />
-          </a>
-        </div>
+
+        <nav className="footer-col" aria-label="Explore">
+          <span className="footer-col-h">{t('footer-explore')}</span>
+          <a href="/#what-is">{t('nav-overview')}</a>
+          <a href="/#impact">{t('nav-impact')}</a>
+          <a href="/#solution">{t('nav-approach')}</a>
+          <Link to="/team">{t('nav-team')}</Link>
+          <Link to="/consultation#consultation-form">{t('nav-consultation')}</Link>
+        </nav>
+
+        <nav className="footer-col" aria-label="Legal">
+          <span className="footer-col-h">{t('footer-legal')}</span>
+          <Link to="/privacy">{t('footer-privacy')}</Link>
+          <Link to="/terms">{t('footer-terms')}</Link>
+          <Link to="/disclaimer">{t('footer-disclaimer')}</Link>
+        </nav>
+      </div>
+
+      <div className="footer-legal-bar">
+        <p className="footer-disclaimer">{t('footer-disclaimer-text')}</p>
+        <p className="footer-rights">{t('footer-rights')}</p>
       </div>
     </footer>
   );
