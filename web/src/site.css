@@ -15,11 +15,12 @@
   --teal-950: #062523;
 
   /* ── Accent: calm amber (action only — never a warning) — v2 ── */
-  --color-accent: #c2872a;
-  --color-accent-light: #ddab55;
-  --color-accent-dark: #8f6119;
-  --amber-50: #fbf6ea;
-  --amber-100: #f1e4c2;
+  /* Action accent — warm coral (replaces amber/yellow; used only for CTAs) */
+  --color-accent: #d65a41;
+  --color-accent-light: #e8785d;
+  --color-accent-dark: #a8402c;
+  --amber-50: #fbeeea;
+  --amber-100: #f2d3c9;
 
   /* ── Neutral slate scale (cool, professional) ── */
   --neutral-25: #fafbfb;
@@ -242,8 +243,8 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 0.55rem var(--space-lg);
-  background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent));
-  color: #241905 !important;
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
+  color: #fff !important;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.875rem;
@@ -255,8 +256,8 @@ img {
 }
 
 .nav-consultation-cta:hover {
-  background: var(--color-accent-light);
-  color: #241905 !important;
+  background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent));
+  color: #fff !important;
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
 }
@@ -698,14 +699,14 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent));
-  color: #241905;
-  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
+  color: #fff;
+  box-shadow: var(--shadow-sm);
 }
 .btn-primary:hover {
-  background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent-light));
+  background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent));
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-md);
 }
 .btn-primary:active {
   transform: translateY(0);
@@ -1394,7 +1395,7 @@ section[id],
   -webkit-backdrop-filter: blur(16px) saturate(135%);
   border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 .crisis-card:hover,
@@ -1405,7 +1406,7 @@ section[id],
 .sol-card:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.95);
-  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-lg);
 }
 
 .crisis-card {
@@ -1423,7 +1424,7 @@ section[id],
   background: radial-gradient(120% 120% at 30% 20%, var(--teal-100), var(--teal-50));
   border: 1px solid var(--teal-200);
   color: var(--color-primary);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), var(--shadow-xs);
+  box-shadow: var(--shadow-xs);
 }
 .card-badge svg {
   width: 1.6rem;
@@ -2796,7 +2797,7 @@ section[id],
   background: radial-gradient(120% 120% at 30% 20%, var(--teal-100), var(--teal-50));
   border: 1px solid var(--teal-200);
   margin-bottom: var(--space-md);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), var(--shadow-xs);
+  box-shadow: var(--shadow-xs);
 }
 .sol-badge svg {
   width: 1.6rem;
