@@ -122,7 +122,7 @@
 .consult-privacy {
   padding: var(--space-md) var(--space-lg);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   background: rgba(0, 0, 0, 0.12);
   font-family: var(--font-sans);
   font-size: 0.8125rem;
@@ -199,13 +199,13 @@
 /* STEP CARD */
 .step {
   background: var(--color-surface);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   padding: var(--space-2xl) var(--space-xl);
   display: none;
   animation: fadeUp 0.32s ease;
   font-family: var(--font-sans);
-  box-shadow: 0 1px 3px rgba(26, 44, 52, 0.06);
+  box-shadow: var(--shadow-md);
 }
 
 .step.active {
@@ -305,7 +305,7 @@
   width: 100%;
   padding: 0.75rem 0.875rem;
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   font-family: var(--font-sans);
   font-size: 1rem;
   color: var(--color-text);
@@ -329,7 +329,7 @@
 .f-textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(13, 92, 92, 0.12);
+  box-shadow: 0 0 0 3px rgba(12, 91, 87, 0.12);
 }
 
 .f-input::placeholder,
@@ -368,7 +368,7 @@
   gap: 0.8125rem;
   padding: 0.875rem 1.125rem;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: border-color 0.18s, background 0.18s;
   background: var(--color-surface);
@@ -390,7 +390,7 @@
 .c-card.sel,
 .s-card.sel {
   border-color: var(--color-primary);
-  background: rgba(13, 92, 92, 0.06);
+  background: rgba(12, 91, 87, 0.06);
 }
 
 .r-card input,
@@ -483,7 +483,7 @@
   gap: 0.8125rem;
   padding: 1rem 1.125rem;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.22s;
   background: var(--color-surface);
@@ -498,7 +498,7 @@
 
 .rank-item[data-rank='1'] {
   border-color: var(--color-primary);
-  background: rgba(13, 92, 92, 0.06);
+  background: rgba(12, 91, 87, 0.06);
 }
 
 .rank-item[data-rank='2'] {
@@ -555,7 +555,7 @@
   padding: var(--space-md) var(--space-lg);
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   margin-top: var(--space-md);
   display: none;
 }
@@ -632,7 +632,7 @@
 /* THANK YOU */
 .ty-wrap {
   background: var(--color-surface);
-  border-radius: 8px;
+  border-radius: var(--radius);
   border: 1px solid var(--color-border);
   padding: var(--space-3xl) var(--space-xl);
   text-align: center;
@@ -643,7 +643,7 @@
 .ty-icon {
   width: 3.75rem;
   height: 3.75rem;
-  background: rgba(13, 92, 92, 0.1);
+  background: rgba(12, 91, 87, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -672,7 +672,7 @@
 .ty-box {
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   padding: var(--space-lg) var(--space-xl);
   font-family: var(--font-sans);
   font-size: 0.875rem;
