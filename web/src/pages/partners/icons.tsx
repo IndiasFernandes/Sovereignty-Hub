@@ -18,25 +18,25 @@ export const IcLink = (p: P) => (<svg viewBox="0 0 24 24" {...p}><path {...s} d=
 export const ArtFoundations = () => (
   <svg viewBox="0 0 360 320" role="img" aria-label="National legacy and regional network">
     <defs>
-      <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#e7c570" /><stop offset="1" stopColor="#bd8a2c" /></linearGradient>
+      <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5fd4ce" /><stop offset="1" stopColor="#178f88" /></linearGradient>
     </defs>
     {/* connecting network */}
-    <g stroke="#e7c570" strokeOpacity=".55" strokeWidth="1.3">
+    <g stroke="#5fd4ce" strokeOpacity=".55" strokeWidth="1.3">
       <path d="M70 70 180 120 300 80M70 70 120 220M300 80 250 230M180 120 120 220M180 120 250 230" fill="none" />
     </g>
-    <g fill="#e7c570">
+    <g fill="#5fd4ce">
       <circle cx="70" cy="70" r="6" /><circle cx="300" cy="80" r="6" /><circle cx="120" cy="220" r="6" /><circle cx="250" cy="230" r="6" />
     </g>
     {/* dome / institution */}
     <g transform="translate(120,96)">
       <path d="M60 8C30 8 8 30 8 56h104C112 30 90 8 60 8Z" fill="url(#fg)" />
-      <rect x="6" y="56" width="108" height="8" rx="3" fill="#e7c570" />
-      <g fill="#cfa64a">
+      <rect x="6" y="56" width="108" height="8" rx="3" fill="#5fd4ce" />
+      <g fill="#2fa39b">
         <rect x="16" y="66" width="10" height="70" /><rect x="40" y="66" width="10" height="70" />
         <rect x="64" y="66" width="10" height="70" /><rect x="88" y="66" width="10" height="70" />
       </g>
-      <rect x="2" y="136" width="116" height="10" rx="3" fill="#e7c570" />
-      <circle cx="60" cy="34" r="9" fill="#241905" />
+      <rect x="2" y="136" width="116" height="10" rx="3" fill="#5fd4ce" />
+      <circle cx="60" cy="34" r="9" fill="#0a3d3a" />
     </g>
   </svg>
 );

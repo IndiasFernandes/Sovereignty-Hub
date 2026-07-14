@@ -20,7 +20,8 @@
 .pp *{box-sizing:border-box}
 .pp-wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
 .pp a{color:var(--accent)}
-.pp .eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;font-weight:800}
+.pp .eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:.72rem;font-weight:700}
+.pp h1,.pp h2,.pp h3,.pp h4{font-family:var(--font-display);letter-spacing:-.01em}
 
 /* entrance motion */
 @keyframes ppUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
@@ -67,8 +68,8 @@
 
 /* ---------- SECTIONS ---------- */
 .pp-sec{padding:68px 0}
-.pp-sec.alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.pp-sec.tinted{background:var(--tint)}
+.pp-sec.alt{background:radial-gradient(80% 70% at 100% 0%, var(--teal-50), transparent 55%),linear-gradient(180deg,#eef4f2,#f6faf8);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pp-sec.tinted{background:radial-gradient(70% 60% at 92% -5%, var(--teal-50), transparent 55%),linear-gradient(180deg,#f1f6f4,#fafbfa)}
 .pp-head{max-width:720px;margin-bottom:34px}
 .pp-head .eyebrow{color:var(--accent)}
 .pp-head h2{font-family:var(--serif);font-size:1.85rem;margin:.25em 0 .2em;font-weight:760;letter-spacing:-.01em}
@@ -85,13 +86,14 @@
 /* benefit cards */
 .pp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .pp-grid.two{grid-template-columns:repeat(2,1fr)}
-.pp-card{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
-  padding:26px;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease}
-.pp-sec.alt .pp-card,.pp-sec.tinted .pp-card{background:var(--white)}
-.pp-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -16px rgba(16,34,44,.28)}
-.pp-ico{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;margin-bottom:16px;
-  background:var(--tint);color:var(--accent)}
-.pp-ico svg{width:26px;height:26px}
+.pp-card{position:relative;background:linear-gradient(160deg,rgba(255,255,255,.72),rgba(255,255,255,.46));
+  backdrop-filter:blur(16px) saturate(135%);-webkit-backdrop-filter:blur(16px) saturate(135%);
+  border:1px solid rgba(255,255,255,.75);border-radius:var(--radius);
+  padding:26px;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.pp-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.95);box-shadow:var(--shadow-lg)}
+.pp-ico{width:3.5rem;height:3.5rem;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;
+  background:var(--teal-50);border:1px solid var(--teal-100);color:var(--color-primary)}
+.pp-ico svg{width:1.6rem;height:1.6rem}
 .pp-card h3{font-size:1.12rem;margin:0 0 .3em}
 .pp-card p{color:var(--soft);font-size:.95rem;margin:0}
 .pp-num{font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--accent)}
@@ -125,7 +127,7 @@
 /* benefit list (rows) */
 .pp-benefit{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
 .pp-benefit:last-child{border-bottom:0}
-.pp-benefit .bi{flex:0 0 auto;width:42px;height:42px;border-radius:11px;background:var(--tint);color:var(--accent);
+.pp-benefit .bi{flex:0 0 auto;width:3rem;height:3rem;border-radius:50%;background:var(--teal-50);border:1px solid var(--teal-100);color:var(--color-primary);
   display:grid;place-items:center}
 .pp-benefit .bi svg{width:22px;height:22px}
 .pp-benefit b{display:block;font-size:1rem}
