@@ -9,6 +9,103 @@
 .aud-hero .page-hero-lead {
   margin-bottom: 0;
 }
+.aud-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: var(--space-xl) 0 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+.aud-proof svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--teal-bright);
+}
+
+/* Story — stakes + pull-stat */
+.aud-story-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.aud-story-grid .section-lead {
+  margin-bottom: 0;
+}
+.aud-pull {
+  border-left: 2px solid var(--color-primary);
+  padding-left: var(--space-lg);
+}
+.aud-pull strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-primary-dark);
+}
+.aud-pull span {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  max-width: 16rem;
+}
+
+/* Why it matters — dark glass */
+.aud-why {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(64% 55% at 92% 0%, rgba(21, 128, 122, 0.3), transparent 55%),
+    linear-gradient(180deg, var(--ink-800) 0%, var(--ink-900) 100%);
+  border-block: 1px solid rgba(255, 255, 255, 0.06);
+}
+.aud-why h2 {
+  color: #fff;
+}
+.aud-why .impact-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: var(--shadow-lg);
+}
+.aud-why .impact-card::before {
+  background: linear-gradient(var(--teal-bright), var(--color-primary-light));
+}
+.aud-why .impact-card h3 { color: #fff; }
+.aud-why .impact-card p { color: rgba(255, 255, 255, 0.68); }
+.aud-why .impact-idx { color: var(--teal-bright); }
+
+/* Proof band in CTA */
+.aud-proofbar {
+  list-style: none;
+  margin: 0 0 var(--space-2xl);
+  padding: 0 0 var(--space-xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+.aud-proofbar strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #fff;
+}
+.aud-proofbar span {
+  display: block;
+  margin-top: var(--space-xs);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 620px) {
+  .aud-story-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .aud-proofbar { grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+}
 
 /* What you get */
 .aud-get {
