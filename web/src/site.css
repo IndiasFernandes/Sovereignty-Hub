@@ -1133,6 +1133,146 @@ img {
   max-width: 36rem;
 }
 
+/* ── Signature piece: the Execution Loop (decision → delivered care) ── */
+.loop {
+  max-width: 64rem;
+  margin: var(--space-2xl) auto 0;
+}
+.loop-flow {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+/* the connecting line, behind the markers */
+.loop-flow::before {
+  content: '';
+  position: absolute;
+  top: 1.75rem;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary-light), var(--teal-600), var(--color-primary-light));
+  opacity: 0.45;
+  z-index: 0;
+}
+.loop-node,
+.loop-end {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 0;
+  min-width: 0;
+}
+.loop-badge {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-full);
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+  background: radial-gradient(120% 120% at 30% 20%, var(--teal-100), var(--teal-50));
+  border: 1px solid var(--teal-200);
+  box-shadow: 0 0 0 6px var(--color-bg-alt);
+}
+.loop-badge svg { width: 1.55rem; height: 1.55rem; }
+.loop-node strong {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: var(--space-md);
+}
+.loop-role {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+.loop-end .loop-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin-top: 1.25rem;
+  background: var(--color-primary-dark);
+  box-shadow: 0 0 0 6px var(--color-bg-alt);
+}
+.loop-end-out .loop-dot {
+  background: var(--color-accent);
+}
+.loop-end-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: var(--space-md);
+  max-width: 6rem;
+}
+.loop-pulse {
+  position: absolute;
+  top: calc(1.75rem - 5px);
+  left: 6%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--teal-bright);
+  box-shadow: 0 0 14px 2px var(--teal-bright);
+  z-index: 2;
+  animation: loopPulse 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes loopPulse {
+  0% { left: 6%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 94%; opacity: 0; }
+}
+.loop-foundation {
+  margin-top: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(120% 200% at 0% 0%, rgba(21, 128, 122, 0.35), transparent 60%),
+    var(--ink-900);
+  text-align: center;
+}
+.loop-foundation span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.82);
+}
+.loop-caption {
+  text-align: center;
+  margin: var(--space-md) 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 720px) {
+  .loop-flow {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+  .loop-flow::before {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--color-primary-light), var(--color-primary-light));
+  }
+  .loop-pulse { display: none; }
+  .loop-badge { box-shadow: 0 0 0 6px var(--color-surface); }
+  .loop-end .loop-dot { margin-top: 0; box-shadow: 0 0 0 6px var(--color-surface); }
+  .loop-end-label { margin-top: var(--space-xs); }
+}
+
 /* ── The Approach — phased path (on dark) ── */
 .path {
   list-style: none;

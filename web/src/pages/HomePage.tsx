@@ -142,33 +142,36 @@ export function HomePage() {
           <h2><T k="solution-title" /></h2>
           <p className="section-lead"><T k="solution-lead" /></p>
 
-          <div className="sol-grid">
-            {([
-              { k: 'eng', icon: SOL_ICONS.eng },
-              { k: 'bri', icon: SOL_ICONS.bri },
-              { k: 'shi', icon: SOL_ICONS.shi },
-            ] as const).map((c) => (
-              <article className={`sol-card sol-${c.k}`} key={c.k}>
-                <div className="sol-head">
-                  <div className="sol-badge" aria-hidden="true">{c.icon}</div>
-                  <div className="sol-role"><T k={`${c.k}-role`} /></div>
-                  <h3><T k={`${c.k}-name`} /></h3>
-                  <p className="sol-fn"><T k={`${c.k}-fn`} /></p>
+          <div className="loop" role="img" aria-label="Decision to delivered care flows through the Engine, Bridge and Shield over a shared governed data layer.">
+            <div className="loop-flow">
+              <div className="loop-end">
+                <span className="loop-dot" aria-hidden="true" />
+                <span className="loop-end-label"><T k="loop-decision" /></span>
+              </div>
+              {([
+                { k: 'eng', icon: SOL_ICONS.eng },
+                { k: 'bri', icon: SOL_ICONS.bri },
+                { k: 'shi', icon: SOL_ICONS.shi },
+              ] as const).map((c) => (
+                <div className="loop-node" key={c.k}>
+                  <span className="loop-badge" aria-hidden="true">{c.icon}</span>
+                  <strong><T k={`loop-${c.k}`} /></strong>
+                  <span className="loop-role"><T k={`${c.k}-role`} /></span>
                 </div>
-                <ul className="sol-list" dangerouslySetInnerHTML={{ __html: t(`${c.k}-list`) }} />
-              </article>
-            ))}
+              ))}
+              <div className="loop-end loop-end-out">
+                <span className="loop-dot" aria-hidden="true" />
+                <span className="loop-end-label"><T k="loop-delivery" /></span>
+              </div>
+              <span className="loop-pulse" aria-hidden="true" />
+            </div>
+            <div className="loop-foundation">{/* governed data layer bar */}
+              <span><T k="loop-foundation" /></span>
+            </div>
+            <p className="loop-caption"><T k="loop-caption" /></p>
           </div>
 
           <p className="sol-trust"><T k="sol-trust" /></p>
-
-          <div className="sol-foundation">
-            <div className="sol-found-ico" aria-hidden="true">🛡️</div>
-            <div>
-              <div className="sol-found-t"><T k="sol-found-title" /></div>
-              <div className="sol-found-s"><T k="sol-found-sub" /></div>
-            </div>
-          </div>
         </div>
       </section>
 
