@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/Layout';
+import { useI18n } from '../i18n/I18nProvider';
+import { tr } from '../i18n/formRu';
 import '../audience.css';
 
 const PATHS = [
@@ -10,37 +12,37 @@ const PATHS = [
 ];
 
 export function ContactPage() {
+  const { lang } = useI18n();
   useEffect(() => {
     const prev = document.title;
-    document.title = 'Contact • EECA Lung Health Sovereignty Hub';
+    document.title = `${tr('Contact', lang)} • EECA Lung Health Sovereignty Hub`;
     return () => { document.title = prev; };
-  }, []);
+  }, [lang]);
 
   return (
     <SiteLayout>
       <section className="page-hero aud-hero">
         <div className="page-hero-inner container">
-          <p className="page-hero-eyebrow">Contact</p>
-          <h1>Let's talk.</h1>
+          <p className="page-hero-eyebrow">{tr('Contact', lang)}</p>
+          <h1>{tr("Let's talk.", lang)}</h1>
           <p className="page-hero-lead">
-            The fastest way to reach us is the consultation form — it routes your message to the right
-            person on our team. Partner and funding discussions are handled in confidence.
+            {tr('The fastest way to reach us is the consultation form — it routes your message to the right person on our team. Partner and funding discussions are handled in confidence.', lang)}
           </p>
           <div className="aud-hero-cta">
-            <Link to="/consultation#consultation-form" className="btn btn-primary">Request a consultation</Link>
+            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr('Request a consultation', lang)}</Link>
           </div>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <p className="eyebrow">Who are you?</p>
-          <h2>Choose the path that fits.</h2>
+          <p className="eyebrow">{tr('Who are you?', lang)}</p>
+          <h2>{tr('Choose the path that fits.', lang)}</h2>
           <div className="contact-paths">
             {PATHS.map((p) => (
               <Link className="contact-path" to={p.to} key={p.to}>
-                <strong>{p.t}</strong>
-                <span>{p.d}</span>
+                <strong>{tr(p.t, lang)}</strong>
+                <span>{tr(p.d, lang)}</span>
                 <span className="contact-path-arrow" aria-hidden="true">→</span>
               </Link>
             ))}

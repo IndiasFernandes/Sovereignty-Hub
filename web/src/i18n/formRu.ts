@@ -510,6 +510,162 @@ const M: Record<string, string> = {
   'Emergency legal measure templates for cross-border health crises': 'Шаблоны экстренных правовых мер для трансграничных кризисов здоровья',
   'Civil society feedback integration with legislative drafting': 'Интеграция обратной связи гражданского общества в разработку законов',
   'Real-time medicine supply disruption monitoring': 'Мониторинг сбоев в поставках лекарств в реальном времени',
+
+  // ── Audience pages (AudiencePage.tsx) ─────────────────────────────────
+  'For policymakers': 'Для политиков',
+  'For partners': 'Для партнёров',
+  'For donors': 'Для доноров',
+  'Act with certainty. See it delivered.': 'Действуйте с уверенностью. Увидьте результат.',
+  'A governed platform to build on.': 'Управляемая платформа для развития.',
+  'Fund proof, not promises.': 'Финансируйте доказанное, а не обещания.',
+  'Move from commitment to enacted, financed policy in weeks — with governed, human-reviewed tools and the backing of a proven regional parliamentary network.':
+    'От намерения до принятой и профинансированной политики — за недели, с управляемыми, проверяемыми людьми инструментами и поддержкой проверенной региональной парламентской сети.',
+  'Bring your technology, diagnostics, or capital into a proven, standards-based regional health system — with a clearly defined role and measurable impact.':
+    'Внедрите свои технологии, диагностику или капитал в проверенную, стандартизированную региональную систему здравоохранения — с чётко определённой ролью и измеримым результатом.',
+  'Back a de-risked, phased model that delivers a working result in one country before scaling to nine — with transparent governance and measurable outcomes.':
+    'Поддержите поэтапную модель со сниженным риском, которая даёт работающий результат в одной стране, прежде чем масштабироваться на девять — с прозрачным управлением и измеримыми результатами.',
+  'Request a consultation': 'Запросить консультацию',
+  'Explore a partnership': 'Обсудить партнёрство',
+  'Request the concept note': 'Запросить концепт-ноту',
+  'Backed by nine national caucuses — active since 2014.': 'Поддержано девятью национальными парламентскими группами — действуют с 2014 года.',
+  'Standards-based, human-reviewed, sovereign by design.': 'Стандартизировано, проверяется людьми, суверенно по своей архитектуре.',
+  'Each phase proven before the next is funded.': 'Каждый этап доказан прежде, чем финансируется следующий.',
+
+  'What you get': 'Что вы получаете',
+  'What partnership includes': 'Что включает партнёрство',
+  'What your funding delivers': 'Что даёт ваше финансирование',
+  'A secure, invitation-only MP portal to draft and share laws and amendments':
+    'Защищённый портал для депутатов (только по приглашению) для разработки и обмена законами и поправками',
+  'AI-assisted drafting & comparative-law intelligence (human-reviewed)':
+    'Разработка при помощи ИИ и сравнительно-правовая аналитика (с проверкой человеком)',
+  'Decision briefs and budget-impact notes, ready for committee':
+    'Аналитические записки и оценки бюджетного эффекта, готовые для комитета',
+  'A peer network of nine national caucuses and former-MP advisors':
+    'Сеть из девяти национальных парламентских групп и советников — бывших депутатов',
+  'Defined integration points across the Engine, Bridge and Shield':
+    'Чётко определённые точки интеграции в Engine, Bridge и Shield',
+  'Co-financing and partnership frameworks': 'Механизмы совместного финансирования и партнёрства',
+  'A live pilot pathway from proof to regional scale': 'Живой пилотный путь от доказательства к региональному масштабу',
+  'Association with a trusted parliamentary network': 'Ассоциация с надёжной парламентской сетью',
+  'A live, working solution in a first country — the proof unit':
+    'Работающее решение в первой стране — единица доказательства',
+  'Transparent governance, reporting and independent oversight':
+    'Прозрачное управление, отчётность и независимый надзор',
+  'A replicable, scalable model for regional health sovereignty':
+    'Тиражируемая, масштабируемая модель регионального суверенитета здравоохранения',
+  'Full budget and terms, shared with you in confidence': 'Полный бюджет и условия — предоставляются вам конфиденциально',
+  'Built around what you need.': 'Создано вокруг ваших потребностей.',
+
+  'Turn your decision into delivered care.': 'Превратите своё решение в оказанную помощь.',
+  'Start a confidential conversation about your country.': 'Начните конфиденциальный разговор о вашей стране.',
+  'Build with a proven regional platform.': 'Стройте на основе проверенной региональной платформы.',
+  "Let's discuss where your organisation fits.": 'Обсудим, где найдётся место вашей организации.',
+  'Invest in a working model of health sovereignty.': 'Инвестируйте в работающую модель суверенитета здравоохранения.',
+  'See the results before scale — request the concept note.': 'Увидьте результаты до масштабирования — запросите концепт-ноту.',
+  'Back to overview': 'Назад к обзору',
+
+  'patients in scope': 'пациентов в фокусе',
+  'national caucuses': 'национальных парламентских групп',
+  'priority countries': 'приоритетных стран',
+  'network active since': 'сеть действует с',
+
+  // Policymakers body
+  'Draft': 'Разработка',
+  'Coordinate': 'Согласование',
+  'Enact': 'Принятие',
+  'Deliver': 'Реализация',
+  'AI-assisted, human-reviewed drafting in a secure MP portal.': 'Разработка с ИИ и проверкой человеком в защищённом портале депутата.',
+  'Evidence, comparative law and stakeholders aligned.': 'Согласованы доказательная база, сравнительное право и заинтересованные стороны.',
+  'Tabled, debated and passed — tracked in the app.': 'Внесено, обсуждено и принято — с отслеживанием в приложении.',
+  'Turned into financed, operational care.': 'Превращено в финансируемую, работающую помощь.',
+  'Certainty': 'Уверенность',
+  'Sovereignty': 'Суверенитет',
+  'Low risk': 'Низкий риск',
+  'Draft, compare and table legislation faster — AI assistance that is transparent and human-reviewed at every step.':
+    'Разрабатывайте, сравнивайте и вносите законопроекты быстрее — ИИ-помощь, прозрачная и проверяемая человеком на каждом шаге.',
+  'Own your national health agenda as external funding recedes, on sovereign, in-region infrastructure.':
+    'Владейте своей национальной повесткой здравоохранения по мере сокращения внешнего финансирования — на суверенной, региональной инфраструктуре.',
+  'People decide, not machines. Full audit trail, no personal exposure, no unproven "AI breakthroughs".':
+    'Решают люди, а не машины. Полный аудиторский след, отсутствие персональных рисков, никаких недоказанных «прорывов ИИ».',
+  'The lag': 'Разрыв во времени',
+  'You have the will. The system has the lag.': 'У вас есть воля. У системы — разрыв во времени.',
+  'An average parliamentarian faces a deluge of legislation, and complex health policy stalls between commitment and action — for months, sometimes years. Donors withdraw, systems fragment, patients wait. The Hub closes that gap.':
+    'Средний парламентарий сталкивается с потоком законодательных инициатив, и сложная политика здравоохранения застревает между намерением и действием — на месяцы, а иногда и годы. Доноры уходят, системы фрагментируются, пациенты ждут. Хаб закрывает этот разрыв.',
+  'Conventional path': 'Обычный путь',
+  'Months–years': 'Месяцы–годы',
+  'With the Hub': 'С Хабом',
+  'Weeks': 'Недели',
+  'high-burden countries that raised domestic TB budgets had an active caucus':
+    'стран с высоким бременем ТБ, увеличивших внутреннее финансирование, имели действующую парламентскую группу',
+  'The execution loop': 'Цикл исполнения',
+  'From your decision to delivered care.': 'От вашего решения до оказанной помощи.',
+  'Why it matters to you': 'Почему это важно для вас',
+
+  // Partners body
+  'Technology, diagnostics or capital': 'Технологии, диагностика или капитал',
+  'Innovation, R&D and know-how': 'Инновации, НИОКР и ноу-хау',
+  'Distribution and supply-chain reach': 'Охват дистрибуции и цепочек поставок',
+  'Access to expanding regional health markets': 'Доступ к растущим региональным рынкам здравоохранения',
+  'ESG/SDG-aligned, reportable impact': 'Отчётное воздействие, соответствующее ESG/ЦУР',
+  'ISO 27001-grade security': 'Безопасность уровня ISO 27001',
+  'GDPR-equivalent protection': 'Защита данных на уровне GDPR',
+  'Human-in-the-loop review': 'Проверка с участием человека',
+  'Sovereign, in-region hosting': 'Суверенный региональный хостинг',
+  'Scope your role': 'Определите свою роль',
+  'Integrate': 'Интеграция',
+  'Scale': 'Масштабирование',
+  'Identify integration points across the Engine, Bridge and Shield.': 'Определите точки интеграции в Engine, Bridge и Shield.',
+  'Plug in under governed, standards-based frameworks with human oversight.':
+    'Подключайтесь в рамках управляемых, стандартизированных механизмов с человеческим надзором.',
+  'Move from a proven pilot to nine-country regional reach.': 'Перейдите от проверенного пилота к региональному охвату девяти стран.',
+  'The opportunity': 'Возможность',
+  'A region rebuilding its health systems — and it needs you.': 'Регион перестраивает свои системы здравоохранения — и ему нужны вы.',
+  'As external funding recedes, Eastern Europe & Central Asia is building self-reliant health infrastructure. Technology, diagnostics and capital with a governed home can lead here — this is shared value, not charity.':
+    'По мере сокращения внешнего финансирования Восточная Европа и Центральная Азия строит самодостаточную инфраструктуру здравоохранения. Технологии, диагностика и капитал с управляемым «домом» могут здесь лидировать — это общая ценность, а не благотворительность.',
+  'What you bring': 'Что вы приносите',
+  'What you gain': 'Что вы получаете',
+  'Governed by design': 'Управляемость заложена в архитектуре',
+  'Credibility, built in.': 'Доверие встроено изначально.',
+  'How you engage': 'Как вы участвуете',
+  'Three steps to a defined role.': 'Три шага к чётко определённой роли.',
+
+  // Donors body
+  'Foundation': 'Фундамент',
+  'Replication': 'Тиражирование',
+  'Regional platform': 'Региональная платформа',
+  'Scale & integration': 'Масштаб и интеграция',
+  'A working solution, live in one country — the proof unit.': 'Работающее решение, запущенное в одной стране — единица доказательства.',
+  'The proven playbook, stamped country by country.': 'Проверенный план действий, тиражируемый по странам.',
+  'The full application across the region.': 'Полноценное применение по всему региону.',
+  'Nine-country coverage, sustainability, hand-off.': 'Охват девяти стран, устойчивость, передача управления.',
+  'vulnerable patients protected': 'уязвимых пациентов под защитой',
+  'countries the model can reach': 'стран, которые может охватить модель',
+  'human-reviewed, governed decisions': 'решений, проверяемых людьми и управляемых',
+  'The moment': 'Момент',
+  'Proof matters more than promises.': 'Доказательства важнее обещаний.',
+  'Global donors are stepping back just as the need peaks — and funders now reward evidence, not pilots that never scale. The Hub delivers a working result in a single country first, so your capital backs a proven unit, then replicates it.':
+    'Глобальные доноры отступают именно тогда, когда потребность достигает пика — и финансирующие организации теперь вознаграждают доказательства, а не пилоты, которые никогда не масштабируются. Хаб сначала даёт работающий результат в одной стране, поэтому ваш капитал поддерживает проверенную единицу, а затем тиражирует её.',
+  'Needed 2026–28': 'Требуется на 2026–28',
+  'Pledged so far': 'Обещано на сегодня',
+  'The de-risked ladder': 'Лестница со сниженным риском',
+  'Each rung proven before the next is funded.': 'Каждая ступень доказана прежде, чем финансируется следующая.',
+  'A donor never funds a promise — only a repeat of something already working.':
+    'Донор никогда не финансирует обещание — только повторение того, что уже работает.',
+  'Measured impact': 'Измеренное воздействие',
+
+  // ── Contact page (ContactPage.tsx) ────────────────────────────────────
+  'Contact': 'Контакты',
+  "Let's talk.": 'Давайте поговорим.',
+  "The fastest way to reach us is the consultation form — it routes your message to the right person on our team. Partner and funding discussions are handled in confidence.":
+    'Самый быстрый способ связаться с нами — форма консультации: она направит ваше сообщение нужному человеку в команде. Обсуждения партнёрства и финансирования ведутся конфиденциально.',
+  'Who are you?': 'Кто вы?',
+  'Choose the path that fits.': 'Выберите подходящий путь.',
+  'Policymakers': 'Политики',
+  'MPs, ministries and national caucuses.': 'Депутаты, министерства и национальные парламентские группы.',
+  'Partners': 'Партнёры',
+  'Organisations, technology and diagnostics.': 'Организации, технологии и диагностика.',
+  'Donors': 'Доноры',
+  'Funders and foundations.': 'Финансирующие организации и фонды.',
 };
 
 export function tr(text: string | undefined | null, lang: Lang): string {

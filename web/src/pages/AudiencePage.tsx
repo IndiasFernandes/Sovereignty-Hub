@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/Layout';
 import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { Reveal, CountUp } from '../lib/motion';
+import { useI18n } from '../i18n/I18nProvider';
+import { tr } from '../i18n/formRu';
 import '../audience.css';
 
 type Audience = 'policymakers' | 'partners' | 'donors';
@@ -11,17 +13,17 @@ const HERO: Record<Audience, { eyebrow: string; title: string; lead: string; cta
   policymakers: {
     eyebrow: 'For policymakers', title: 'Act with certainty. See it delivered.',
     lead: 'Move from commitment to enacted, financed policy in weeks — with governed, human-reviewed tools and the backing of a proven regional parliamentary network.',
-    cta: 'Request a consultation', proof: 'Backed by nine national caucuses — active since 2014.', img: '/assets/images/policymakers.jpg',
+    cta: 'Request a consultation', proof: 'Backed by nine national caucuses — active since 2014.', img: '/assets/images/policymakers.webp',
   },
   partners: {
     eyebrow: 'For partners', title: 'A governed platform to build on.',
     lead: 'Bring your technology, diagnostics, or capital into a proven, standards-based regional health system — with a clearly defined role and measurable impact.',
-    cta: 'Explore a partnership', proof: 'Standards-based, human-reviewed, sovereign by design.', img: '/assets/images/diagnostics.jpg',
+    cta: 'Explore a partnership', proof: 'Standards-based, human-reviewed, sovereign by design.', img: '/assets/images/diagnostics.webp',
   },
   donors: {
     eyebrow: 'For donors', title: 'Fund proof, not promises.',
     lead: 'Back a de-risked, phased model that delivers a working result in one country before scaling to nine — with transparent governance and measurable outcomes.',
-    cta: 'Request the concept note', proof: 'Each phase proven before the next is funded.', img: '/assets/images/donors.jpg',
+    cta: 'Request the concept note', proof: 'Each phase proven before the next is funded.', img: '/assets/images/donors.webp',
   },
 };
 
@@ -63,6 +65,7 @@ const cssw = (w: string) => ({ '--w': w } as React.CSSProperties);
 
 /* ---------------- POLICYMAKERS — a process ---------------- */
 function Policymakers() {
+  const { lang } = useI18n();
   const flow = [
     { t: 'Draft', d: 'AI-assisted, human-reviewed drafting in a secure MP portal.' },
     { t: 'Coordinate', d: 'Evidence, comparative law and stakeholders aligned.' },
@@ -79,14 +82,14 @@ function Policymakers() {
       <section className="section aud-tension">
         <div className="container aud-tension-grid">
           <Reveal>
-            <p className="eyebrow">The lag</p>
-            <h2>You have the will. The system has the lag.</h2>
-            <p className="section-lead">An average parliamentarian faces a deluge of legislation, and complex health policy stalls between commitment and action — for months, sometimes years. Donors withdraw, systems fragment, patients wait. The Hub closes that gap.</p>
+            <p className="eyebrow">{tr('The lag', lang)}</p>
+            <h2>{tr('You have the will. The system has the lag.', lang)}</h2>
+            <p className="section-lead">{tr('An average parliamentarian faces a deluge of legislation, and complex health policy stalls between commitment and action — for months, sometimes years. Donors withdraw, systems fragment, patients wait. The Hub closes that gap.', lang)}</p>
           </Reveal>
           <Reveal className="sig">
-            <div className="sig-bar-row"><span className="sig-bar-lab">Conventional path</span><div className="sig-bar-track"><div className="sig-bar barfill sig-slow" style={cssw('100%')}>Months–years</div></div></div>
-            <div className="sig-bar-row"><span className="sig-bar-lab">With the Hub</span><div className="sig-bar-track"><div className="sig-bar barfill sig-fast" style={cssw('18%')}>Weeks</div></div></div>
-            <div className="sig-stat"><strong><CountUp value={22} />/26</strong><span>high-burden countries that raised domestic TB budgets had an active caucus</span></div>
+            <div className="sig-bar-row"><span className="sig-bar-lab">{tr('Conventional path', lang)}</span><div className="sig-bar-track"><div className="sig-bar barfill sig-slow" style={cssw('100%')}>{tr('Months–years', lang)}</div></div></div>
+            <div className="sig-bar-row"><span className="sig-bar-lab">{tr('With the Hub', lang)}</span><div className="sig-bar-track"><div className="sig-bar barfill sig-fast" style={cssw('18%')}>{tr('Weeks', lang)}</div></div></div>
+            <div className="sig-stat"><strong><CountUp value={22} />/26</strong><span>{tr('high-burden countries that raised domestic TB budgets had an active caucus', lang)}</span></div>
           </Reveal>
         </div>
       </section>
@@ -94,13 +97,13 @@ function Policymakers() {
       {/* Signature structure: horizontal execution flow */}
       <section className="section aud-dark aud-flow">
         <div className="container">
-          <Reveal><p className="eyebrow eyebrow-onDark">The execution loop</p></Reveal>
-          <Reveal><h2>From your decision to delivered care.</h2></Reveal>
+          <Reveal><p className="eyebrow eyebrow-onDark">{tr('The execution loop', lang)}</p></Reveal>
+          <Reveal><h2>{tr('From your decision to delivered care.', lang)}</h2></Reveal>
           <ol className="path">
             {flow.map((s, i) => (
               <Reveal as="li" className="path-step" delay={i * 90} key={s.t}>
                 <span className="path-num">0{i + 1}</span>
-                <div className="path-body"><strong>{s.t}</strong><p>{s.d}</p></div>
+                <div className="path-body"><strong>{tr(s.t, lang)}</strong><p>{tr(s.d, lang)}</p></div>
               </Reveal>
             ))}
           </ol>
@@ -110,13 +113,13 @@ function Policymakers() {
       {/* Why — as rows (not cards) */}
       <section className="section section-alt">
         <div className="container">
-          <Reveal><p className="eyebrow">Why it matters to you</p></Reveal>
+          <Reveal><p className="eyebrow">{tr('Why it matters to you', lang)}</p></Reveal>
           <ul className="why-rows">
             {why.map((w, i) => (
               <Reveal as="li" delay={i * 80} key={w.t}>
                 <span className="why-rows-n">0{i + 1}</span>
-                <strong>{w.t}</strong>
-                <p>{w.d}</p>
+                <strong>{tr(w.t, lang)}</strong>
+                <p>{tr(w.d, lang)}</p>
               </Reveal>
             ))}
           </ul>
@@ -128,6 +131,7 @@ function Policymakers() {
 
 /* ---------------- PARTNERS — an exchange ---------------- */
 function Partners() {
+  const { lang } = useI18n();
   const bring = ['Technology, diagnostics or capital', 'Innovation, R&D and know-how', 'Distribution and supply-chain reach'];
   const gain = ['Access to expanding regional health markets', 'ESG/SDG-aligned, reportable impact', 'Association with a trusted parliamentary network'];
   const standards = ['ISO 27001-grade security', 'GDPR-equivalent protection', 'Human-in-the-loop review', 'Sovereign, in-region hosting'];
@@ -141,14 +145,14 @@ function Partners() {
       <section className="section aud-tension">
         <div className="container aud-tension-grid">
           <Reveal>
-            <p className="eyebrow">The opportunity</p>
-            <h2>A region rebuilding its health systems — and it needs you.</h2>
-            <p className="section-lead">As external funding recedes, Eastern Europe & Central Asia is building self-reliant health infrastructure. Technology, diagnostics and capital with a governed home can lead here — this is shared value, not charity.</p>
+            <p className="eyebrow">{tr('The opportunity', lang)}</p>
+            <h2>{tr('A region rebuilding its health systems — and it needs you.', lang)}</h2>
+            <p className="section-lead">{tr('As external funding recedes, Eastern Europe & Central Asia is building self-reliant health infrastructure. Technology, diagnostics and capital with a governed home can lead here — this is shared value, not charity.', lang)}</p>
           </Reveal>
           <Reveal className="sig sig-bringgain">
-            <div className="sig-col"><p className="sig-col-h">What you bring</p><ul>{bring.map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="sig-col"><p className="sig-col-h">{tr('What you bring', lang)}</p><ul>{bring.map((x) => <li key={x}>{tr(x, lang)}</li>)}</ul></div>
             <div className="sig-swap" aria-hidden="true">⇄</div>
-            <div className="sig-col sig-col-gain"><p className="sig-col-h">What you gain</p><ul>{gain.map((x) => <li key={x}>{x}</li>)}</ul></div>
+            <div className="sig-col sig-col-gain"><p className="sig-col-h">{tr('What you gain', lang)}</p><ul>{gain.map((x) => <li key={x}>{tr(x, lang)}</li>)}</ul></div>
           </Reveal>
         </div>
       </section>
@@ -156,13 +160,13 @@ function Partners() {
       {/* Signature structure: governed-by-design standards strip */}
       <section className="section aud-dark">
         <div className="container">
-          <Reveal><p className="eyebrow eyebrow-onDark">Governed by design</p></Reveal>
-          <Reveal><h2>Credibility, built in.</h2></Reveal>
+          <Reveal><p className="eyebrow eyebrow-onDark">{tr('Governed by design', lang)}</p></Reveal>
+          <Reveal><h2>{tr('Credibility, built in.', lang)}</h2></Reveal>
           <div className="std-strip">
             {standards.map((s, i) => (
               <Reveal as="div" className="std-chip" delay={i * 80} key={s}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 7.4-7 8.9C8 17.4 5 14.4 5 11V6l7-3z" /><path d="M9 11.5l2 2 4-4" /></svg>
-                <span>{s}</span>
+                <span>{tr(s, lang)}</span>
               </Reveal>
             ))}
           </div>
@@ -172,14 +176,14 @@ function Partners() {
       {/* Signature structure: engage steps */}
       <section className="section section-alt">
         <div className="container">
-          <Reveal><p className="eyebrow">How you engage</p></Reveal>
-          <Reveal><h2>Three steps to a defined role.</h2></Reveal>
+          <Reveal><p className="eyebrow">{tr('How you engage', lang)}</p></Reveal>
+          <Reveal><h2>{tr('Three steps to a defined role.', lang)}</h2></Reveal>
           <div className="engage">
             {engage.map((s, i) => (
               <Reveal as="article" className="engage-step" delay={i * 90} key={s.t}>
                 <span className="engage-n">0{i + 1}</span>
-                <strong>{s.t}</strong>
-                <p>{s.d}</p>
+                <strong>{tr(s.t, lang)}</strong>
+                <p>{tr(s.d, lang)}</p>
               </Reveal>
             ))}
           </div>
@@ -191,6 +195,7 @@ function Partners() {
 
 /* ---------------- DONORS — evidence ---------------- */
 function Donors() {
+  const { lang } = useI18n();
   const ladder = [
     { t: 'Foundation', d: 'A working solution, live in one country — the proof unit.' },
     { t: 'Replication', d: 'The proven playbook, stamped country by country.' },
@@ -207,14 +212,20 @@ function Donors() {
       <section className="section aud-tension">
         <div className="container aud-tension-grid">
           <Reveal>
-            <p className="eyebrow">The moment</p>
-            <h2>Proof matters more than promises.</h2>
-            <p className="section-lead">Global donors are stepping back just as the need peaks — and funders now reward evidence, not pilots that never scale. The Hub delivers a working result in a single country first, so your capital backs a proven unit, then replicates it.</p>
+            <p className="eyebrow">{tr('The moment', lang)}</p>
+            <h2>{tr('Proof matters more than promises.', lang)}</h2>
+            <p className="section-lead">{tr('Global donors are stepping back just as the need peaks — and funders now reward evidence, not pilots that never scale. The Hub delivers a working result in a single country first, so your capital backs a proven unit, then replicates it.', lang)}</p>
           </Reveal>
           <Reveal className="sig sig-fundgap">
-            <div className="sig-bar-row"><span className="sig-bar-lab">Needed 2026–28</span><div className="sig-bar-track"><div className="sig-bar barfill" style={cssw('100%')}>$18.0B</div></div></div>
-            <div className="sig-bar-row"><span className="sig-bar-lab">Pledged so far</span><div className="sig-bar-track"><div className="sig-bar barfill sig-gap" style={cssw('66%')}>$11.85B</div></div></div>
-            <p className="sig-cap">A <strong>~$6B shortfall</strong>, and external health aid is projected to fall <strong>30–40%</strong>. Proof, not promises, is what scales now.</p>
+            <div className="sig-bar-row"><span className="sig-bar-lab">{tr('Needed 2026–28', lang)}</span><div className="sig-bar-track"><div className="sig-bar barfill" style={cssw('100%')}>$18.0B</div></div></div>
+            <div className="sig-bar-row"><span className="sig-bar-lab">{tr('Pledged so far', lang)}</span><div className="sig-bar-track"><div className="sig-bar barfill sig-gap" style={cssw('66%')}>$11.85B</div></div></div>
+            <p className="sig-cap">
+              {lang === 'ru' ? (
+                <>Дефицит ~<strong>6 млрд $</strong>, при этом объём внешней помощи здравоохранению, по прогнозам, сократится на <strong>30–40%</strong>. Сейчас масштабируются доказательства, а не обещания.</>
+              ) : (
+                <>A <strong>~$6B shortfall</strong>, and external health aid is projected to fall <strong>30–40%</strong>. Proof, not promises, is what scales now.</>
+              )}
+            </p>
           </Reveal>
         </div>
       </section>
@@ -223,15 +234,15 @@ function Donors() {
       <section className="section aud-dark">
         <div className="container aud-ladder-wrap">
           <Reveal className="aud-ladder-head">
-            <p className="eyebrow eyebrow-onDark">The de-risked ladder</p>
-            <h2>Each rung proven before the next is funded.</h2>
-            <p className="section-lead" style={{ color: 'rgba(255,255,255,.7)' }}>A donor never funds a promise — only a repeat of something already working.</p>
+            <p className="eyebrow eyebrow-onDark">{tr('The de-risked ladder', lang)}</p>
+            <h2>{tr('Each rung proven before the next is funded.', lang)}</h2>
+            <p className="section-lead" style={{ color: 'rgba(255,255,255,.7)' }}>{tr('A donor never funds a promise — only a repeat of something already working.', lang)}</p>
           </Reveal>
           <ol className="ladder">
             {ladder.map((s, i) => (
               <Reveal as="li" className="ladder-step" delay={i * 90} key={s.t}>
                 <span className="ladder-n">{i + 1}</span>
-                <div><strong>{s.t}</strong><p>{s.d}</p></div>
+                <div><strong>{tr(s.t, lang)}</strong><p>{tr(s.d, lang)}</p></div>
               </Reveal>
             ))}
           </ol>
@@ -241,12 +252,12 @@ function Donors() {
       {/* Signature structure: big impact metrics */}
       <section className="section section-alt">
         <div className="container">
-          <Reveal><p className="eyebrow">Measured impact</p></Reveal>
+          <Reveal><p className="eyebrow">{tr('Measured impact', lang)}</p></Reveal>
           <div className="metrics">
             {metrics.map((m, i) => (
               <Reveal as="div" className="metric" delay={i * 100} key={m.l}>
                 <strong><CountUp value={m.value} format={m.fmt} /></strong>
-                <span>{m.l}</span>
+                <span>{tr(m.l, lang)}</span>
               </Reveal>
             ))}
           </div>
@@ -259,31 +270,32 @@ function Donors() {
 const BODY = { policymakers: Policymakers, partners: Partners, donors: Donors };
 
 export function AudiencePage({ audience }: { audience: Audience }) {
+  const { lang } = useI18n();
   const h = HERO[audience];
   const get = GET[audience];
   const close = CLOSE[audience];
   const Body = BODY[audience];
   useEffect(() => {
     const prev = document.title;
-    document.title = `${h.eyebrow} • EECA Lung Health Sovereignty Hub`;
+    document.title = `${tr(h.eyebrow, lang)} • EECA Lung Health Sovereignty Hub`;
     return () => { document.title = prev; };
-  }, [h.eyebrow]);
+  }, [h.eyebrow, lang]);
 
   return (
     <SiteLayout>
       <section className="page-hero aud-hero">
         <div className="aud-hero-bg" style={{ '--aud-img': `url(${h.img})` } as React.CSSProperties} aria-hidden="true" />
         <div className="page-hero-inner container">
-          <p className="page-hero-eyebrow">{h.eyebrow}</p>
-          <h1>{h.title}</h1>
-          <p className="page-hero-lead">{h.lead}</p>
+          <p className="page-hero-eyebrow">{tr(h.eyebrow, lang)}</p>
+          <h1>{tr(h.title, lang)}</h1>
+          <p className="page-hero-lead">{tr(h.lead, lang)}</p>
           <div className="aud-hero-cta">
-            <Link to="/consultation#consultation-form" className="btn btn-primary">{h.cta}</Link>
+            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr(h.cta, lang)}</Link>
             <ConceptNoteModal variant="link" />
           </div>
           <p className="aud-proof">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-            {h.proof}
+            {tr(h.proof, lang)}
           </p>
         </div>
       </section>
@@ -293,14 +305,14 @@ export function AudiencePage({ audience }: { audience: Audience }) {
       <section className="section section-alt aud-getwrap">
         <div className="container aud-get">
           <Reveal className="aud-get-head">
-            <p className="eyebrow">{get.title}</p>
-            <h2>Built around what you need.</h2>
+            <p className="eyebrow">{tr(get.title, lang)}</p>
+            <h2>{tr('Built around what you need.', lang)}</h2>
           </Reveal>
           <ul className="aud-list">
             {get.items.map((g, i) => (
               <Reveal as="li" delay={i * 70} key={g}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                <span>{g}</span>
+                <span>{tr(g, lang)}</span>
               </Reveal>
             ))}
           </ul>
@@ -313,15 +325,15 @@ export function AudiencePage({ audience }: { audience: Audience }) {
             {PROOF.map((p, i) => (
               <Reveal as="li" delay={i * 80} key={p.l}>
                 <strong><CountUp value={p.value} format={p.fmt} /></strong>
-                <span>{p.l}</span>
+                <span>{tr(p.l, lang)}</span>
               </Reveal>
             ))}
           </ul>
-          <h2>{close.title}</h2>
-          <p className="cta-lead">{close.lead}</p>
+          <h2>{tr(close.title, lang)}</h2>
+          <p className="cta-lead">{tr(close.lead, lang)}</p>
           <div className="cta-buttons">
-            <Link to="/consultation#consultation-form" className="btn btn-primary">{h.cta}</Link>
-            <Link to="/" className="btn btn-secondary">Back to overview</Link>
+            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr(h.cta, lang)}</Link>
+            <Link to="/" className="btn btn-secondary">{tr('Back to overview', lang)}</Link>
           </div>
         </div>
       </section>

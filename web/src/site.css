@@ -579,7 +579,7 @@ img {
   inset: 0;
   z-index: 0;
   /* Photo base (falls back to ink gradient if the file is missing) */
-  --hero-photo: url('/assets/images/hero.jpg');
+  --hero-photo: url('/assets/images/hero.webp');
   background:
     var(--hero-photo, none) center / cover no-repeat,
     linear-gradient(150deg, var(--ink-800) 0%, var(--ink-900) 100%);
