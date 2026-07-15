@@ -48,7 +48,7 @@ export const translations = {
 
     // Index - What Is
     'what-is-title': 'What is the EECA Lung Health Sovereignty Hub?',
-    'what-is-p1': 'The Hub builds on the established Global TB Caucus network, active in EECA since 2014–2016, with nine national caucuses. It is a <strong>strategic investment platform</strong> that delivers measurable impact on lung health outcomes and regional stability.',
+    'what-is-p1': 'The Hub builds on the established Global TB Caucus network — active in EECA since 2014–2016, with nine national caucuses. It is a <strong>governed regional platform</strong> that turns lung-health policy into delivered care: a working model of health sovereignty as global funding recedes.',
     'what-is-p2': 'It runs as one governed platform with three components — the <strong>Engine</strong> (AI-powered legislative platform), the <strong>Bridge</strong> (data-driven diplomacy and financing alignment), and the <strong>Shield</strong> (health security and continuity of care) — over a shared, governed data layer, to build resilient, self-reliant lung health systems across Eastern Europe and Central Asia.',
     'what-is-link': 'Why is this urgent?',
 
@@ -290,7 +290,7 @@ export const translations = {
 
     // Index - What Is
     'what-is-title': 'Что такое EECA Хаб суверенитета в области здоровья лёгких?',
-    'what-is-p1': 'Хаб строится на основе сети Глобального парламентского кокуса по ТБ, активной в регионе ВЕЦА с 2014–2016 годов, с девятью национальными кокусами. Это <strong>стратегическая инвестиционная платформа</strong>, обеспечивающая измеримое влияние на результаты в области здоровья лёгких и региональную стабильность.',
+    'what-is-p1': 'Хаб строится на основе сети Глобального парламентского кокуса по ТБ — активной в регионе ВЕЦА с 2014–2016 годов, с девятью национальными кокусами. Это <strong>управляемая региональная платформа</strong>, которая превращает политику в области здоровья лёгких в оказанную помощь: рабочая модель суверенитета здравоохранения по мере сокращения глобального финансирования.',
     'what-is-p2': 'Он работает как единая управляемая платформа с тремя компонентами — <strong>«Двигатель»</strong> (законодательная платформа на базе ИИ), <strong>«Мост»</strong> (дипломатия на основе данных и согласование финансирования) и <strong>«Щит»</strong> (безопасность здоровья и непрерывность помощи) — на общем управляемом слое данных, для создания устойчивых, самодостаточных систем здоровья лёгких в Восточной Европе и Центральной Азии.',
     'what-is-link': 'Почему это срочно?',
 
