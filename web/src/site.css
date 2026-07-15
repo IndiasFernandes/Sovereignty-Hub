@@ -335,7 +335,7 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 0.55rem var(--space-lg);
-  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
+  background: linear-gradient(180deg, var(--color-accent-dark), #8f3620);
   color: #fff !important;
   text-decoration: none;
   font-weight: 700;
@@ -791,12 +791,12 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
+  background: linear-gradient(180deg, var(--color-accent-dark), #8f3620);
   color: #fff;
   box-shadow: var(--shadow-sm);
 }
 .btn-primary:hover {
-  background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent));
+  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-dark));
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
