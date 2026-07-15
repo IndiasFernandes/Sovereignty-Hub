@@ -259,6 +259,78 @@ img {
   color: var(--color-primary);
 }
 
+/* Participate dropdown */
+.nav-has-drop { position: relative; }
+.nav-drop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding-block: 0.35rem;
+}
+.nav-drop-btn svg { transition: transform var(--transition); }
+.nav-has-drop:hover .nav-drop-btn,
+.nav-has-drop:focus-within .nav-drop-btn { color: var(--color-primary); }
+.nav-has-drop:hover .nav-drop-btn svg,
+.nav-has-drop:focus-within .nav-drop-btn svg { transform: rotate(180deg); }
+.nav-drop {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.55rem;
+  min-width: 13.5rem;
+  list-style: none;
+  padding: 0.4rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+  z-index: 120;
+}
+.nav-has-drop:hover .nav-drop,
+.nav-has-drop:focus-within .nav-drop {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.nav-drop li { border: none !important; }
+.nav-drop a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+.nav-drop a::after { display: none; }
+.nav-drop a:hover { background: var(--teal-50); color: var(--color-primary); }
+
+@media (max-width: 1024px) {
+  .nav-drop {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0 0 0 var(--space-md);
+  }
+  .nav-drop-btn { pointer-events: none; width: 100%; padding: var(--space-md) 0; }
+  .nav-drop-btn svg { display: none; }
+  .nav-drop a { padding: var(--space-sm) 0; font-size: 1rem; }
+}
+
 .nav-consultation-cta {
   display: inline-flex;
   align-items: center;

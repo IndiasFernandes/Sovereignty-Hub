@@ -52,9 +52,17 @@ export function Header({ current }: HeaderProps) {
         </button>
         <nav className="nav" id="main-nav" aria-label="Main navigation">
           <ul onClick={() => setMenuOpen(false)}>
-            <li><Link to="/policymakers">{t('nav-policymakers')}</Link></li>
-            <li><Link to="/partners">{t('nav-partners')}</Link></li>
-            <li><Link to="/donors">{t('nav-donors')}</Link></li>
+            <li className="nav-has-drop">
+              <button type="button" className="nav-drop-btn" aria-haspopup="true" onClick={(e) => e.stopPropagation()}>
+                {t('nav-participate')}
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              </button>
+              <ul className="nav-drop">
+                <li><Link to="/policymakers">{t('nav-policymakers')}</Link></li>
+                <li><Link to="/partners">{t('nav-partners')}</Link></li>
+                <li><Link to="/donors">{t('nav-donors')}</Link></li>
+              </ul>
+            </li>
             <li><Link to="/team">{t('nav-team')}</Link></li>
             <li><Link to="/contact">{t('nav-contact')}</Link></li>
           </ul>
