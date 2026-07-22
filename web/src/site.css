@@ -14,11 +14,14 @@
   --teal-800: #0a3d3a;
   --teal-950: #062523;
 
-  /* ── Accent: calm amber (action only — never a warning) — v2 ── */
-  /* Action accent — warm coral (replaces amber/yellow; used only for CTAs) */
-  --color-accent: #d65a41;
-  --color-accent-light: #e8785d;
-  --color-accent-dark: #a8402c;
+  /* ── Brand: logo navy (replaces coral; used for CTAs + the 3rd component color) ── */
+  --color-navy: #023a6d;
+  --color-navy-light: #145a94;
+  --color-navy-dark: #011f3d;
+  --color-navy-abyss: #010f1e;
+  --color-accent: var(--color-navy);
+  --color-accent-light: var(--color-navy-light);
+  --color-accent-dark: var(--color-navy-dark);
   --amber-50: #fbeeea;
   --amber-100: #f2d3c9;
 
@@ -193,11 +196,14 @@ img {
   font-weight: 600;
 }
 
-.logo-icon {
-  font-size: 0.9375rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--color-primary);
+.logo-mark {
+  height: 1.75rem;
+  width: auto;
+  display: block;
+}
+
+.footer-logo .logo-mark {
+  height: 1.625rem;
 }
 
 .logo-text {
@@ -332,7 +338,7 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 0.55rem var(--space-lg);
-  background: linear-gradient(180deg, var(--color-accent-dark), #8f3620);
+  background: linear-gradient(180deg, var(--color-accent-dark), var(--color-navy-abyss));
   color: #fff !important;
   text-decoration: none;
   font-weight: 700;
@@ -796,7 +802,7 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, var(--color-accent-dark), #8f3620);
+  background: linear-gradient(180deg, var(--color-accent-dark), var(--color-navy-abyss));
   color: #fff;
   box-shadow: var(--shadow-sm);
 }
