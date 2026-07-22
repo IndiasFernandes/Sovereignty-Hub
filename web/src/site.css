@@ -275,7 +275,8 @@ img {
 .nav-has-drop:focus-within .nav-drop-btn { color: var(--color-primary); }
 .nav-has-drop:hover .nav-drop-btn svg,
 .nav-has-drop:focus-within .nav-drop-btn svg { transform: rotate(180deg); }
-.nav-drop {
+.nav-has-drop .nav-drop {
+  display: block;
   position: absolute;
   top: 100%;
   left: 0;
@@ -695,6 +696,14 @@ img {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.86);
   margin: 0 0 var(--space-lg);
+}
+.statcard-text a {
+  color: var(--teal-bright);
+  font-weight: 600;
+  text-decoration-color: rgba(95, 212, 206, 0.45);
+}
+.statcard-text a:hover {
+  text-decoration-color: var(--teal-bright);
 }
 .statgrid {
   list-style: none;
@@ -1439,6 +1448,13 @@ img {
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
 }
+.credstrip-label a {
+  color: var(--color-primary);
+  text-decoration-color: var(--teal-200);
+}
+.credstrip-label a:hover {
+  text-decoration-color: var(--color-primary);
+}
 .country-chips {
   display: flex;
   flex-wrap: wrap;
@@ -2166,6 +2182,14 @@ section[id],
 .concept-note-content p,
 .concept-note-content li {
   margin: 0 0 var(--space-md);
+}
+
+.concept-note-content a {
+  color: var(--color-primary);
+  text-decoration-color: var(--teal-200);
+}
+.concept-note-content a:hover {
+  text-decoration-color: var(--color-primary);
 }
 
 .concept-note-content table {
