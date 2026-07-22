@@ -4,6 +4,16 @@ import { T } from '../i18n/I18nProvider';
 
 const team = [
   {
+    name: 'team-alesia-name',
+    role: 'team-alesia-role',
+    bio1: 'team-alesia-bio1',
+    bio2: 'team-alesia-bio2',
+    roleHub: 'team-alesia-role-hub',
+    roleText: 'team-alesia-role-text',
+    photo: '/assets/images/team/team-alesia.png',
+    alt: 'Portrait of Alesia Matusevych',
+  },
+  {
     name: 'team-gayane-name',
     role: 'team-gayane-role',
     bio1: 'team-gayane-bio1',
@@ -12,16 +22,6 @@ const team = [
     roleText: 'team-gayane-role-text',
     photo: '/assets/images/team/team-gayane.png',
     alt: 'Portrait of Gayané Arustamyan',
-  },
-  {
-    name: 'team-alesia-name',
-    role: 'team-alesia-role',
-    bio1: 'team-alesia-bio1',
-    bio2: 'team-alesia-bio2',
-    roleHub: 'team-alesia-role-hub',
-    roleText: 'team-alesia-role-text',
-    photo: '/assets/images/team/team-alesia.png',
-    alt: 'Portrait of Alesia Matusevich',
   },
   {
     name: 'team-daniel-name',
