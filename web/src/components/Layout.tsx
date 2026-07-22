@@ -52,6 +52,7 @@ export function Header({ current }: HeaderProps) {
         </button>
         <nav className="nav" id="main-nav" aria-label="Main navigation">
           <ul onClick={() => setMenuOpen(false)}>
+            <li><Link to="/solution">{t('nav-solution')}</Link></li>
             <li className="nav-has-drop">
               <button type="button" className="nav-drop-btn" aria-haspopup="true" onClick={(e) => e.stopPropagation()}>
                 {t('nav-participate')}

@@ -174,6 +174,7 @@ export function HomePage() {
 
           <p className="sol-engine-note"><T k="sol-engine-note" /></p>
           <p className="sol-trust"><T k="sol-trust" /></p>
+          <p><Link className="link-arrow" to="/solution"><T k="solp-explore-link" /></Link></p>
         </div>
       </section>
 

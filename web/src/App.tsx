@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ScrollManager } from './components/ScrollManager';
 import { I18nProvider } from './i18n/I18nProvider';
 import { HomePage } from './pages/HomePage';
+import { SolutionPage } from './pages/SolutionPage';
 import { TeamPage } from './pages/TeamPage';
 import { ConsultationPage } from './pages/ConsultationPage';
 import { AdminLoginPage } from './pages/admin/AdminLoginPage';
@@ -19,6 +20,7 @@ export default function App() {
         <ScrollManager />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/solution" element={<SolutionPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/consultation" element={<ConsultationPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
