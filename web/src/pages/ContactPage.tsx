@@ -29,14 +29,17 @@ export function ContactPage() {
             {tr('The fastest way to reach us is the consultation form — it routes your message to the right person on our team. Partner and funding discussions are handled in confidence.', lang)}
           </p>
           <div className="aud-hero-cta">
-            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr('Request a consultation', lang)}</Link>
+            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr('Book a consultation', lang)}</Link>
           </div>
+          <p className="aud-proof">
+            {tr('Or email us directly:', lang)}{' '}
+            <a href="mailto:alesia.matusevych@globaltbcaucus.org">alesia.matusevych@globaltbcaucus.org</a>
+          </p>
         </div>
       </section>
 
       <section className="section">
         <div className="container">
-          <p className="eyebrow">{tr('Who are you?', lang)}</p>
           <h2>{tr('Choose the path that fits.', lang)}</h2>
           <div className="contact-paths">
             {PATHS.map((p) => (

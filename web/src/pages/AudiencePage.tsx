@@ -13,7 +13,7 @@ const HERO: Record<Audience, { eyebrow: string; title: string; lead: string; cta
   policymakers: {
     eyebrow: 'For policymakers', title: 'Act with certainty. See it delivered.',
     lead: 'Move from commitment to enacted, financed policy in weeks — with governed, human-reviewed tools and the backing of a proven regional parliamentary network.',
-    cta: 'Request a consultation', proof: 'Backed by nine national caucuses — active since 2014.', img: '/assets/images/policymakers.webp',
+    cta: 'Book a consultation', proof: 'Backed by nine national caucuses — active since 2014.', img: '/assets/images/policymakers.webp',
   },
   partners: {
     eyebrow: 'For partners', title: 'A governed platform to build on.',
@@ -57,7 +57,6 @@ const CLOSE: Record<Audience, { title: string; lead: string }> = {
 const PROOF = [
   { value: 300, fmt: (n: number) => `${Math.round(n)}K+`, l: 'patients in scope' },
   { value: 9, fmt: (n: number) => String(Math.round(n)), l: 'national caucuses' },
-  { value: 18, fmt: (n: number) => String(Math.round(n)), l: 'priority countries' },
   { value: 2014, fmt: (n: number) => String(Math.round(n)), l: 'network active since' },
 ];
 

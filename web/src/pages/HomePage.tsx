@@ -37,7 +37,7 @@ export function HomePage() {
           </div>
           <aside className="hero-statcard" aria-label="Programme at a glance">
             <p className="statcard-eyebrow"><T k="statcard-eyebrow" /></p>
-            <p className="statcard-text"><T k="statcard-text" /></p>
+            <p className="statcard-text"><T k="statcard-text" html /></p>
             <ul className="statgrid">
               {(['1', '2', '3', '4'] as const).map((n) => (
                 <li key={n}>
@@ -60,11 +60,12 @@ export function HomePage() {
               { to: '/policymakers', t: 'who-pm-t', d: 'who-pm-d' },
               { to: '/partners', t: 'who-pa-t', d: 'who-pa-d' },
               { to: '/donors', t: 'who-do-t', d: 'who-do-d' },
+              { to: '/contact', t: 'who-cs-t', d: 'who-cs-d' },
             ] as const).map((w) => (
               <Link className="who-card" to={w.to} key={w.to}>
                 <strong><T k={w.t} /></strong>
                 <span><T k={w.d} /></span>
-                <span className="who-arrow"><T k="who-cta" /> →</span>
+                <span className="who-arrow" aria-hidden="true">→</span>
               </Link>
             ))}
           </div>
@@ -79,12 +80,12 @@ export function HomePage() {
           </div>
           <div className="whatis-body">
             <p><T k="what-is-p1" html /></p>
-            <p><T k="what-is-p2" html /></p>
             <a href="#urgency" className="link-arrow"><T k="what-is-link" /></a>
+            <p><T k="what-is-p2" html /></p>
           </div>
         </div>
         <div className="container credstrip">
-          <span className="credstrip-label"><T k="cred-label" /></span>
+          <span className="credstrip-label"><T k="cred-label" html /></span>
           <ul className="country-chips">
             {t('countries').split('·').map((c) => (
               <li key={c}>{c.trim()}</li>
@@ -171,6 +172,7 @@ export function HomePage() {
             <p className="loop-caption"><T k="loop-caption" /></p>
           </div>
 
+          <p className="sol-engine-note"><T k="sol-engine-note" /></p>
           <p className="sol-trust"><T k="sol-trust" /></p>
         </div>
       </section>

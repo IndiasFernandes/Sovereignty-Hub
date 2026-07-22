@@ -194,14 +194,10 @@ img {
 }
 
 .logo-icon {
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  color: #fff;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  padding: 0.35em 0.6em;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
 }
 
 .logo-text {
@@ -1145,7 +1141,7 @@ img {
 /* Who it's for — audience pathways */
 .who-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-lg);
   margin-top: var(--space-2xl);
 }
@@ -1188,6 +1184,9 @@ img {
 }
 .who-card:hover .who-arrow {
   color: var(--color-primary-dark) !important;
+}
+@media (max-width: 1024px) {
+  .who-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
   .who-grid { grid-template-columns: 1fr; }

@@ -63,6 +63,7 @@
   color: rgba(255, 255, 255, 0.72);
 }
 .aud-proof svg { width: 1rem; height: 1rem; color: var(--teal-bright); }
+.aud-proof a { color: var(--teal-bright); font-weight: 600; }
 
 /* --- Tension + signature (2-col) --- */
 .aud-tension-grid {
@@ -152,7 +153,7 @@
   padding: 0 0 var(--space-xl);
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
 }
 .proofband strong { display: block; font-family: var(--font-display); font-size: 2rem; line-height: 1; color: #fff; }

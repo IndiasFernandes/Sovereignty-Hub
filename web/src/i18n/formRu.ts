@@ -524,7 +524,7 @@ const M: Record<string, string> = {
     'Внедрите свои технологии, диагностику или капитал в проверенную, стандартизированную региональную систему здравоохранения — с чётко определённой ролью и измеримым результатом.',
   'Back a de-risked, phased model that delivers a working result in one country before scaling to nine — with transparent governance and measurable outcomes.':
     'Поддержите поэтапную модель со сниженным риском, которая даёт работающий результат в одной стране, прежде чем масштабироваться на девять — с прозрачным управлением и измеримыми результатами.',
-  'Request a consultation': 'Запросить консультацию',
+  'Book a consultation': 'Записаться на консультацию',
   'Explore a partnership': 'Обсудить партнёрство',
   'Request the concept note': 'Запросить концепт-ноту',
   'Backed by nine national caucuses — active since 2014.': 'Поддержано девятью национальными парламентскими группами — действуют с 2014 года.',
@@ -566,7 +566,6 @@ const M: Record<string, string> = {
 
   'patients in scope': 'пациентов в фокусе',
   'national caucuses': 'национальных парламентских групп',
-  'priority countries': 'приоритетных стран',
   'network active since': 'сеть действует с',
 
   // Policymakers body
@@ -658,8 +657,8 @@ const M: Record<string, string> = {
   "Let's talk.": 'Давайте поговорим.',
   "The fastest way to reach us is the consultation form — it routes your message to the right person on our team. Partner and funding discussions are handled in confidence.":
     'Самый быстрый способ связаться с нами — форма консультации: она направит ваше сообщение нужному человеку в команде. Обсуждения партнёрства и финансирования ведутся конфиденциально.',
-  'Who are you?': 'Кто вы?',
   'Choose the path that fits.': 'Выберите подходящий путь.',
+  'Or email us directly:': 'Или напишите нам напрямую:',
   'Policymakers': 'Политики',
   'MPs, ministries and national caucuses.': 'Депутаты, министерства и национальные парламентские группы.',
   'Partners': 'Партнёры',
