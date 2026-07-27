@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { SiteLayout } from '../components/Layout';
 import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { Reveal, CountUp } from '../lib/motion';

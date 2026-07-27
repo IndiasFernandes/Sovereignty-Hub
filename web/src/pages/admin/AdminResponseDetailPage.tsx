@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router';
 import { SiteLayout } from '../../components/Layout';
 import { getAllSteps, labelForOption, type FormVariant } from '../../lib/formSchema';
 import {

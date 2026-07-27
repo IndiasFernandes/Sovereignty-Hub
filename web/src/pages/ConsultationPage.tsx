@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { StepWizard } from '../components/form/StepWizard';
 import { SiteLayout } from '../components/Layout';
 import { scrollToElement } from '../lib/scrollToTarget';
