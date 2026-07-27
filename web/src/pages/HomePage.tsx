@@ -1,7 +1,8 @@
 import { Link } from 'react-router';
 import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { SiteLayout } from '../components/Layout';
-import { T, useI18n } from '../i18n/I18nProvider';
+import { T } from '../i18n/I18nProvider';
+import { useI18n } from '../i18n/useI18n';
 
 const svg = { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, 'aria-hidden': true };
 const SOL_ICONS = {

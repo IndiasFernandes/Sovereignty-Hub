@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import {
   buildStepSequence,
   resolveBranch,
@@ -10,7 +10,7 @@ import { submitConsultation } from '../../lib/submitConsultation';
 import { scrollToElement } from '../../lib/scrollToTarget';
 import { FieldRenderer } from './FieldRenderer';
 import { ConceptNoteModal } from '../ConceptNoteModal';
-import { useI18n } from '../../i18n/I18nProvider';
+import { useI18n } from '../../i18n/useI18n';
 import { localizeStep, localizeError, tr } from '../../i18n/formRu';
 
 type Props = {
@@ -27,16 +27,13 @@ export function StepWizard({ hero }: Props) {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const steps = useMemo(() => buildStepSequence(answers), [answers]);
+  // Clamp for render: `steps` can shrink when a branch changes, leaving stepIndex stale
+  // until the next navigation writes a valid value back via setStepIndex.
+  const activeIndex = Math.min(stepIndex, Math.max(steps.length - 1, 0));
 
-  useEffect(() => {
-    if (stepIndex >= steps.length && steps.length > 0) {
-      setStepIndex(steps.length - 1);
-    }
-  }, [steps.length, stepIndex]);
-
-  const current = steps[stepIndex];
+  const current = steps[activeIndex];
   const view = current ? localizeStep(current, lang) : null;
-  const progress = steps.length > 1 ? Math.round((stepIndex / (steps.length - 1)) * 97) + 3 : 3;
+  const progress = steps.length > 1 ? Math.round((activeIndex / (steps.length - 1)) * 97) + 3 : 3;
 
   const onChange = useCallback((id: string, value: unknown) => {
     setAnswers((prev) => {
@@ -59,7 +56,7 @@ export function StepWizard({ hero }: Props) {
       return;
     }
 
-    if (stepIndex >= steps.length - 1) {
+    if (activeIndex >= steps.length - 1) {
       setSubmitting(true);
       setSubmitError(null);
       try {
@@ -79,7 +76,7 @@ export function StepWizard({ hero }: Props) {
   };
 
   const goBack = () => {
-    if (stepIndex > 0) setStepIndex((i) => i - 1);
+    if (activeIndex > 0) setStepIndex((i) => i - 1);
     setError(null);
     scrollToElement('consultation-form', true);
   };
@@ -122,7 +119,7 @@ export function StepWizard({ hero }: Props) {
             <div className="prog-top">
               <span className="prog-label">{tr(STEP_LABELS[current?.id ?? ''] ?? 'Consultation', lang)}</span>
               <span className="prog-count">
-                {stepIndex + 1} {tr('of', lang)} {steps.length}
+                {activeIndex + 1} {tr('of', lang)} {steps.length}
               </span>
             </div>
             <div className="prog-track">
@@ -142,7 +139,7 @@ export function StepWizard({ hero }: Props) {
 
           {current && view && (
             <div className="step active">
-              <div className="step-tag">{tr('Step', lang)} {stepIndex + 1} · {view.tag}</div>
+              <div className="step-tag">{tr('Step', lang)} {activeIndex + 1} · {view.tag}</div>
               <h2>{view.title}</h2>
               {view.hint && <p className="step-hint">{view.hint}</p>}
 
@@ -175,11 +172,11 @@ export function StepWizard({ hero }: Props) {
               {submitError && <div className="c-field-err show">{submitError}</div>}
 
               <div className="step-nav">
-                <button type="button" className="btn-back" disabled={stepIndex === 0} onClick={goBack}>
+                <button type="button" className="btn-back" disabled={activeIndex === 0} onClick={goBack}>
                   {tr('Back', lang)}
                 </button>
                 <button type="button" className="btn-next" disabled={submitting} onClick={goNext}>
-                  {stepIndex >= steps.length - 1
+                  {activeIndex >= steps.length - 1
                     ? submitting
                       ? tr('Submitting…', lang)
                       : tr('Submit', lang)

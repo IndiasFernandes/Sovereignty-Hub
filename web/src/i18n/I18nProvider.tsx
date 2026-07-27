@@ -1,25 +1,10 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from 'react';
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { translations } from './translations';
+import { I18nContext, useI18n } from './useI18n';
 
 export type Lang = 'en' | 'ru';
 
 const STORAGE_KEY = 'eeca-hub-lang';
-
-type I18nContextValue = {
-  lang: Lang;
-  setLang: (lang: Lang) => void;
-  t: (key: string) => string;
-};
-
-const I18nContext = createContext<I18nContextValue | null>(null);
 
 function readStoredLang(): Lang {
   if (typeof window === 'undefined') return 'en';
@@ -55,12 +40,6 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const value = useMemo(() => ({ lang, setLang, t }), [lang, setLang, t]);
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
-}
-
-export function useI18n() {
-  const ctx = useContext(I18nContext);
-  if (!ctx) throw new Error('useI18n must be used within I18nProvider');
-  return ctx;
 }
 
 export function T({

@@ -218,7 +218,6 @@ export function AdminDashboardPage() {
                     const urgencyLabel = labelForOption(
                       'q3_urgency',
                       String(answers.q3_urgency ?? ''),
-                      'full',
                     );
                     return (
                       <tr key={r.id}>

@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { useNoIndex } from '../lib/useNoIndex';
 import '../design.css';
 
+const readToken = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
 /** Reads a computed CSS custom property from :root. */
 function useToken(name: string) {
-  const [val, setVal] = useState('');
-  useEffect(() => {
-    setVal(getComputedStyle(document.documentElement).getPropertyValue(name).trim());
-  }, [name]);
-  return val;
+  const [state, setState] = useState(() => ({ name, val: readToken(name) }));
+  if (state.name !== name) {
+    setState({ name, val: readToken(name) });
+  }
+  return state.val;
 }
 
 function Swatch({ token, dark }: { token: string; dark?: boolean }) {

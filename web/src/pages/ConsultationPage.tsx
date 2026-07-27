@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { StepWizard } from '../components/form/StepWizard';
 import { SiteLayout } from '../components/Layout';
 import { scrollToElement } from '../lib/scrollToTarget';
-import { useI18n } from '../i18n/I18nProvider';
+import { useI18n } from '../i18n/useI18n';
 import { tr } from '../i18n/formRu';
 
 function ConsultHero() {

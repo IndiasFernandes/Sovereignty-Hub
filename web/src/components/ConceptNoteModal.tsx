@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useI18n, T } from '../i18n/I18nProvider';
+import { T } from '../i18n/I18nProvider';
+import { useI18n } from '../i18n/useI18n';
 
 type Props = {
   /** 'button' (default) = primary CTA used on the home page; 'link' = compact inline link for the form. */

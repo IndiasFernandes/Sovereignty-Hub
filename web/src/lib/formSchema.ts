@@ -1,5 +1,4 @@
 export type RespondentType = 'A' | 'B' | 'C' | 'D';
-export type FormVariant = 'full';
 export type FormAnswers = Record<string, unknown>;
 
 export type FieldOption = {
@@ -951,7 +950,7 @@ function closingSteps(): FormStep[] {
   return steps;
 }
 
-export function getAllSteps(_variant: FormVariant = 'full'): FormStep[] {
+export function getAllSteps(): FormStep[] {
   return [
     ...sharedSteps(),
     ...branchASteps(),
@@ -1075,8 +1074,8 @@ export const STEP_LABELS: Record<string, string> = {
   open: 'Open response',
 };
 
-export function labelForOption(fieldId: string, value: string, variant: FormVariant): string {
-  const all = getAllSteps(variant);
+export function labelForOption(fieldId: string, value: string): string {
+  const all = getAllSteps();
   for (const step of all) {
     for (const field of step.fields) {
       if (field.id === fieldId && field.options) {
