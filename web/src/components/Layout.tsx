@@ -120,17 +120,29 @@ export function Footer() {
             <strong>{t('footer-brand')}</strong>
           </Link>
           <p>{t('footer-tagline')}</p>
-          <div className="footer-partners" aria-label="Foundational partner">
+          <div className="footer-partners" aria-label="Foundational partners">
             <span className="footer-partners-label">{t('footer-partner')}</span>
-            <a
-              href="https://www.globaltbcaucus.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="partner-logo"
-              aria-label="Global TB Caucus — opens in new tab"
-            >
-              <img src="/assets/images/logos/01_GTBC_logotype_main_CMJN.jpg" alt="Global TB Caucus" />
-            </a>
+            <div className="partner-logos">
+              <a
+                href="https://www.globaltbcaucus.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="partner-logo"
+                aria-label="Global TB Caucus — opens in new tab"
+              >
+                <img src="/assets/images/logos/01_GTBC_logotype_main_CMJN.jpg" alt="Global TB Caucus" />
+              </a>
+              <a
+                href="https://innerflect.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="partner-logo partner-logo--lockup"
+                aria-label="Innerflect — opens in new tab"
+              >
+                <img src="/assets/images/logos/innerflect-mark.svg" alt="" aria-hidden="true" />
+                <span className="partner-lockup-name">Innerflect</span>
+              </a>
+            </div>
           </div>
         </div>
 

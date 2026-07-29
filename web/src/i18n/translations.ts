@@ -235,7 +235,7 @@ export const translations = {
     // Footer
     'footer-brand': 'EECA Lung Health Sovereignty Hub',
     'footer-tagline': 'Political will, delivered as care — across Eastern Europe & Central Asia.',
-    'footer-partner': 'Foundational partner',
+    'footer-partner': 'Foundational partners',
     'nav-impact': 'Impact', 'nav-participate': 'Participate',
     'footer-explore': 'Explore',
     'footer-legal': 'Legal',
@@ -504,7 +504,7 @@ export const translations = {
     // Footer
     'footer-brand': 'EECA Хаб суверенитета в области здоровья лёгких',
     'footer-tagline': 'Политическая воля, воплощённая в помощь — по всей Восточной Европе и Центральной Азии.',
-    'footer-partner': 'Основной партнёр',
+    'footer-partner': 'Основные партнёры',
     'nav-impact': 'Влияние', 'nav-participate': 'Участие',
     'footer-explore': 'Разделы',
     'footer-legal': 'Правовое',

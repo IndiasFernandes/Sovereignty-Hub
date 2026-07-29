@@ -2391,6 +2391,12 @@ section[id],
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4);
 }
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-sm);
+}
 .partner-logo {
   display: block;
   padding: var(--space-sm) var(--space-md);
@@ -2408,6 +2414,24 @@ section[id],
   height: 40px;
   width: auto;
   object-fit: contain;
+}
+/* Innerflect lockup: brand mark + wordmark, matched to the 40px partner system */
+.partner-logo--lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.partner-logo--lockup img {
+  height: 26px;
+}
+.partner-lockup-name {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+  line-height: 1;
 }
 
 /* Legal bar */
