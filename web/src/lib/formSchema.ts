@@ -57,8 +57,7 @@ export const ROLES = [
   'Member of Parliament or parliamentary staff',
   'Government official (Ministry of Health or other)',
   'National TB or lung health program officer',
-  'International organization (UN agency, WHO, IOM, etc.)',
-  'Bilateral or multilateral donor',
+  'International bilateral/multilateral donor (UN agency, Global Fund, etc.)',
   'Private foundation or philanthropic organization',
   'Academic or research institution',
   'Implementation partner or technical assistance provider',
@@ -120,7 +119,6 @@ const mvpFeatureOptions: FieldOption[] = [
   opt('alerts', 'Continuity-of-care risk alerts for displaced populations'),
   opt('emergency', 'Emergency legal measure templates for cross-border health crises'),
   opt('feedback', 'Civil society feedback integration with legislative drafting'),
-  opt('supply', 'Real-time medicine supply disruption monitoring'),
 ];
 
 export function resolveBranch(answers: FormAnswers): RespondentType | null {
@@ -291,41 +289,44 @@ function sharedSteps(): FormStep[] {
         },
       ],
     },
-    {
-      id: 'contact',
-      tag: 'Follow-up',
-      title: 'Would you be willing to be contacted for a follow-up conversation of up to 30 minutes?',
-      hint: 'Your contact details will be used only for follow-up related to this initiative, with your explicit permission.',
-      fields: [
-        {
-          id: 'q8_consent',
-          type: 'radio',
-          label: '',
-          required: true,
-          options: [
-            opt('yes', 'Yes — please contact me'),
-            opt('maybe', 'Maybe — I would like to know more first'),
-            opt('no', 'No — I prefer to remain anonymous'),
-          ],
-        },
-        {
-          id: 'contact_group',
-          type: 'group',
-          label: 'Please share your name and preferred contact method',
-          optional: true,
-          showWhen: (a) => ['yes', 'maybe'].includes(str(a.q8_consent)),
-          fields: [
-            { id: 'q8a_name', type: 'text', label: 'Name', placeholder: 'Your name' },
-            { id: 'q8a_email', type: 'text', label: 'Email address', placeholder: 'email@example.com' },
-            { id: 'q8a_org', type: 'text', label: 'Organization', placeholder: 'Organization name' },
-            { id: 'q8a_lang', type: 'text', label: 'Preferred language for follow-up', placeholder: 'e.g. English, Russian' },
-          ],
-        },
-      ],
-    },
   ];
 
   return steps;
+}
+
+function contactStep(): FormStep {
+  return {
+    id: 'contact',
+    tag: 'Follow-up',
+    title: 'Would you be willing to be contacted for a follow-up conversation of up to 30 minutes?',
+    hint: 'Your contact details will be used only for follow-up related to this initiative, with your explicit permission.',
+    fields: [
+      {
+        id: 'q8_consent',
+        type: 'radio',
+        label: '',
+        required: true,
+        options: [
+          opt('yes', 'Yes — please contact me'),
+          opt('maybe', 'Maybe — I would like to know more first'),
+          opt('no', 'No — I prefer to remain anonymous'),
+        ],
+      },
+      {
+        id: 'contact_group',
+        type: 'group',
+        label: 'Please share your name and preferred contact method',
+        optional: true,
+        showWhen: (a) => ['yes', 'maybe'].includes(str(a.q8_consent)),
+        fields: [
+          { id: 'q8a_name', type: 'text', label: 'Name', placeholder: 'Your name' },
+          { id: 'q8a_email', type: 'text', label: 'Email address', placeholder: 'email@example.com' },
+          { id: 'q8a_org', type: 'text', label: 'Organization', placeholder: 'Organization name' },
+          { id: 'q8a_lang', type: 'text', label: 'Preferred language for follow-up', placeholder: 'e.g. English, Russian' },
+        ],
+      },
+    ],
+  };
 }
 
 function branchASteps(): FormStep[] {
@@ -392,7 +393,7 @@ function branchASteps(): FormStep[] {
     {
       id: 'a-migration',
       tag: 'Community · Displaced populations',
-      title: 'Migrant and displaced community access to care',
+      title: 'Migrant, refugee, and displaced community access to care',
       showWhen: (_, b) => b === 'A',
       fields: [
         {
@@ -621,7 +622,7 @@ function branchBSteps(): FormStep[] {
         {
           id: 'qb6_intel',
           type: 'radio',
-          label: 'How useful would it be for your work to have access to a regional system that provides early alerts on migration-related health risks and identifies gaps in continuity of care?',
+          label: 'How useful would access to a regional early warning system — one that helps identify risks of disruptions in the availability and supply of TB and lung health medicines, as well as other threats to continuity of treatment — be for your work?',
           required: true,
           options: [
             opt('very', 'Very useful — it would directly support timely decision-making'),
@@ -852,14 +853,6 @@ function branchCSteps(): FormStep[] {
             opt('other', 'Other — please specify'),
           ],
         },
-        {
-          id: 'qc10_upload',
-          type: 'file',
-          label: 'Upload relevant reports, assessments, or data samples (optional). PDF, DOCX, XLSX. Max 10MB. No individual patient data.',
-          optional: true,
-          accept: '.pdf,.docx,.xlsx',
-          maxSizeMB: 10,
-        },
       ],
     },
   ];
@@ -871,7 +864,7 @@ function closingSteps(): FormStep[] {
     type: 'rank',
     label: 'If the Hub were launching with one core feature in the next 6 months, rank by priority (1 = highest)',
     required: true,
-    rankCount: 7,
+    rankCount: 6,
     options: mvpFeatureOptions,
   };
 
@@ -884,7 +877,7 @@ function closingSteps(): FormStep[] {
         {
           id: 'q9_intel',
           type: 'radio',
-          label: 'Would a system that uses regional data to identify where patients may lose access to treatment — and alerts decision-makers early — be useful?',
+          label: 'How useful would a regional early warning system be — one that helps identify risks of patients losing access to treatment and alerts decision-makers early?',
           required: true,
           options: [
             opt('very', 'Very useful — this is a critical gap'),
@@ -930,6 +923,7 @@ function closingSteps(): FormStep[] {
         mvpField,
       ],
     },
+    contactStep(),
     {
       id: 'open',
       tag: 'Closing · Open response',

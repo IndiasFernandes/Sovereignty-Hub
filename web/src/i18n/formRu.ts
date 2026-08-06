@@ -128,7 +128,7 @@ const M: Record<string, string> = {
   'Where does access to lung health care most commonly break down in your experience or community?':
     'Где, по вашему опыту или в вашем сообществе, чаще всего нарушается доступ к помощи при лёгочных заболеваниях?',
   'Community signals and feedback channels': 'Сигналы сообщества и каналы обратной связи',
-  'Migrant and displaced community access to care': 'Доступ к помощи для мигрантов и перемещённых сообществ',
+  'Migrant, refugee, and displaced community access to care': 'Доступ к помощи для мигрантов, беженцев и вынужденно перемещённых лиц',
   'If this Hub were built, which functions would be most useful for communities like yours?':
     'Если бы этот Хаб был создан, какие функции были бы наиболее полезны для сообществ, подобных вашему?',
   'Rank in order of usefulness (1 = most useful).': 'Расположите по полезности (1 = наиболее полезно).',
@@ -190,8 +190,8 @@ const M: Record<string, string> = {
     'Использовали бы вы защищённый цифровой портал по приглашению, созданный специально для парламентариев?',
   'Are there upcoming legislative windows, budget cycles, or political deadlines in the next 12 months?':
     'Есть ли в ближайшие 12 месяцев предстоящие законодательные окна, бюджетные циклы или политические сроки?',
-  'How useful would it be for your work to have access to a regional system that provides early alerts on migration-related health risks and identifies gaps in continuity of care?':
-    'Насколько полезным для вашей работы был бы доступ к региональной системе, которая заранее предупреждает о связанных с миграцией рисках для здоровья и выявляет пробелы в непрерывности помощи?',
+  'How useful would access to a regional early warning system — one that helps identify risks of disruptions in the availability and supply of TB and lung health medicines, as well as other threats to continuity of treatment — be for your work?':
+    'Насколько полезным для вашей работы был бы доступ к региональной системе раннего предупреждения, которая помогает выявлять риски перебоев в поставках лекарственных препаратов для лечения ТБ и заболеваний лёгких и другие угрозы непрерывности лечения?',
   'What single thing would make this platform genuinely useful to you — something you would actually open and rely on? (max 100 words)':
     'Что одно сделало бы эту платформу действительно полезной для вас — чем вы бы реально пользовались и на что полагались? (до 100 слов)',
   'Share your honest perspective…': 'Поделитесь вашим искренним мнением…',
@@ -217,10 +217,8 @@ const M: Record<string, string> = {
     'С точки зрения финансирования, какой компонент Хаба было бы проще всего поддержать в ближайшие 12–18 месяцев?',
   'What rules, safeguards, or trust standards would the Hub need to meet before your organization could engage or support it?':
     'Каким правилам, гарантиям или стандартам доверия должен соответствовать Хаб, прежде чем ваша организация сможет участвовать или поддержать его?',
-  'Upload relevant reports, assessments, or data samples (optional). PDF, DOCX, XLSX. Max 10MB. No individual patient data.':
-    'Загрузите соответствующие отчёты, оценки или образцы данных (необязательно). PDF, DOCX, XLSX. Макс. 10 МБ. Без индивидуальных данных пациентов.',
-  'Would a system that uses regional data to identify where patients may lose access to treatment — and alerts decision-makers early — be useful?':
-    'Была бы полезна система, которая использует региональные данные, чтобы определить, где пациенты могут потерять доступ к лечению, и заранее предупреждает лиц, принимающих решения?',
+  'How useful would a regional early warning system be — one that helps identify risks of patients losing access to treatment and alerts decision-makers early?':
+    'Насколько полезной для вашей работы была бы региональная система раннего предупреждения, которая помогает выявлять риски потери доступа пациентов к лечению и своевременно информирует лиц, принимающих решения?',
   'How prepared is the health system in your country or region to maintain TB and lung health services during a major crisis?':
     'Насколько система здравоохранения в вашей стране или регионе готова поддерживать услуги по туберкулёзу и лёгочному здоровью во время крупного кризиса?',
   'Is there currently any functional mechanism for cross-border coordination on TB or lung health continuity between your country and neighbors?':
@@ -247,8 +245,7 @@ const M: Record<string, string> = {
   'Member of Parliament or parliamentary staff': 'Депутат парламента или сотрудник аппарата',
   'Government official (Ministry of Health or other)': 'Государственный служащий (Минздрав или иное)',
   'National TB or lung health program officer': 'Сотрудник национальной программы по ТБ или лёгочному здоровью',
-  'International organization (UN agency, WHO, IOM, etc.)': 'Международная организация (агентство ООН, ВОЗ, МОМ и др.)',
-  'Bilateral or multilateral donor': 'Двусторонний или многосторонний донор',
+  'International bilateral/multilateral donor (UN agency, Global Fund, etc.)': 'Международная организация двухсторонней/многосторонней помощи (агентство ООН, Глобальный Фонд и др.)',
   'Private foundation or philanthropic organization': 'Частный фонд или благотворительная организация',
   'Academic or research institution': 'Академическое или исследовательское учреждение',
   'Implementation partner or technical assistance provider': 'Партнёр по реализации или поставщик технической помощи',
@@ -509,7 +506,6 @@ const M: Record<string, string> = {
   'Continuity-of-care risk alerts for displaced populations': 'Оповещения о рисках непрерывности помощи для перемещённых групп',
   'Emergency legal measure templates for cross-border health crises': 'Шаблоны экстренных правовых мер для трансграничных кризисов здоровья',
   'Civil society feedback integration with legislative drafting': 'Интеграция обратной связи гражданского общества в разработку законов',
-  'Real-time medicine supply disruption monitoring': 'Мониторинг сбоев в поставках лекарств в реальном времени',
 
   // ── Audience pages (AudiencePage.tsx) ─────────────────────────────────
   'For policymakers': 'Для политиков',
