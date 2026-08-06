@@ -36,7 +36,7 @@ export function PartnersFoundationsPage() {
           <div className="pp-stat"><b>2014</b><span>Network active in EECA since</span></div>
           <div className="pp-stat"><b>9</b><span>National parliaments (TB Caucus)</span></div>
           <div className="pp-stat"><b>300k+</b><span>Vulnerable patients</span></div>
-          <div className="pp-stat"><b>$1.2M</b><span>Over 24 months</span></div>
+          <div className="pp-stat"><b>24&nbsp;mo</b><span>Multi-phase programme</span></div>
         </div>
       </div>
 
@@ -127,7 +127,7 @@ export function PartnersFoundationsPage() {
         <div className="pp-wrap">
           <div className="pp-cta-band">
             <h2>Lead a legacy your nation will remember.</h2>
-            <p>A lead philanthropic investment toward the $1.2M / 24-month programme — or a named component (Engine, Bridge, or Shield). We will align scope, recognition and reporting to your foundation’s priorities.</p>
+            <p>A lead philanthropic investment toward the 24-month regional programme — or a named component (Engine, Bridge, or Shield). We will align scope, recognition and reporting to your foundation’s priorities. Full budget and terms available on request.</p>
             <a className="pp-btn pp-btn-primary" href={EMAIL}>Request the proposal &amp; a trustee briefing →</a>
           </div>
         </div>

@@ -99,7 +99,7 @@ export const translations = {
     'pillar3-func': 'Ensure decisions are debated, tracked, and followed through',
     'pillar3-deliver': 'Caucus Engagement Frameworks • Budget Advocacy Toolkit • Oversight and Monitoring Framework • Accountability Scorecards • Structured Dialogue Mechanisms',
 
-    // Index - Solution: Engine / Bridge / Shield (aligned to the $1.2M Investment Proposal)
+    // Index - Solution: Engine / Bridge / Shield
     'eng-role': 'Legislative platform',
     'eng-name': 'The Engine — Sovereignty App',
     'eng-fn': 'Turn political decisions into ready-to-table legislation and budget action, faster.',
@@ -146,7 +146,8 @@ export const translations = {
     'loop-eng': 'Engine', 'loop-bri': 'Bridge', 'loop-shi': 'Shield',
     'loop-foundation': 'Shared, governed data layer — WHO-aligned, ISO 27001-grade, sovereign',
     'loop-caption': 'Months compressed into weeks — one continuous, governed cycle.',
-    'approach-confidential': 'Full budget and terms are shared with partners in confidence.',
+    'approach-confidential': 'Full budget and terms are available on request.',
+    'request-budget-cta': 'Request the budget →',
 
     // Solution page (/solution) — simplified, general-audience copy
     'solp-title': 'The Solution',
@@ -188,7 +189,7 @@ export const translations = {
     'gov-node4-t': 'Advisory Board of Ex-MPs', 'gov-node4-d': 'Peer mentorship & high-level diplomatic missions',
     'gov-node5-t': 'Technical Secretariat', 'gov-node5-d': 'Day-to-day delivery — three core leads + support',
     'pathway-step1': 'Donor investment',
-    'pathway-step1-sub': '$1M MVP',
+    'pathway-step1-sub': 'Foundation Phase',
     'pathway-step2': '12-month demonstrator',
     'pathway-step2-sub': 'Measurable deliverables',
     'pathway-step3': 'Regional scale-up',
@@ -368,7 +369,7 @@ export const translations = {
     'pillar3-func': 'Обеспечение обсуждения, отслеживания и выполнения решений',
     'pillar3-deliver': 'Рамки вовлечения кокусов • Набор инструментов бюджетной адвокации • Рамки надзора и мониторинга • Карточки подотчётности • Механизмы структурированного диалога',
 
-    // Index - Solution: Двигатель / Мост / Щит (согласовано с инвестиционным предложением $1,2 млн)
+    // Index - Solution: Двигатель / Мост / Щит
     'eng-role': 'Законодательная платформа',
     'eng-name': '«Двигатель» — Sovereignty App',
     'eng-fn': 'Превращает политические решения в готовые к внесению законопроекты и бюджетные действия — быстрее.',
@@ -411,7 +412,8 @@ export const translations = {
     'loop-eng': 'Двигатель', 'loop-bri': 'Мост', 'loop-shi': 'Щит',
     'loop-foundation': 'Общий управляемый слой данных — по стандартам ВОЗ, уровня ISO 27001, суверенный',
     'loop-caption': 'Месяцы сжаты в недели — единый непрерывный управляемый цикл.',
-    'approach-confidential': 'Полный бюджет и условия предоставляются партнёрам конфиденциально.',
+    'approach-confidential': 'Полный бюджет и условия предоставляются по запросу.',
+    'request-budget-cta': 'Запросить бюджет →',
 
     // Solution page (/solution) — simplified, general-audience copy
     'solp-title': 'Решение',
@@ -457,7 +459,7 @@ export const translations = {
     'gov-node4-t': 'Совет бывших депутатов', 'gov-node4-d': 'Наставничество и дипломатические миссии высокого уровня',
     'gov-node5-t': 'Технический секретариат', 'gov-node5-d': 'Повседневная работа — три ведущих специалиста и поддержка',
     'pathway-step1': 'Инвестиция донора',
-    'pathway-step1-sub': 'MVP $1 млн',
+    'pathway-step1-sub': 'Фундаментальная фаза',
     'pathway-step2': '12-месячный демонстратор',
     'pathway-step2-sub': 'Измеримые результаты',
     'pathway-step3': 'Региональное масштабирование',

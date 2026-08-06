@@ -553,7 +553,7 @@ const M: Record<string, string> = {
     'Прозрачное управление, отчётность и независимый надзор',
   'A replicable, scalable model for regional health sovereignty':
     'Тиражируемая, масштабируемая модель регионального суверенитета здравоохранения',
-  'Full budget and terms, shared with you in confidence': 'Полный бюджет и условия — предоставляются вам конфиденциально',
+  'Full budget and terms — available on request': 'Полный бюджет и условия — предоставляются по запросу',
   'Built around what you need.': 'Создано вокруг ваших потребностей.',
 
   'Turn your decision into delivered care.': 'Превратите своё решение в оказанную помощь.',

@@ -195,7 +195,10 @@ export function HomePage() {
               </li>
             ))}
           </ol>
-          <p className="invest-note"><T k="approach-confidential" /></p>
+          <p className="invest-note">
+            <T k="approach-confidential" />{' '}
+            <Link className="link-arrow" to="/contact"><T k="request-budget-cta" /></Link>
+          </p>
         </div>
       </section>
 

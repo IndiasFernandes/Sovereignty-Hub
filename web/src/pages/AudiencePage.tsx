@@ -44,7 +44,7 @@ const GET: Record<Audience, { title: string; items: string[] }> = {
     'A live, working solution in a first country — the proof unit',
     'Transparent governance, reporting and independent oversight',
     'A replicable, scalable model for regional health sovereignty',
-    'Full budget and terms, shared with you in confidence',
+    'Full budget and terms — available on request',
   ] },
 };
 

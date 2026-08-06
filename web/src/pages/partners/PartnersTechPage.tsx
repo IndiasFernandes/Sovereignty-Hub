@@ -85,7 +85,7 @@ export function PartnersTechPage() {
         <div className="pp-wrap">
           <div className="pp-head"><div className="eyebrow">How you can help</div><h2>Three ways to partner</h2></div>
           <div className="pp-steps">
-            <div className="pp-step"><div className="n">1</div><h4>Fund</h4><p>A grant toward the $1.2M / 24-month programme or a named component. Fit: Google.org (AI for Government), McGovern Foundation, AWS IMAGINE.</p></div>
+            <div className="pp-step"><div className="n">1</div><h4>Fund</h4><p>A grant toward the 24-month regional programme or a named component. Fit: Google.org (AI for Government), McGovern Foundation, AWS IMAGINE. Full budget on request.</p></div>
             <div className="pp-step"><div className="n">2</div><h4>Power</h4><p>Cloud/compute credits and model access to run the platform sustainably. Fit: Microsoft Azure, Anthropic, NVIDIA Inception, OpenAI.</p></div>
             <div className="pp-step"><div className="n">3</div><h4>Build</h4><p>Engineering time, solution architecture and responsible-AI review. Fit: Google.org engineers, Microsoft AI for Good Lab, IBM.</p></div>
           </div>
