@@ -95,28 +95,43 @@ export function HomePage() {
       </section>
 
       <section id="urgency" className="section opp">
-        <div className="container opp-grid opp-grid-2">
-          <div className="opp-aside">
-            <p className="eyebrow eyebrow-onDark"><T k="opp-eyebrow" /></p>
-            <h2><T k="urgency-title" /></h2>
-            <p className="section-lead"><T k="urgency-lead" /></p>
-          </div>
-          <figure className="opp-chart">
-            {([
-              { l: 'opp-bar1-label', v: 'opp-bar1-val', w: '85%' },
-              { l: 'opp-bar2-label', v: 'opp-bar2-val', w: '99%' },
-            ] as const).map((b) => (
-              <div className="opp-bar-row" key={b.l}>
-                <span className="opp-bar-label"><T k={b.l} /></span>
-                <div className="opp-bar-track">
-                  <div className="opp-bar" style={{ width: b.w }}>
-                    <b><T k={b.v} /></b>
+        <div className="container">
+          <div className="opp-grid opp-grid-2">
+            <div className="opp-aside">
+              <p className="eyebrow eyebrow-onDark"><T k="opp-eyebrow" /></p>
+              <h2><T k="urgency-title" /></h2>
+              <p className="section-lead"><T k="urgency-lead" /></p>
+            </div>
+            <figure className="opp-chart">
+              {([
+                { l: 'opp-bar1-label', v: 'opp-bar1-val', w: '85%' },
+                { l: 'opp-bar2-label', v: 'opp-bar2-val', w: '99%' },
+              ] as const).map((b) => (
+                <div className="opp-bar-row" key={b.l}>
+                  <span className="opp-bar-label"><T k={b.l} /></span>
+                  <div className="opp-bar-track">
+                    <div className="opp-bar" style={{ width: b.w }}>
+                      <b><T k={b.v} /></b>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-            <figcaption><T k="opp-chart-cap" /></figcaption>
-          </figure>
+              ))}
+              <figcaption><T k="opp-chart-cap" /></figcaption>
+            </figure>
+          </div>
+
+          <div className="opp-inaction">
+            <p className="eyebrow eyebrow-onDark opp-inaction-eyebrow"><T k="inaction-eyebrow" /></p>
+            <div className="opp-inaction-grid">
+              {(['a', 'b', 'c'] as const).map((k) => (
+                <article className="opp-inaction-card" key={k}>
+                  <strong className="opp-inaction-value"><T k={`inaction-${k}-val`} /></strong>
+                  <p className="opp-inaction-desc"><T k={`inaction-${k}-text`} /></p>
+                </article>
+              ))}
+            </div>
+            <p className="opp-inaction-source"><T k="inaction-source" html /></p>
+          </div>
         </div>
       </section>
 
