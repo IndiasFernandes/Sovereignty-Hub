@@ -185,14 +185,6 @@ function sharedSteps(): FormStep[] {
           ],
         },
         {
-          id: 'q0d_describe',
-          type: 'textarea',
-          label: 'Please briefly describe your perspective',
-          required: true,
-          placeholder: 'Describe how you relate to EECA lung health systems…',
-          showWhen: (a) => a.q0_type === 'D',
-        },
-        {
           id: 'q0d_nearest',
           type: 'radio',
           label: 'Which track is closest to your perspective?',
@@ -666,7 +658,7 @@ function branchCSteps(): FormStep[] {
     {
       id: 'c-profile',
       tag: 'Partner · Organization',
-      title: 'Organization type and data holdings',
+      title: 'Organization type',
       showWhen: (_, b) => b === 'C',
       fields: [
         {
@@ -685,47 +677,14 @@ function branchCSteps(): FormStep[] {
             opt('other', 'Other (please specify)'),
           ],
         },
-        {
-          id: 'qc2_data',
-          type: 'checkbox',
-          label: 'Does your organization hold any of the following types of data relevant to the EECA region?',
-          required: true,
-          options: [
-            opt('tb', 'Aggregated TB incidence, treatment, or outcome data'),
-            opt('finance', 'Health financing or budget allocation data'),
-            opt('migration', 'Migration and displacement population data'),
-            opt('procurement', 'Medicine procurement or supply chain data'),
-            opt('legislation', 'Legislative or policy tracking databases'),
-            opt('performance', 'Health system performance indicators'),
-            opt('donor', 'Donor disbursement and funding flow data'),
-            opt('none', 'None of the above'),
-            opt('unsure', "I'm not sure what is available"),
-          ],
-        },
       ],
     },
     {
       id: 'c-data',
-      tag: 'Partner · Data & funding',
-      title: 'Data sharing conditions and funding transition risks',
+      tag: 'Partner · Funding transition',
+      title: 'Funding transition risks',
       showWhen: (_, b) => b === 'C',
       fields: [
-        {
-          id: 'qc3_share',
-          type: 'checkbox',
-          label: 'If your organization holds relevant data, what conditions would be required for it to be shared or integrated?',
-          optional: true,
-          options: [
-            opt('dua', 'Data use agreement with defined governance'),
-            opt('tech', 'Technical integration with existing systems'),
-            opt('pia', 'Privacy impact assessment'),
-            opt('audit', 'Third-party or independent audit'),
-            opt('who', 'Alignment with WHO or UN data standards'),
-            opt('gov', 'Government sign-off in relevant countries'),
-            opt('open', 'No conditions — we could share openly'),
-            opt('never', 'We are unlikely to share data regardless of conditions'),
-          ],
-        },
         {
           id: 'qc4_funding',
           type: 'radio',
@@ -1060,7 +1019,7 @@ export const STEP_LABELS: Record<string, string> = {
   'b-intelligence': 'Migration intelligence',
   'b-design': 'Design priorities',
   'c-profile': 'Org profile',
-  'c-data': 'Data & funding',
+  'c-data': 'Funding transition',
   'c-evidence': 'Evidence & systems',
   'c-pilot': 'Pilot & funding',
   'c-governance': 'Governance standards',

@@ -142,8 +142,8 @@ const M: Record<string, string> = {
   'Secure MP portal and legislative timing': 'Защищённый портал для депутатов и сроки законотворчества',
   'Health Security & Migration Intelligence': 'Безопасность здоровья и миграционная аналитика',
   'What would make this platform genuinely useful to you?': 'Что сделало бы эту платформу действительно полезной для вас?',
-  'Organization type and data holdings': 'Тип организации и имеющиеся данные',
-  'Data sharing conditions and funding transition risks': 'Условия обмена данными и риски при изменении финансирования',
+  'Organization type': 'Тип организации',
+  'Funding transition risks': 'Риски при изменении финансирования',
   'Evidence requirements and existing platforms': 'Требования к доказательствам и существующие платформы',
   'Pilot support and fundable MVP': 'Поддержка пилота и финансируемый MVP',
   'Governance, privacy and trust requirements': 'Требования к управлению, конфиденциальности и доверию',
@@ -156,8 +156,6 @@ const M: Record<string, string> = {
   // ── Field labels & placeholders ───────────────────────────────────────
   'Which country or region are you responding from?': 'Из какой страны или региона вы отвечаете?',
   'Which of the following best describes your primary role?': 'Что из перечисленного лучше всего описывает вашу основную роль?',
-  'Please briefly describe your perspective': 'Кратко опишите вашу позицию',
-  'Describe how you relate to EECA lung health systems…': 'Опишите, как вы связаны с системами лёгочного здоровья ВЕЦА…',
   'Which track is closest to your perspective?': 'Какое направление ближе всего к вашей позиции?',
   'Other risk (please specify)': 'Другой риск (уточните)',
   'Please share your name and preferred contact method': 'Укажите ваше имя и предпочтительный способ связи',
@@ -198,10 +196,6 @@ const M: Record<string, string> = {
   'Upload draft legislation, policy briefs, or committee reports (optional). PDF, DOCX. Max 10MB.':
     'Загрузите проекты законов, аналитические записки или отчёты комитетов (необязательно). PDF, DOCX. Макс. 10 МБ.',
   'Which best describes your organization?': 'Что лучше всего описывает вашу организацию?',
-  'Does your organization hold any of the following types of data relevant to the EECA region?':
-    'Располагает ли ваша организация какими-либо из следующих типов данных, относящихся к региону ВЕЦА?',
-  'If your organization holds relevant data, what conditions would be required for it to be shared or integrated?':
-    'Если ваша организация располагает соответствующими данными, какие условия необходимы для их передачи или интеграции?',
   'How serious are funding gaps for TB and lung health programs in your countries, especially as donor support decreases or ends?':
     'Насколько серьёзны пробелы в финансировании программ по туберкулёзу и лёгочному здоровью в ваших странах, особенно по мере сокращения или прекращения донорской поддержки?',
   'What key evidence or criteria would your organization look for when assessing a platform like the EECA Hub?':
