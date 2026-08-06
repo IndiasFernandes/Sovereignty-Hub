@@ -7,8 +7,7 @@ import '../audience.css';
 
 const PATHS = [
   { to: '/policymakers', t: 'Policymakers', d: 'MPs, ministries and national caucuses.' },
-  { to: '/partners', t: 'Partners', d: 'Organisations, technology and diagnostics.' },
-  { to: '/donors', t: 'Donors', d: 'Funders and foundations.' },
+  { to: '/partners', t: 'Partners', d: 'Organisations, funders, technology and diagnostics.' },
 ];
 
 export function ContactPage() {

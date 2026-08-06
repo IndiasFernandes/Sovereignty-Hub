@@ -7,7 +7,7 @@ import { useI18n } from '../i18n/I18nProvider';
 import { tr } from '../i18n/formRu';
 import '../audience.css';
 
-type Audience = 'policymakers' | 'partners' | 'donors';
+type Audience = 'policymakers' | 'partners';
 
 const HERO: Record<Audience, { eyebrow: string; title: string; lead: string; cta: string; proof: string; img: string }> = {
   policymakers: {
@@ -17,13 +17,8 @@ const HERO: Record<Audience, { eyebrow: string; title: string; lead: string; cta
   },
   partners: {
     eyebrow: 'For partners', title: 'A governed platform to build on.',
-    lead: 'Bring your technology, diagnostics, or capital into a proven, standards-based regional health system — with a clearly defined role and measurable impact.',
+    lead: 'Bring your technology, diagnostics, capital or funding into a proven, standards-based regional health system — with a clearly defined role and measurable impact.',
     cta: 'Explore a partnership', proof: 'Standards-based, human-reviewed, sovereign by design.', img: '/assets/images/diagnostics.webp',
-  },
-  donors: {
-    eyebrow: 'For donors', title: 'Fund proof, not promises.',
-    lead: 'Back a de-risked, phased model that delivers a working result in one country before scaling to nine — with transparent governance and measurable outcomes.',
-    cta: 'Request the concept note', proof: 'Each phase proven before the next is funded.', img: '/assets/images/donors.webp',
   },
 };
 
@@ -37,21 +32,16 @@ const GET: Record<Audience, { title: string; items: string[] }> = {
   partners: { title: 'What partnership includes', items: [
     'Defined integration points across the Engine, Bridge and Shield',
     'Co-financing and partnership frameworks',
-    'A live pilot pathway from proof to regional scale',
-    'Association with a trusted parliamentary network',
-  ] },
-  donors: { title: 'What your funding delivers', items: [
     'A live, working solution in a first country — the proof unit',
     'Transparent governance, reporting and independent oversight',
-    'A replicable, scalable model for regional health sovereignty',
+    'Association with a trusted parliamentary network',
     'Full budget and terms — available on request',
   ] },
 };
 
 const CLOSE: Record<Audience, { title: string; lead: string }> = {
   policymakers: { title: 'Turn your decision into delivered care.', lead: 'Start a confidential conversation about your country.' },
-  partners: { title: 'Build with a proven regional platform.', lead: "Let's discuss where your organisation fits." },
-  donors: { title: 'Invest in a working model of health sovereignty.', lead: 'See the results before scale — request the concept note.' },
+  partners: { title: 'Build with a proven regional platform.', lead: "Let's discuss where your organisation fits — from technology to funding." },
 };
 
 const PROOF = [
@@ -192,81 +182,7 @@ function Partners() {
   );
 }
 
-/* ---------------- DONORS — evidence ---------------- */
-function Donors() {
-  const { lang } = useI18n();
-  const ladder = [
-    { t: 'Foundation', d: 'A working solution, live in one country — the proof unit.' },
-    { t: 'Replication', d: 'The proven playbook, stamped country by country.' },
-    { t: 'Regional platform', d: 'The full application across the region.' },
-    { t: 'Scale & integration', d: 'Nine-country coverage, sustainability, hand-off.' },
-  ];
-  const metrics = [
-    { value: 300, fmt: (n: number) => `${Math.round(n)}K+`, l: 'vulnerable patients protected' },
-    { value: 9, fmt: (n: number) => String(Math.round(n)), l: 'countries the model can reach' },
-    { value: 100, fmt: (n: number) => `${Math.round(n)}%`, l: 'human-reviewed, governed decisions' },
-  ];
-  return (
-    <>
-      <section className="section aud-tension">
-        <div className="container aud-tension-grid">
-          <Reveal>
-            <p className="eyebrow">{tr('The moment', lang)}</p>
-            <h2>{tr('Proof matters more than promises.', lang)}</h2>
-            <p className="section-lead">{tr('Global donors are stepping back just as the need peaks — and funders now reward evidence, not pilots that never scale. The Hub delivers a working result in a single country first, so your capital backs a proven unit, then replicates it.', lang)}</p>
-          </Reveal>
-          <Reveal className="sig sig-fundgap">
-            <div className="sig-bar-row"><span className="sig-bar-lab">{tr('Needed 2026–28', lang)}</span><div className="sig-bar-track"><div className="sig-bar barfill" style={cssw('100%')}>$18.0B</div></div></div>
-            <div className="sig-bar-row"><span className="sig-bar-lab">{tr('Pledged so far', lang)}</span><div className="sig-bar-track"><div className="sig-bar barfill sig-gap" style={cssw('66%')}>$11.85B</div></div></div>
-            <p className="sig-cap">
-              {lang === 'ru' ? (
-                <>Дефицит ~<strong>6 млрд $</strong>, при этом объём внешней помощи здравоохранению, по прогнозам, сократится на <strong>30–40%</strong>. Сейчас масштабируются доказательства, а не обещания.</>
-              ) : (
-                <>A <strong>~$6B shortfall</strong>, and external health aid is projected to fall <strong>30–40%</strong>. Proof, not promises, is what scales now.</>
-              )}
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Signature structure: de-risked ladder (vertical) */}
-      <section className="section aud-dark">
-        <div className="container aud-ladder-wrap">
-          <Reveal className="aud-ladder-head">
-            <p className="eyebrow eyebrow-onDark">{tr('The de-risked ladder', lang)}</p>
-            <h2>{tr('Each rung proven before the next is funded.', lang)}</h2>
-            <p className="section-lead" style={{ color: 'rgba(255,255,255,.7)' }}>{tr('A donor never funds a promise — only a repeat of something already working.', lang)}</p>
-          </Reveal>
-          <ol className="ladder">
-            {ladder.map((s, i) => (
-              <Reveal as="li" className="ladder-step" delay={i * 90} key={s.t}>
-                <span className="ladder-n">{i + 1}</span>
-                <div><strong>{tr(s.t, lang)}</strong><p>{tr(s.d, lang)}</p></div>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* Signature structure: big impact metrics */}
-      <section className="section section-alt">
-        <div className="container">
-          <Reveal><p className="eyebrow">{tr('Measured impact', lang)}</p></Reveal>
-          <div className="metrics">
-            {metrics.map((m, i) => (
-              <Reveal as="div" className="metric" delay={i * 100} key={m.l}>
-                <strong><CountUp value={m.value} format={m.fmt} /></strong>
-                <span>{tr(m.l, lang)}</span>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-}
-
-const BODY = { policymakers: Policymakers, partners: Partners, donors: Donors };
+const BODY = { policymakers: Policymakers, partners: Partners };
 
 export function AudiencePage({ audience }: { audience: Audience }) {
   const { lang } = useI18n();

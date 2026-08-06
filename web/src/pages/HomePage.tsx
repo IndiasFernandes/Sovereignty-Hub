@@ -59,7 +59,6 @@ export function HomePage() {
             {([
               { to: '/policymakers', t: 'who-pm-t', d: 'who-pm-d' },
               { to: '/partners', t: 'who-pa-t', d: 'who-pa-d' },
-              { to: '/donors', t: 'who-do-t', d: 'who-do-d' },
               { to: '/contact', t: 'who-cs-t', d: 'who-cs-d' },
             ] as const).map((w) => (
               <Link className="who-card" to={w.to} key={w.to}>
@@ -96,29 +95,11 @@ export function HomePage() {
 
       <section id="urgency" className="section opp">
         <div className="container">
-          <div className="opp-grid opp-grid-2">
-            <div className="opp-aside">
-              <p className="eyebrow eyebrow-onDark"><T k="opp-eyebrow" /></p>
-              <h2><T k="urgency-title" /></h2>
-              <p className="section-lead"><T k="urgency-lead" /></p>
-            </div>
-            <figure className="opp-chart">
-              {([
-                { l: 'opp-bar1-label', v: 'opp-bar1-val', w: '85%' },
-                { l: 'opp-bar2-label', v: 'opp-bar2-val', w: '99%' },
-              ] as const).map((b) => (
-                <div className="opp-bar-row" key={b.l}>
-                  <span className="opp-bar-label"><T k={b.l} /></span>
-                  <div className="opp-bar-track">
-                    <div className="opp-bar" style={{ width: b.w }}>
-                      <b><T k={b.v} /></b>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              <figcaption><T k="opp-chart-cap" /></figcaption>
-            </figure>
-          </div>
+          <header className="opp-header">
+            <p className="eyebrow eyebrow-onDark"><T k="opp-eyebrow" /></p>
+            <h2><T k="urgency-title" /></h2>
+            <p className="section-lead"><T k="urgency-lead" /></p>
+          </header>
 
           <div className="opp-inaction">
             <p className="eyebrow eyebrow-onDark opp-inaction-eyebrow"><T k="inaction-eyebrow" /></p>

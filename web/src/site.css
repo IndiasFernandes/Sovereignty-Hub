@@ -1038,62 +1038,14 @@ img {
   letter-spacing: -0.01em;
 }
 
-/* ── Opportunity data chart (TB burden bars) ── */
-.opp-chart {
-  margin: 0;
+/* ── Urgency — header (on dark) ── */
+.opp-header {
+  max-width: 44rem;
+  margin: 0 auto var(--space-2xl);
+  text-align: center;
 }
-.opp-bar-row {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr;
-  align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
-}
-.opp-bar-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
-  text-align: right;
-}
-.opp-bar-track {
-  height: 2.25rem;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-}
-.opp-bar {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 var(--space-sm);
-  border-radius: var(--radius-sm);
-  background: linear-gradient(90deg, var(--color-primary-dark), var(--color-primary-light) 75%, var(--teal-bright));
-  box-shadow: 0 0 22px -8px rgba(95, 212, 206, 0.6);
-}
-.opp-bar b {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  color: #fff;
-}
-.opp-chart figcaption {
-  margin-top: var(--space-sm);
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.55);
-  max-width: 22rem;
-}
-
-/* The Moment — 2-column (text + chart) */
-.opp-grid-2 {
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-.opp-grid-2 .opp-aside {
-  position: static;
-}
-.opp-grid-2 .opp-chart {
-  max-width: 30rem;
-  margin-left: auto;
+.opp-header .section-lead {
+  margin: 0 auto;
 }
 
 /* ── Urgency — cost of inaction stat cards (on dark) ── */
@@ -1492,8 +1444,6 @@ img {
 }
 
 @media (max-width: 860px) {
-  .opp-grid-2 { grid-template-columns: 1fr; }
-  .opp-grid-2 .opp-chart { margin-left: 0; }
   .impact-grid { grid-template-columns: 1fr; }
   .path { grid-template-columns: 1fr 1fr; }
 }

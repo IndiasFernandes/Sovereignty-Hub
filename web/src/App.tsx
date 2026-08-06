@@ -29,7 +29,7 @@ export default function App() {
           {/* Audience pages */}
           <Route path="/policymakers" element={<AudiencePage audience="policymakers" />} />
           <Route path="/partners" element={<AudiencePage audience="partners" />} />
-          <Route path="/donors" element={<AudiencePage audience="donors" />} />
+          <Route path="/donors" element={<Navigate to="/partners" replace />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* Internal design-system reference (noindex) */}
           <Route path="/design" element={<DesignSystemPage />} />

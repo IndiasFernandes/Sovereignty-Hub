@@ -61,7 +61,6 @@ export function Header({ current }: HeaderProps) {
               <ul className="nav-drop">
                 <li><Link to="/policymakers">{t('nav-policymakers')}</Link></li>
                 <li><Link to="/partners">{t('nav-partners')}</Link></li>
-                <li><Link to="/donors">{t('nav-donors')}</Link></li>
                 <li><Link to="/contact">{t('who-cs-t')}</Link></li>
               </ul>
             </li>
@@ -150,7 +149,6 @@ export function Footer() {
           <span className="footer-col-h">{t('footer-explore')}</span>
           <Link to="/policymakers">{t('nav-policymakers')}</Link>
           <Link to="/partners">{t('nav-partners')}</Link>
-          <Link to="/donors">{t('nav-donors')}</Link>
           <Link to="/contact">{t('who-cs-t')}</Link>
           <Link to="/team">{t('nav-team')}</Link>
           <Link to="/contact">{t('nav-contact')}</Link>
