@@ -3055,19 +3055,11 @@ section[id],
   }
 
   .nav-consultation-bar {
-    display: inline-flex;
-    margin-left: auto;
-    margin-right: var(--space-xs);
-    padding: var(--space-sm) var(--space-md);
-    font-size: 0.8125rem;
-    max-width: 9rem;
-    white-space: normal;
-    line-height: 1.2;
-    text-align: center;
+    display: none;
   }
 
   .nav-consultation-menu {
-    display: none;
+    display: inline-flex;
   }
 
   .nav-backdrop {
