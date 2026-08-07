@@ -47,6 +47,10 @@ export function ForFundersPage() {
             <Link to="/concept-note" className="btn btn-secondary"><T k="briefing-secondary" /></Link>
             <BriefingCTA variant="inline" kind="mou" labelKey="briefing-tertiary" />
           </div>
+          <p className="funders-fit-hint">
+            <T k="ff-hint" />{' '}
+            <Link to="/consultation/funder" className="link-arrow"><T k="ff-take-check" /></Link>
+          </p>
           <p className="funders-hero-proof"><T k="working-pilot-proof" /></p>
         </div>
       </section>

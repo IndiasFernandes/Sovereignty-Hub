@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/Layout';
 import { BriefingCTA } from '../components/BriefingCTA';
+import { TierGrid } from '../components/TierGrid';
 import { Reveal, CountUp } from '../lib/motion';
 import { useI18n } from '../i18n/I18nProvider';
 import { tr } from '../i18n/formRu';
@@ -143,6 +144,13 @@ function Partners() {
             <div className="sig-swap" aria-hidden="true">⇄</div>
             <div className="sig-col sig-col-gain"><p className="sig-col-h">{tr('What you gain', lang)}</p><ul>{gain.map((x) => <li key={x}>{tr(x, lang)}</li>)}</ul></div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Funder tier grid */}
+      <section className="section">
+        <div className="container">
+          <TierGrid />
         </div>
       </section>
 

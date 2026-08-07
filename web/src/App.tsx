@@ -15,6 +15,7 @@ import { LegalPage } from './pages/LegalPage';
 import { ForFundersPage } from './pages/ForFundersPage';
 import { ConceptNotePage } from './pages/ConceptNotePage';
 import { GovernanceFinancialsPage } from './pages/GovernanceFinancialsPage';
+import { FunderFitPage } from './pages/FunderFitPage';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/solution" element={<SolutionPage />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route path="/consultation/funder" element={<FunderFitPage />} />
           <Route path="/consultation" element={<ConsultationPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route path="/admin" element={<AdminDashboardPage />} />
