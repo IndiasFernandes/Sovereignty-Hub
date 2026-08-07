@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/Layout';
 import { BriefingCTA } from '../components/BriefingCTA';
+import { UseOfFundsChart } from '../components/UseOfFundsChart';
 import { T, useI18n } from '../i18n/I18nProvider';
 
 type CouncilMember = {
@@ -17,13 +18,6 @@ const COUNCIL: CouncilMember[] = [
   { key: 'alesia', photo: '/assets/images/team/team-alesia.png', nameKey: 'council-b-name', roleKey: 'council-b-role' },
   { key: 'invited', photo: '', nameKey: 'council-c-name', roleKey: 'council-c-role', invited: true },
 ];
-
-const USE_OF_FUNDS = [
-  { key: 'engine', pctKey: 'funders-uof-a-pct', labelKey: 'funders-uof-a-lab' },
-  { key: 'bridge', pctKey: 'funders-uof-b-pct', labelKey: 'funders-uof-b-lab' },
-  { key: 'shield', pctKey: 'funders-uof-c-pct', labelKey: 'funders-uof-c-lab' },
-  { key: 'gov', pctKey: 'funders-uof-d-pct', labelKey: 'funders-uof-d-lab' },
-] as const;
 
 export function ForFundersPage() {
   const { t } = useI18n();
@@ -73,27 +67,7 @@ export function ForFundersPage() {
 
       <section className="section section-alt">
         <div className="container">
-          <p className="eyebrow"><T k="funders-uof-eyebrow" /></p>
-          <h2><T k="funders-uof-title" /></h2>
-          <p className="section-lead"><T k="funders-uof-lead" /></p>
-          <div className="funders-uof-grid">
-            {USE_OF_FUNDS.map((row) => (
-              <div className="funders-uof-row" key={row.key}>
-                <div className="funders-uof-lab">
-                  <strong><T k={row.labelKey} /></strong>
-                </div>
-                <div className="funders-uof-bar-wrap">
-                  <div
-                    className="funders-uof-bar"
-                    data-key={row.key}
-                    style={{ width: `var(--uof-${row.key})` }}
-                  />
-                  <span className="funders-uof-pct"><T k={row.pctKey} /></span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="funders-uof-caveat"><T k="uof-chart-caveat" /></p>
+          <UseOfFundsChart />
         </div>
       </section>
 

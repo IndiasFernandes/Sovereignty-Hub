@@ -4519,3 +4519,85 @@ section[id],
 @media (max-width: 820px) {
   .footer-governance { font-size: 0.75rem; padding-inline: var(--space-md); }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   W7 — UseOfFundsChart (used on /for-funders + /concept-note)
+   ═══════════════════════════════════════════════════════════════ */
+.uof-chart {
+  max-width: 48rem;
+}
+.uof-chart-head {
+  margin-bottom: var(--space-xl);
+}
+.uof-chart-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0.5rem 0 var(--space-md);
+}
+.uof-chart-lead {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 40rem;
+}
+.uof-chart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.uof-chart-row {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+.uof-chart-label strong {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+.uof-chart-bar-wrap {
+  position: relative;
+  background: var(--teal-50);
+  border-radius: var(--radius-sm);
+  height: 2.25rem;
+  overflow: hidden;
+}
+.uof-chart-bar {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  transition: width 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.uof-chart-pct {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+.uof-chart-caveat {
+  margin-top: var(--space-lg);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+.uof-chart.is-compact .uof-chart-title { font-size: 1.5rem; }
+.uof-chart.is-compact .uof-chart-lead { font-size: 0.92rem; }
+.concept-note-uof {
+  margin-bottom: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+@media (max-width: 820px) {
+  .uof-chart-row { grid-template-columns: 1fr; gap: var(--space-xs); }
+  .uof-chart-title { font-size: 1.6rem; }
+}
