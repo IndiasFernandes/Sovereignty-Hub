@@ -36,9 +36,10 @@ export const translations = {
     'hero-tagline': 'A strategic investment platform designed to strengthen Eastern Europe and Central Asia\'s health resilience, data sovereignty, and regional stability.',
     'hero-cta': 'Discover the Hub',
     'hero-consultation': 'Stakeholder Consultation',
+    'hero-see-ask': 'See the $60K ask',
     'hero-eyebrow': 'EECA Lung Health Sovereignty Hub',
     'hero-headline': 'Decisions<br><span class="hero-accent">delivered as care.</span>',
-    'hero-lead': 'We help parliaments across Eastern Europe & Central Asia move lung-health policy from decision to delivered care in weeks, not years — and keep it reaching patients, even in crisis.',
+    'hero-lead': 'A regional platform closing the lung-health delivery gap across nine EECA countries. Seeking $60,000 Phase 1 partners to launch the Foundation Phase in Kazakhstan — one working national pilot before further funding is asked.',
     'statcard-eyebrow': 'At a glance',
     'statcard-text': 'Built on the <a href="https://www.globaltbcaucus.org/" target="_blank" rel="noopener noreferrer">Global TB Caucus</a> network, active across the region since 2014.',
     'stat1v': '300K+', 'stat1l': 'patients in scope',
@@ -336,6 +337,17 @@ export const translations = {
     'gov-financials-fiscal-body': 'The Hub operates as an autonomous, regionally-led centre supported by the Global TB Caucus network. Governance is exercised through a Regional Steering Committee, a Parliamentary Council drawn from nine active national caucuses, a Civil Society Council, an Advisory Board of former MPs, and a lean Technical Secretariat.',
     'gov-financials-transparency-title': 'Transparency principles',
     'gov-financials-transparency-body': 'Aggregated, non-identifiable data only. ISO 27001-grade information security. GDPR-equivalent data protection. Sovereign, in-region hosting. Human-in-the-loop review on every AI-assisted output. Independent oversight and reporting to partners on a fixed cadence.',
+
+    // ── W2 — Home funder-impact block ──
+    'home-funder-eyebrow': 'Phase 1 · The Ask',
+    'home-funder-title': '$60,000 funds one working national pilot.',
+    'home-funder-lead': 'A self-contained six-month Foundation Phase in Kazakhstan — the proof unit that unlocks Phase 2. Every rung proven before the next is funded.',
+    'home-fi-a-val': '$60K',
+    'home-fi-a-lab': 'Phase 1 ask — the entire Foundation Phase, one country, six months.',
+    'home-fi-b-val': '9 countries',
+    'home-fi-b-lab': 'Regional TB Caucus network active in EECA since 2014.',
+    'home-fi-c-val': '300K+',
+    'home-fi-c-lab': 'Vulnerable lung-health patients in scope across the region.',
   },
 
   ru: {
@@ -374,9 +386,10 @@ export const translations = {
     'hero-tagline': 'Стратегическая инвестиционная платформа для укрепления устойчивости систем здравоохранения, суверенитета данных и региональной стабильности в Восточной Европе и Центральной Азии.',
     'hero-cta': 'Узнать о Хабе',
     'hero-consultation': 'Консультация заинтересованных сторон',
+    'hero-see-ask': 'Посмотреть запрос в $60 000',
     'hero-eyebrow': 'EECA Хаб суверенитета в области здоровья лёгких',
     'hero-headline': 'Решения<br><span class="hero-accent">воплощённые в помощь.</span>',
-    'hero-lead': 'Мы помогаем парламентам Восточной Европы и Центральной Азии проходить путь от решения к оказанной помощи в области здоровья лёгких за недели, а не годы — и сохранять помощь для пациентов даже в кризис.',
+    'hero-lead': 'Региональная платформа, закрывающая разрыв в лечении заболеваний лёгких в девяти странах ВЕЦА. Ищем партнёров Фазы 1 на $60 000 для запуска Фундаментальной фазы в Казахстане — один работающий национальный пилот до запроса дальнейшего финансирования.',
     'statcard-eyebrow': 'Кратко',
     'statcard-text': 'На основе сети <a href="https://www.globaltbcaucus.org/" target="_blank" rel="noopener noreferrer">Глобального парламентского кокуса по ТБ</a>, активной в регионе с 2014 года.',
     'stat1v': '300K+', 'stat1l': 'пациентов в охвате',
@@ -674,5 +687,16 @@ export const translations = {
     'gov-financials-fiscal-body': 'Хаб функционирует как автономный, регионально управляемый центр при поддержке сети Глобального парламентского кокуса по ТБ. Управление осуществляется через Региональный руководящий комитет, Парламентский совет из девяти национальных кокусов, Совет гражданского общества, Совет бывших депутатов и небольшой Технический секретариат.',
     'gov-financials-transparency-title': 'Принципы прозрачности',
     'gov-financials-transparency-body': 'Только агрегированные, обезличенные данные. Информационная безопасность уровня ISO 27001. Защита данных, эквивалентная GDPR. Суверенный, региональный хостинг. Проверка человеком на каждом этапе, где задействован ИИ. Независимый надзор и отчётность партнёрам с фиксированной периодичностью.',
+
+    // ── W2 — Home funder-impact block ──
+    'home-funder-eyebrow': 'Фаза 1 · Запрос',
+    'home-funder-title': '$60 000 финансируют один работающий национальный пилот.',
+    'home-funder-lead': 'Самодостаточная шестимесячная Фундаментальная фаза в Казахстане — доказательство, открывающее Фазу 2. Каждая ступень доказана перед финансированием следующей.',
+    'home-fi-a-val': '$60K',
+    'home-fi-a-lab': 'Запрос Фазы 1 — вся Фундаментальная фаза, одна страна, шесть месяцев.',
+    'home-fi-b-val': '9 стран',
+    'home-fi-b-lab': 'Региональная сеть ТБ-кокусов в ВЕЦА, активная с 2014 года.',
+    'home-fi-c-val': '300 000+',
+    'home-fi-c-lab': 'Уязвимых пациентов с заболеваниями лёгких в поле охвата в регионе.',
   },
 } as const;

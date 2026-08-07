@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { SiteLayout } from '../components/Layout';
+import { BriefingCTA } from '../components/BriefingCTA';
 import { T, useI18n } from '../i18n/I18nProvider';
 
 const svg = { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, 'aria-hidden': true };
@@ -31,8 +32,8 @@ export function HomePage() {
             <h1><T k="hero-headline" html /></h1>
             <p className="hero-lead"><T k="hero-lead" /></p>
             <div className="hero-buttons">
-              <Link to="/consultation#consultation-form" className="btn btn-primary"><T k="hero-consultation" /></Link>
-              <a href="#what-is" className="btn btn-hero-secondary"><T k="hero-cta" /></a>
+              <BriefingCTA variant="primary" kind="briefing" />
+              <Link to="/for-funders" className="btn btn-hero-secondary"><T k="hero-see-ask" /></Link>
             </div>
           </div>
           <aside className="hero-statcard" aria-label="Programme at a glance">
@@ -47,6 +48,58 @@ export function HomePage() {
               ))}
             </ul>
           </aside>
+        </div>
+      </section>
+
+      <section id="funder-impact" className="section funder-impact-home">
+        <div className="container">
+          <p className="eyebrow"><T k="home-funder-eyebrow" /></p>
+          <h2 className="home-funder-title"><T k="home-funder-title" /></h2>
+          <p className="section-lead home-funder-lead"><T k="home-funder-lead" /></p>
+
+          <div className="funders-impact-grid">
+            {(['a', 'b', 'c'] as const).map((k) => (
+              <article className="funders-impact-card" key={k}>
+                <strong className="funders-impact-value"><T k={`home-fi-${k}-val`} /></strong>
+                <p className="funders-impact-desc"><T k={`home-fi-${k}-lab`} /></p>
+              </article>
+            ))}
+          </div>
+
+          <div className="home-council">
+            <p className="eyebrow home-council-eyebrow"><T k="council-title" /></p>
+            <div className="council-strip">
+              <div className="council-card">
+                <img src="/assets/images/team/team-gayane.png" alt="" loading="lazy" />
+                <div className="council-meta">
+                  <strong><T k="council-a-name" /></strong>
+                  <span><T k="council-a-role" /></span>
+                </div>
+              </div>
+              <div className="council-card">
+                <img src="/assets/images/team/team-alesia.png" alt="" loading="lazy" />
+                <div className="council-meta">
+                  <strong><T k="council-b-name" /></strong>
+                  <span><T k="council-b-role" /></span>
+                </div>
+              </div>
+              <div className="council-card is-invited">
+                <div className="council-monogram" aria-hidden="true"><span>WE</span></div>
+                <div className="council-meta">
+                  <strong><T k="council-c-name" /></strong>
+                  <span><T k="council-c-role" /></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="working-pilot-proof-home"><T k="working-pilot-proof" /></p>
+
+          <div className="home-funder-actions">
+            <BriefingCTA variant="primary" kind="briefing" />
+            <Link to="/for-funders" className="btn btn-secondary"><T k="hero-see-ask" /></Link>
+            <Link to="/concept-note" className="link-arrow"><T k="briefing-secondary" /></Link>
+          </div>
         </div>
       </section>
 
