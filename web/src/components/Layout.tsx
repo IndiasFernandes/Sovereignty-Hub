@@ -170,6 +170,12 @@ export function Footer() {
         <p className="footer-disclaimer">{t('footer-disclaimer-text')}</p>
         <p className="footer-rights">{t('footer-rights')}</p>
       </div>
+
+      <p className="footer-governance">
+        <span>{t('footer-governance')}</span>
+        <span className="footer-governance-sep" aria-hidden="true">·</span>
+        <Link to="/governance/financials">{t('footer-financials')}</Link>
+      </p>
     </footer>
   );
 }

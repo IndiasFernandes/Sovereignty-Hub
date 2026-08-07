@@ -4459,3 +4459,63 @@ section[id],
   .activity-title { font-size: 1.4rem; }
   .ai-badge.ai-badge-mockup { top: 40px; right: 8px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   W6 — Team LinkedIn + footer governance line
+   ═══════════════════════════════════════════════════════════════ */
+.team-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+.team-heading h2 {
+  margin: 0;
+}
+.team-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.08);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.team-linkedin:hover {
+  background: #0a66c2;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.footer-governance {
+  max-width: var(--container-max, 78rem);
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-lg) var(--space-md);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+.footer-governance a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-underline-offset: 0.18em;
+  font-weight: 500;
+}
+.footer-governance a:hover {
+  color: #fff;
+  text-decoration-color: rgba(255, 255, 255, 0.9);
+}
+.footer-governance-sep {
+  opacity: 0.5;
+}
+@media (max-width: 820px) {
+  .footer-governance { font-size: 0.75rem; padding-inline: var(--space-md); }
+}

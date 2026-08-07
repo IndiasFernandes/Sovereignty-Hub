@@ -21,6 +21,22 @@ type I18nContextValue = {
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
+/** Language prefixes we should default to RU for on first visit (EECA + RU-adjacent). */
+const RU_DEFAULT_PREFIXES = ['ru', 'uk', 'kk', 'az', 'hy', 'ka', 'be', 'tg', 'uz', 'ky', 'tk'];
+
+function detectFromBrowser(): Lang {
+  if (typeof navigator === 'undefined') return 'en';
+  const langs = (navigator.languages && navigator.languages.length > 0)
+    ? navigator.languages
+    : [navigator.language || 'en'];
+  for (const raw of langs) {
+    const prefix = String(raw).toLowerCase().split(/[-_]/)[0];
+    if (prefix === 'en') return 'en';
+    if (RU_DEFAULT_PREFIXES.includes(prefix)) return 'ru';
+  }
+  return 'en';
+}
+
 function readStoredLang(): Lang {
   if (typeof window === 'undefined') return 'en';
   const fromQuery = new URLSearchParams(window.location.search).get('lang');
@@ -28,7 +44,10 @@ function readStoredLang(): Lang {
     localStorage.setItem(STORAGE_KEY, fromQuery);
     return fromQuery;
   }
-  return localStorage.getItem(STORAGE_KEY) === 'ru' ? 'ru' : 'en';
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored === 'ru' || stored === 'en') return stored;
+  // No stored preference and no query override — auto-detect from browser.
+  return detectFromBrowser();
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {

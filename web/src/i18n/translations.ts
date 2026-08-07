@@ -415,6 +415,10 @@ export const translations = {
     'activity-3-d': 'End-of-Phase-0 review with caucuses in Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Tajikistan, Ukraine and Uzbekistan.',
     'ai-badge-mockup': 'Illustrative product mockup',
 
+    // ── W6 — Footer governance line ──
+    'footer-governance': 'Data governance: GDPR-equivalent · sovereign in-region hosting · aggregated non-identifiable data only · human-in-the-loop on all AI outputs',
+    'footer-financials': 'Financials & filings',
+
     // ── W2 — Home funder-impact block ──
     'home-funder-eyebrow': 'Phase 1 · The Ask',
     'home-funder-title': 'One working national pilot. Then Phase 2.',
@@ -841,6 +845,10 @@ export const translations = {
     'activity-3-t': 'Обзор сети Global TB Caucus по девяти странам',
     'activity-3-d': 'Завершение обзора Фазы 0 с кокусами в Армении, Азербайджане, Грузии, Казахстане, Кыргызстане, Молдове, Таджикистане, Украине и Узбекистане.',
     'ai-badge-mockup': 'Иллюстративный макет продукта',
+
+    // ── W6 — Строка управления данными в подвале ──
+    'footer-governance': 'Управление данными: эквивалент GDPR · суверенный региональный хостинг · только агрегированные обезличенные данные · проверка человеком на всех выходах ИИ',
+    'footer-financials': 'Финансы и отчётность',
 
     // ── W2 — Home funder-impact block ──
     'home-funder-eyebrow': 'Фаза 1 · Запрос',
