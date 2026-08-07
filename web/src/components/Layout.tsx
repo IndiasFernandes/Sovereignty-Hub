@@ -53,6 +53,7 @@ export function Header({ current }: HeaderProps) {
         <nav className="nav" id="main-nav" aria-label="Main navigation">
           <ul onClick={() => setMenuOpen(false)}>
             <li><Link to="/solution">{t('nav-solution')}</Link></li>
+            <li><Link to="/for-funders">{t('nav-funders')}</Link></li>
             <li className="nav-has-drop">
               <button type="button" className="nav-drop-btn" aria-haspopup="true" onClick={(e) => e.stopPropagation()}>
                 {t('nav-participate')}
@@ -147,8 +148,10 @@ export function Footer() {
 
         <nav className="footer-col" aria-label="Explore">
           <span className="footer-col-h">{t('footer-explore')}</span>
+          <Link to="/for-funders">{t('nav-funders')}</Link>
           <Link to="/policymakers">{t('nav-policymakers')}</Link>
           <Link to="/partners">{t('nav-partners')}</Link>
+          <Link to="/concept-note">{t('nav-concept-note')}</Link>
           <Link to="/contact">{t('who-cs-t')}</Link>
           <Link to="/team">{t('nav-team')}</Link>
           <Link to="/contact">{t('nav-contact')}</Link>

@@ -12,6 +12,9 @@ import { AudiencePage } from './pages/AudiencePage';
 import { ContactPage } from './pages/ContactPage';
 import { DesignSystemPage } from './pages/DesignSystemPage';
 import { LegalPage } from './pages/LegalPage';
+import { ForFundersPage } from './pages/ForFundersPage';
+import { ConceptNotePage } from './pages/ConceptNotePage';
+import { GovernanceFinancialsPage } from './pages/GovernanceFinancialsPage';
 
 export default function App() {
   return (
@@ -30,6 +33,9 @@ export default function App() {
           <Route path="/policymakers" element={<AudiencePage audience="policymakers" />} />
           <Route path="/partners" element={<AudiencePage audience="partners" />} />
           <Route path="/donors" element={<Navigate to="/partners" replace />} />
+          <Route path="/for-funders" element={<ForFundersPage />} />
+          <Route path="/concept-note" element={<ConceptNotePage />} />
+          <Route path="/governance/financials" element={<GovernanceFinancialsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           {/* Internal design-system reference (noindex) */}
           <Route path="/design" element={<DesignSystemPage />} />
