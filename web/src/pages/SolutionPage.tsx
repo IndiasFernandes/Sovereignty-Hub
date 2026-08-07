@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { SiteLayout } from '../components/Layout';
+import { BriefingCTA } from '../components/BriefingCTA';
 import { T } from '../i18n/I18nProvider';
 
 const svg = { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, 'aria-hidden': true };
@@ -182,9 +182,9 @@ export function SolutionPage() {
           <p className="cta-lead"><T k="cta-lead" /></p>
           <p className="cta-sub"><T k="cta-sub" /></p>
           <div className="cta-buttons">
-            <Link to="/consultation#consultation-form" className="btn btn-primary"><T k="cta-consultation" /></Link>
-            <Link to="/" className="btn btn-secondary"><T k="cta-learn" /></Link>
-            <ConceptNoteModal />
+            <BriefingCTA variant="primary" kind="briefing" />
+            <Link to="/concept-note" className="btn btn-secondary"><T k="briefing-secondary" /></Link>
+            <BriefingCTA variant="inline" kind="mou" labelKey="briefing-tertiary" />
           </div>
         </div>
       </section>

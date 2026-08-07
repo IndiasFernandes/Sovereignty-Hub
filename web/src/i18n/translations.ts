@@ -338,6 +338,13 @@ export const translations = {
     'gov-financials-transparency-title': 'Transparency principles',
     'gov-financials-transparency-body': 'Aggregated, non-identifiable data only. ISO 27001-grade information security. GDPR-equivalent data protection. Sovereign, in-region hosting. Human-in-the-loop review on every AI-assisted output. Independent oversight and reporting to partners on a fixed cadence.',
 
+    // ── W3 — Trust strip (site-wide, above footer) ──
+    'trust-a': 'Aligned with WHO Europe',
+    'trust-b': 'Global TB Caucus lineage · active since 2014',
+    'trust-c': 'GDPR-equivalent data protection',
+    'trust-d': 'Sovereign, in-region hosting',
+    'trust-e': 'Independent audit · Q3 2027 roadmap',
+
     // ── W2 — Home funder-impact block ──
     'home-funder-eyebrow': 'Phase 1 · The Ask',
     'home-funder-title': '$60,000 funds one working national pilot.',
@@ -687,6 +694,13 @@ export const translations = {
     'gov-financials-fiscal-body': 'Хаб функционирует как автономный, регионально управляемый центр при поддержке сети Глобального парламентского кокуса по ТБ. Управление осуществляется через Региональный руководящий комитет, Парламентский совет из девяти национальных кокусов, Совет гражданского общества, Совет бывших депутатов и небольшой Технический секретариат.',
     'gov-financials-transparency-title': 'Принципы прозрачности',
     'gov-financials-transparency-body': 'Только агрегированные, обезличенные данные. Информационная безопасность уровня ISO 27001. Защита данных, эквивалентная GDPR. Суверенный, региональный хостинг. Проверка человеком на каждом этапе, где задействован ИИ. Независимый надзор и отчётность партнёрам с фиксированной периодичностью.',
+
+    // ── W3 — Trust strip (site-wide, above footer) ──
+    'trust-a': 'Согласовано с ВОЗ Европа',
+    'trust-b': 'Наследие Global TB Caucus · активен с 2014',
+    'trust-c': 'Защита данных, эквивалентная GDPR',
+    'trust-d': 'Суверенный, региональный хостинг',
+    'trust-e': 'Независимый аудит · план на Q3 2027',
 
     // ── W2 — Home funder-impact block ──
     'home-funder-eyebrow': 'Фаза 1 · Запрос',

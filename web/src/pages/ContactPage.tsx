@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/Layout';
+import { BriefingCTA } from '../components/BriefingCTA';
 import { useI18n } from '../i18n/I18nProvider';
 import { tr } from '../i18n/formRu';
 import '../audience.css';
@@ -28,7 +29,8 @@ export function ContactPage() {
             {tr('The fastest way to reach us is the consultation form — it routes your message to the right person on our team. Partner and funding discussions are handled in confidence.', lang)}
           </p>
           <div className="aud-hero-cta">
-            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr('Book a consultation', lang)}</Link>
+            <BriefingCTA variant="primary" kind="briefing" />
+            <Link to="/concept-note" className="concept-note-link">{tr('Download the concept note', lang)}</Link>
           </div>
           <p className="aud-proof">
             {tr('Or email us directly:', lang)}{' '}

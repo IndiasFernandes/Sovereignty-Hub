@@ -9,7 +9,7 @@ import {
 import { submitConsultation } from '../../lib/submitConsultation';
 import { scrollToElement } from '../../lib/scrollToTarget';
 import { FieldRenderer } from './FieldRenderer';
-import { ConceptNoteModal } from '../ConceptNoteModal';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../../i18n/I18nProvider';
 import { localizeStep, localizeError, tr } from '../../i18n/formRu';
 
@@ -137,7 +137,9 @@ export function StepWizard({ hero }: Props) {
                 lang,
               )}
             </span>
-            <ConceptNoteModal variant="link" />
+            <Link to="/concept-note" className="concept-note-link" target="_blank" rel="noopener noreferrer">
+              {tr('Open the Concept Note', lang)}
+            </Link>
           </div>
 
           {current && view && (

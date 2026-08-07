@@ -4058,3 +4058,52 @@ section[id],
   .home-funder-actions .btn,
   .home-funder-actions .link-arrow { text-align: center; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   W3 — Trust strip (above footer, site-wide)
+   ═══════════════════════════════════════════════════════════════ */
+.trust-strip {
+  background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-lg) 0;
+}
+.trust-strip-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md) var(--space-xl);
+}
+.trust-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1;
+}
+.trust-chip-icon {
+  display: inline-flex;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+.trust-chip-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.trust-chip-label {
+  letter-spacing: 0.01em;
+}
+@media (max-width: 820px) {
+  .trust-strip { padding: var(--space-md) 0; }
+  .trust-strip-inner {
+    justify-content: flex-start;
+    gap: var(--space-sm) var(--space-md);
+  }
+  .trust-chip { font-size: 0.78rem; }
+}

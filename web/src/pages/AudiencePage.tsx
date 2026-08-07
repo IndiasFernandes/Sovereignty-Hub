@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/Layout';
-import { ConceptNoteModal } from '../components/ConceptNoteModal';
+import { BriefingCTA } from '../components/BriefingCTA';
 import { Reveal, CountUp } from '../lib/motion';
 import { useI18n } from '../i18n/I18nProvider';
 import { tr } from '../i18n/formRu';
@@ -205,8 +205,8 @@ export function AudiencePage({ audience }: { audience: Audience }) {
           <h1>{tr(h.title, lang)}</h1>
           <p className="page-hero-lead">{tr(h.lead, lang)}</p>
           <div className="aud-hero-cta">
-            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr(h.cta, lang)}</Link>
-            <ConceptNoteModal variant="link" />
+            <BriefingCTA variant="primary" kind="briefing" />
+            <Link to="/concept-note" className="concept-note-link">{tr('Download the concept note', lang)}</Link>
           </div>
           <p className="aud-proof">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
@@ -247,8 +247,9 @@ export function AudiencePage({ audience }: { audience: Audience }) {
           <h2>{tr(close.title, lang)}</h2>
           <p className="cta-lead">{tr(close.lead, lang)}</p>
           <div className="cta-buttons">
-            <Link to="/consultation#consultation-form" className="btn btn-primary">{tr(h.cta, lang)}</Link>
-            <Link to="/" className="btn btn-secondary">{tr('Back to overview', lang)}</Link>
+            <BriefingCTA variant="primary" kind="briefing" />
+            <Link to="/concept-note" className="btn btn-secondary">{tr('Download the concept note', lang)}</Link>
+            <BriefingCTA variant="inline" kind="mou" labelKey="briefing-tertiary" />
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useI18n } from '../i18n/I18nProvider';
+import { TrustStrip } from './TrustStrip';
 
 type HeaderProps = {
   current?: 'home' | 'team' | 'consultation';
@@ -181,6 +182,7 @@ export function SiteLayout({ children, current }: { children: React.ReactNode; c
       </a>
       <Header current={current} />
       <main id="main-content">{children}</main>
+      <TrustStrip />
       <Footer />
     </>
   );

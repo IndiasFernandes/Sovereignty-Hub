@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { ConceptNoteModal } from '../components/ConceptNoteModal';
 import { SiteLayout } from '../components/Layout';
 import { BriefingCTA } from '../components/BriefingCTA';
 import { T, useI18n } from '../i18n/I18nProvider';
@@ -280,9 +279,9 @@ export function HomePage() {
           <p className="cta-lead"><T k="cta-lead" /></p>
           <p className="cta-sub"><T k="cta-sub" /></p>
           <div className="cta-buttons">
-            <Link to="/consultation#consultation-form" className="btn btn-primary"><T k="cta-consultation" /></Link>
-            <a href="#what-is" className="btn btn-secondary"><T k="cta-learn" /></a>
-            <ConceptNoteModal />
+            <BriefingCTA variant="primary" kind="briefing" />
+            <Link to="/concept-note" className="btn btn-secondary"><T k="briefing-secondary" /></Link>
+            <BriefingCTA variant="inline" kind="mou" labelKey="briefing-tertiary" />
           </div>
         </div>
       </section>

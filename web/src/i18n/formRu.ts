@@ -553,6 +553,8 @@ const M: Record<string, string> = {
   'Invest in a working model of health sovereignty.': 'Инвестируйте в работающую модель суверенитета здравоохранения.',
   'See the results before scale — request the concept note.': 'Увидьте результаты до масштабирования — запросите концепт-ноту.',
   'Back to overview': 'Назад к обзору',
+  'Download the concept note': 'Скачать концепт-ноту',
+  'Open the Concept Note': 'Открыть концепт-ноту',
 
   'patients in scope': 'пациентов в фокусе',
   'national caucuses': 'национальных парламентских групп',
