@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router';
 import { SiteLayout } from '../../components/Layout';
 import {
   apiGetSession,
@@ -218,7 +218,6 @@ export function AdminDashboardPage() {
                     const urgencyLabel = labelForOption(
                       'q3_urgency',
                       String(answers.q3_urgency ?? ''),
-                      'full',
                     );
                     return (
                       <tr key={r.id}>

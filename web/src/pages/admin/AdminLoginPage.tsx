@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router';
 import { SiteLayout } from '../../components/Layout';
 import { apiGetSession, apiLogin } from '../../lib/api';
 

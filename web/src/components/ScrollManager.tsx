@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { scrollForRoute } from '../lib/scrollToTarget';
 
 /** Resets scroll on route changes; consultation routes land at the form start. */

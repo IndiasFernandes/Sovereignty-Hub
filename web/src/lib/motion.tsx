@@ -1,32 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-
-/** Returns [ref, inView] — inView flips true once the element scrolls into view. */
-export function useInView<T extends HTMLElement = HTMLDivElement>(rootMargin = '0px 0px -12% 0px') {
-  const ref = useRef<T | null>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (typeof IntersectionObserver === 'undefined') {
-      setInView(true);
-      return;
-    }
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setInView(true);
-            obs.disconnect();
-          }
-        });
-      },
-      { rootMargin, threshold: 0.15 },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [rootMargin]);
-  return [ref, inView] as const;
-}
+import { useEffect, useState } from 'react';
+import { useInView } from './useInView';
 
 /** Fade + rise on scroll-in. Collapses to instant under reduced-motion (CSS-handled). */
 export function Reveal({
@@ -67,8 +40,8 @@ export function CountUp({
   useEffect(() => {
     if (!inView) return;
     if (reduceMotion()) {
-      setN(value);
-      return;
+      const raf = requestAnimationFrame(() => setN(value));
+      return () => cancelAnimationFrame(raf);
     }
     let raf = 0;
     let start = 0;

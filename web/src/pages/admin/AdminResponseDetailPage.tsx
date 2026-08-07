@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router';
 import { SiteLayout } from '../../components/Layout';
-import { getAllSteps, labelForOption, type FormVariant } from '../../lib/formSchema';
+import { getAllSteps, labelForOption } from '../../lib/formSchema';
 import {
   apiGetResponse,
   apiGetSession,
@@ -62,9 +62,8 @@ export function AdminResponseDetailPage() {
     );
   }
 
-  const variant: FormVariant = 'full';
   const answers = row.answers as Record<string, unknown>;
-  const steps = getAllSteps(variant);
+  const steps = getAllSteps();
 
   return (
     <SiteLayout>
@@ -106,7 +105,7 @@ export function AdminResponseDetailPage() {
                 const label = field.label ?? field.id;
                 const display =
                   field.type === 'radio' || field.type === 'select'
-                    ? labelForOption(field.id, String(val), variant)
+                    ? labelForOption(field.id, String(val))
                     : Array.isArray(val)
                       ? val.join(', ')
                       : String(val);

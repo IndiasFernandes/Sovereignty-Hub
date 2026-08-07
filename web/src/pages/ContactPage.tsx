@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { SiteLayout } from '../components/Layout';
 import { useI18n } from '../i18n/I18nProvider';
 import { tr } from '../i18n/formRu';

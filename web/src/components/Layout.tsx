@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { useI18n } from '../i18n/I18nProvider';
+import { Link, useLocation } from 'react-router';
+import { useI18n } from '../i18n/useI18n';
 
 type HeaderProps = {
   current?: 'home' | 'team' | 'consultation';
@@ -10,11 +10,13 @@ export function Header({ current }: HeaderProps) {
   const { lang, setLang, t } = useI18n();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
   const onConsultation = current === 'consultation' || location.pathname.startsWith('/consultation');
 
-  useEffect(() => {
+  if (location.pathname !== prevPathname) {
+    setPrevPathname(location.pathname);
     setMenuOpen(false);
-  }, [location.pathname]);
+  }
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
