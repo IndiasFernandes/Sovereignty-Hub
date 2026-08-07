@@ -145,7 +145,7 @@ export const translations = {
     'loop-foundation': 'Shared, governed data layer — WHO-aligned, ISO 27001-grade, sovereign',
     'loop-caption': 'Months compressed into weeks — one continuous, governed cycle.',
     'approach-confidential': 'Full budget and terms are available on request.',
-    'request-budget-cta': 'Request the budget →',
+    'request-budget-cta': 'Request the budget',
 
     // Solution page (/solution) — simplified, general-audience copy
     'solp-title': 'The Solution',
@@ -185,6 +185,12 @@ export const translations = {
     'inaction-c-val': 'US$76–3,700',
     'inaction-c-text': 'average out-of-pocket cost per TB episode across national surveys through 2024.',
     'inaction-source': 'Sources: <a href="https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/tb-reports/global-tuberculosis-report-2024/uhc-and-tb-determinants/5-2-costs-faced-by-tb-patients-and-their-households-social-protection-and-human-rights" target="_blank" rel="noopener noreferrer">WHO Global TB Report 2024</a> · cost-of-inaction studies (<a href="https://pubmed.ncbi.nlm.nih.gov/37339564/" target="_blank" rel="noopener noreferrer">PubMed 37339564</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10748973/" target="_blank" rel="noopener noreferrer">PMC 10748973</a>).',
+    'inuse-eyebrow': 'In use',
+    'inuse-title': 'The platform, in serious rooms.',
+    'inuse-people-t': 'Ministry & caucus sessions',
+    'inuse-people-d': 'Country dashboards used live in policy meetings — the same view an MP sees the moment a decision needs to move.',
+    'inuse-reports-t': 'Budget Review Reports',
+    'inuse-reports-d': 'The platform outputs — printed briefs a ministry or foundation would actually keep on the desk. Same data, same rigour.',
     'gov-eyebrow': 'Governance',
     'gov-node1-t': 'Regional Steering Committee', 'gov-node1-d': 'Strategic direction, oversight & regional alignment',
     'gov-node2-t': 'Parliamentary Council', 'gov-node2-d': 'Nine national TB caucuses championing reform',
@@ -414,7 +420,7 @@ export const translations = {
     'loop-foundation': 'Общий управляемый слой данных — по стандартам ВОЗ, уровня ISO 27001, суверенный',
     'loop-caption': 'Месяцы сжаты в недели — единый непрерывный управляемый цикл.',
     'approach-confidential': 'Полный бюджет и условия предоставляются по запросу.',
-    'request-budget-cta': 'Запросить бюджет →',
+    'request-budget-cta': 'Запросить бюджет',
 
     // Solution page (/solution) — simplified, general-audience copy
     'solp-title': 'Решение',
@@ -458,6 +464,12 @@ export const translations = {
     'inaction-c-val': '76–3&nbsp;700&nbsp;$',
     'inaction-c-text': 'средние личные расходы за эпизод ТБ по национальным опросам до 2024 года.',
     'inaction-source': 'Источники: <a href="https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/tb-reports/global-tuberculosis-report-2024/uhc-and-tb-determinants/5-2-costs-faced-by-tb-patients-and-their-households-social-protection-and-human-rights" target="_blank" rel="noopener noreferrer">Глобальный отчёт ВОЗ по ТБ 2024</a> · исследования цены бездействия (<a href="https://pubmed.ncbi.nlm.nih.gov/37339564/" target="_blank" rel="noopener noreferrer">PubMed 37339564</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10748973/" target="_blank" rel="noopener noreferrer">PMC 10748973</a>).',
+    'inuse-eyebrow': 'В работе',
+    'inuse-title': 'Платформа — там, где принимают серьёзные решения.',
+    'inuse-people-t': 'Заседания министерств и кокусов',
+    'inuse-people-d': 'Страновые дашборды на живых политических встречах — тот же экран, что видит депутат в момент принятия решения.',
+    'inuse-reports-t': 'Обзоры бюджета',
+    'inuse-reports-d': 'Готовые выходы платформы — печатные брифы, которые министерство или фонд оставит на столе. Те же данные, та же строгость.',
     'gov-eyebrow': 'Управление',
     'gov-node1-t': 'Региональный руководящий комитет', 'gov-node1-d': 'Стратегическое руководство, надзор и региональное согласование',
     'gov-node2-t': 'Парламентский совет', 'gov-node2-d': 'Девять национальных кокусов по ТБ продвигают реформы',

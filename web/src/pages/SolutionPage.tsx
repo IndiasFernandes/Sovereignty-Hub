@@ -115,6 +115,36 @@ export function SolutionPage() {
             ))}
           </div>
 
+          {/* In use — the platform in serious rooms */}
+          <div className="sol-inuse">
+            <p className="eyebrow"><T k="inuse-eyebrow" /></p>
+            <h3 className="sol-inuse-title"><T k="inuse-title" /></h3>
+            <div className="sol-inuse-grid">
+              <figure className="sol-inuse-card">
+                <img
+                  src="/assets/images/platform/meeting-country-dashboard.png"
+                  alt="Policy meeting reviewing the EECA Lung Health country dashboard on a wall display"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong><T k="inuse-people-t" /></strong>
+                  <span><T k="inuse-people-d" /></span>
+                </figcaption>
+              </figure>
+              <figure className="sol-inuse-card">
+                <img
+                  src="/assets/images/platform/budget-review-report.png"
+                  alt="Printed Budget Review Report 2024 open on a desk beside a laptop"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <strong><T k="inuse-reports-t" /></strong>
+                  <span><T k="inuse-reports-d" /></span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
           <p className="sol-trust"><T k="sol-trust" /></p>
 
           <div className="sol-std-grid">

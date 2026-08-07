@@ -612,7 +612,7 @@
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
   cursor: pointer;
   transition: all 0.18s;
   margin-left: auto;
@@ -620,13 +620,20 @@
   box-sizing: border-box;
 }
 
-.btn-next:hover {
+.btn-next:hover:not(:disabled) {
   background: var(--color-accent-light);
+  color: #fff;
   transform: translateY(-1px);
 }
 
 .btn-next:active {
   transform: scale(0.98);
+}
+
+.btn-next:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  color: #fff;
 }
 
 /* THANK YOU */
