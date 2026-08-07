@@ -23,7 +23,16 @@ function BrowserFrame({ src, alt, url }: { src: string; alt: string; url: string
         <span className="browser-dots"><i /><i /><i /></span>
         <span className="browser-url">{url}</span>
       </div>
-      <img src={src} alt={alt} loading="lazy" />
+      <div className="browser-frame-media">
+        <img src={src} alt={alt} loading="lazy" />
+        <span className="ai-badge ai-badge-mockup" role="note" aria-label="Illustrative product mockup">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" />
+            <path d="M19 15l0.7 1.9L21.6 17.6l-1.9 0.7L19 20.2l-0.7-1.9L16.4 17.6l1.9-0.7L19 15z" />
+          </svg>
+          <T k="ai-badge-mockup" />
+        </span>
+      </div>
     </div>
   );
 }

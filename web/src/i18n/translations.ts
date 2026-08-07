@@ -404,6 +404,17 @@ export const translations = {
     'ff-hint': 'Not sure yet?',
     'ff-take-check': 'Take the 2-min fit check',
 
+    // ── W5 — Activity strip + AI-mockup badge ──
+    'activity-eyebrow': 'Recent activity',
+    'activity-title': 'What has moved in the last 90 days.',
+    'activity-1-t': 'Alpha in use with the Global TB Caucus regional network',
+    'activity-1-d': 'The Engine and Bridge modules running in a working alpha across the Caucus infrastructure.',
+    'activity-2-t': 'WHO Europe alignment confirmed for TB-Free Central Asia',
+    'activity-2-d': 'Programme framing formally aligned with the WHO Europe TB-Free Central Asia Initiative.',
+    'activity-3-t': 'Global TB Caucus 9-country network review',
+    'activity-3-d': 'End-of-Phase-0 review with caucuses in Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Moldova, Tajikistan, Ukraine and Uzbekistan.',
+    'ai-badge-mockup': 'Illustrative product mockup',
+
     // ── W2 — Home funder-impact block ──
     'home-funder-eyebrow': 'Phase 1 · The Ask',
     'home-funder-title': '$60,000 funds one working national pilot.',
@@ -819,6 +830,17 @@ export const translations = {
     'ff-back': 'Вернуться на страницу для инвесторов',
     'ff-hint': 'Ещё не уверены?',
     'ff-take-check': 'Пройти 2-минутную анкету соответствия',
+
+    // ── W5 — Активность + значок иллюстративного макета ──
+    'activity-eyebrow': 'Последняя активность',
+    'activity-title': 'Что произошло за последние 90 дней.',
+    'activity-1-t': 'Альфа-версия в работе с региональной сетью Global TB Caucus',
+    'activity-1-d': 'Модули «Двигатель» и «Мост» работают в альфа-версии в инфраструктуре Кокуса.',
+    'activity-2-t': 'Согласование с ВОЗ Европа по TB-Free Central Asia',
+    'activity-2-d': 'Формирование программы официально согласовано с инициативой ВОЗ Европа TB-Free Central Asia.',
+    'activity-3-t': 'Обзор сети Global TB Caucus по девяти странам',
+    'activity-3-d': 'Завершение обзора Фазы 0 с кокусами в Армении, Азербайджане, Грузии, Казахстане, Кыргызстане, Молдове, Таджикистане, Украине и Узбекистане.',
+    'ai-badge-mockup': 'Иллюстративный макет продукта',
 
     // ── W2 — Home funder-impact block ──
     'home-funder-eyebrow': 'Фаза 1 · Запрос',

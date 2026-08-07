@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { SiteLayout } from '../components/Layout';
 import { BriefingCTA } from '../components/BriefingCTA';
 import { T, useI18n } from '../i18n/I18nProvider';
+import { ACTIVITY_FEED } from '../lib/activityFeed';
 
 const svg = { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.6, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, 'aria-hidden': true };
 const SOL_ICONS = {
@@ -19,8 +20,18 @@ const SOL_ICONS = {
   ),
 };
 
+function fmtDate(iso: string, lang: 'en' | 'ru'): string {
+  const d = new Date(iso + 'T00:00:00Z');
+  return d.toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
 export function HomePage() {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   return (
     <SiteLayout>
       <section className="hero hero-feature">
@@ -182,6 +193,29 @@ export function HomePage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="activity" className="section activity-section">
+        <div className="container">
+          <p className="eyebrow"><T k="activity-eyebrow" /></p>
+          <h2 className="activity-title"><T k="activity-title" /></h2>
+          <ul className="activity-strip">
+            {ACTIVITY_FEED.map((item) => (
+              <li className="activity-item" key={item.id}>
+                <time className="activity-date" dateTime={item.dateISO}>{fmtDate(item.dateISO, lang)}</time>
+                <div className="activity-body">
+                  <strong className="activity-item-title"><T k={item.titleKey} /></strong>
+                  <span className="activity-item-desc"><T k={item.descKey} /></span>
+                </div>
+                {item.linkTo ? (
+                  <Link to={item.linkTo} className="activity-link" aria-label={t(item.titleKey)}>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                ) : null}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

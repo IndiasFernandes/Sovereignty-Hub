@@ -4346,3 +4346,96 @@ section[id],
   .tier-title { font-size: 1.6rem; }
   .tier-amount { font-size: 2rem; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   W5 — Activity strip + AI-badge inside browser frames
+   ═══════════════════════════════════════════════════════════════ */
+.activity-section {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+.activity-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0.5rem 0 var(--space-xl);
+}
+.activity-strip {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+.activity-item {
+  display: grid;
+  grid-template-columns: 8rem 1fr auto;
+  gap: var(--space-lg);
+  align-items: center;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.activity-date {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  letter-spacing: 0.02em;
+}
+.activity-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+.activity-item-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.activity-item-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.activity-link {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: transform var(--transition), color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+.activity-link:hover {
+  color: var(--color-primary-dark);
+  transform: translateX(3px);
+}
+
+/* AI-badge overlay tuned for browser frames (already exists for photos) */
+.browser-frame-media {
+  position: relative;
+}
+.ai-badge.ai-badge-mockup {
+  top: 46px;
+  right: 12px;
+  background: rgba(10, 26, 32, 0.6);
+}
+@media (max-width: 820px) {
+  .activity-item {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "date link"
+      "body body";
+    gap: 0.35rem var(--space-md);
+  }
+  .activity-date { grid-area: date; }
+  .activity-body { grid-area: body; }
+  .activity-link { grid-area: link; padding: 0.25rem 0.5rem; }
+  .activity-title { font-size: 1.4rem; }
+  .ai-badge.ai-badge-mockup { top: 40px; right: 8px; }
+}
