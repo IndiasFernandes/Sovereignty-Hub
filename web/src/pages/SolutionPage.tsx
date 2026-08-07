@@ -121,22 +121,40 @@ export function SolutionPage() {
             <h3 className="sol-inuse-title"><T k="inuse-title" /></h3>
             <div className="sol-inuse-grid">
               <figure className="sol-inuse-card">
-                <img
-                  src="/assets/images/platform/meeting-country-dashboard.png"
-                  alt="Policy meeting reviewing the EECA Lung Health country dashboard on a wall display"
-                  loading="lazy"
-                />
+                <div className="sol-inuse-media">
+                  <img
+                    src="/assets/images/platform/meeting-country-dashboard.png"
+                    alt="Illustrative composite (AI-generated): a policy meeting reviewing the EECA Lung Health country dashboard on a wall display"
+                    loading="lazy"
+                  />
+                  <span className="ai-badge" role="note" aria-label="AI-generated image">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" />
+                      <path d="M19 15l0.7 1.9L21.6 17.6l-1.9 0.7L19 20.2l-0.7-1.9L16.4 17.6l1.9-0.7L19 15z" />
+                    </svg>
+                    <T k="ai-badge" />
+                  </span>
+                </div>
                 <figcaption>
                   <strong><T k="inuse-people-t" /></strong>
                   <span><T k="inuse-people-d" /></span>
                 </figcaption>
               </figure>
               <figure className="sol-inuse-card">
-                <img
-                  src="/assets/images/platform/budget-review-report.png"
-                  alt="Printed Budget Review Report 2024 open on a desk beside a laptop"
-                  loading="lazy"
-                />
+                <div className="sol-inuse-media">
+                  <img
+                    src="/assets/images/platform/budget-review-report.png"
+                    alt="Illustrative composite (AI-generated): a printed Budget Review Report 2024 open on a desk beside a laptop"
+                    loading="lazy"
+                  />
+                  <span className="ai-badge" role="note" aria-label="AI-generated image">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" />
+                      <path d="M19 15l0.7 1.9L21.6 17.6l-1.9 0.7L19 20.2l-0.7-1.9L16.4 17.6l1.9-0.7L19 15z" />
+                    </svg>
+                    <T k="ai-badge" />
+                  </span>
+                </div>
                 <figcaption>
                   <strong><T k="inuse-reports-t" /></strong>
                   <span><T k="inuse-reports-d" /></span>
